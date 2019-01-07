@@ -1,0 +1,30 @@
+KAnJI
+
+Alex Liu
+Imad Bel
+Jason Lin
+Karen Li
+pd 07
+-----------------------
+Pokemon website app using The New York Times API, Dark Sky API, and xkcd API held together lovingly through Bootstrap.
+
+
+ ______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
+==============================================================
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+alexL -- 2018-1-4 22:22
+--------------------------------------------------------------
+Talked through various plans for project. Settled on pokemon dungeon game that uses the poke API, Dark Sky API, and IP API, thereby emulating a pokemon game with new features. Decided on name of project to be Pokemon Dungeon.
+==============================================================
+alexL -- 2018-1-7 12:45
+--------------------------------------------------------------
+Created devlog.txt file.
+==============================================================
