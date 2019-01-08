@@ -22,10 +22,10 @@ Pokemon website app using Poke API, Dark Sky API, and IP API held together lovin
 
 alexL -- 2018-1-4 22:22
 --------------------------------------------------------------
-1. Talked through various plans for project. 
-2. Settled on pokemon dungeon game that uses the Poke API, 
-Dark Sky API, and IP API, thereby emulating a pokemon game with 
-new features. 
+1. Talked through various plans for project.
+2. Settled on pokemon dungeon game that uses the Poke API,
+Dark Sky API, and IP API, thereby emulating a pokemon game with
+new features.
 2. Decided on name of project to be Pokemon Dungeon.
 ==============================================================
 
@@ -36,7 +36,7 @@ alexL -- 2018-1-7 12:45
 
 alexL -- 2018-1-7 15:30
 --------------------------------------------------------------
-1. Created the html pages and the python code for accounts 
+1. Created the html pages and the python code for accounts
 (creating and resetting).
 ==============================================================
 
@@ -46,4 +46,10 @@ karenL -- 2018-1-7 23:15
 2. Created site map.
 3. Created component map.
 4. Finished design doc
+==============================================================
+
+alexL -- 2018-1-8 13:12
+--------------------------------------------------------------
+1. Created the README and the requirements.txt
+2. Added info to design doc
 ==============================================================
