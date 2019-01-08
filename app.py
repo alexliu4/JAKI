@@ -10,8 +10,6 @@ from util import db
 
 ''' Rate Limits for APIs:
     # Dark Sky API - 1000/day (needs to be credited)
-    # NYTimes API - 1000/day
-    # XKCD API - Unlimited
     # IPAPI - 1000/day
 '''
 
@@ -59,18 +57,23 @@ def home():
         print(e)
         return render_template('error.html', err = e)
 
+    # Try to open up content
+    try:
+        f = open('data/content.json', 'r')
+    except Exception as e:
+        f = open('data/content.json', 'x')
+    try:
+        data = json.loads(f.read())
+    except Exception as e:
+        data = {}
+    f.close()
+
     # if it is time to update/never had it
     # update it
     if today not in data:
         # still works with w and n defined in the try/except
         # w = urllib.request.urlopen(WEATHER_STUB.format(json_data['Weather'], ip['latitude'], ip['longitude'])) # based on your ip address location
         weather = json.loads(w.read())
-
-        c = urllib.request.urlopen(COMIC_STUB)
-        comic = json.loads(c.read())
-
-        # n = urllib.request.urlopen(NEWS_STUB.format("home", json_data['News']))
-        news = json.loads(n.read())
 
         # Create our own json file for easier read/less space taken
         data[today] = dict()
