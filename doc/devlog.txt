@@ -59,3 +59,8 @@ jasonL -- 2018-1-8 12:59
 1. Fixed the database diagram based on feedback.
 2. Updated the overview of the database.
 ==============================================================
+
+jasonL -- 2018-1-8 22:09
+--------------------------------------------------------------
+1. Added JavaScript and CSS to component map.
+==============================================================
