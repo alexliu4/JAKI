@@ -54,7 +54,7 @@ alexL -- 2018-1-8 13:12
 2. Added info to design doc
 ==============================================================
 
-jasonL -- 2018-1-8 12:59
+jasonL -- 2018-1-8 21:59
 --------------------------------------------------------------
 1. Fixed the database diagram based on feedback.
 2. Updated the overview of the database.
