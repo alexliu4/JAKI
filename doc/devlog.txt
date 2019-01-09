@@ -63,5 +63,6 @@ jasonL -- 2018-1-8 12:59
 karenL -- 2018-1-8 22:09
 --------------------------------------------------------------
 1. Added JavaScript and CSS to component map.
-2. Uploaded new design document.
+2. Created timeline.
+3. Uploaded new design document.
 ==============================================================
