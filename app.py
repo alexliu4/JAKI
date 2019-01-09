@@ -36,71 +36,79 @@ def getIP():
     # decode else binary
     return(qwerty.read().decode('utf-8'))
 
-# @app.route('/')
-# def home():
-#
-#     # read json file containing the api keys
-#     with open('data/API_Keys/keys.json') as json_file:
-#         json_data = json.loads(json_file.read())
-#
-#     # Checking the longitude and latitiude based on the ip address
-#     p = urllib.request.urlopen(IPAPI_STUB.format(getIP()))
-#     ip = json.loads(p.read())
-#     location = ""
-#     location += ip['city'] + ", " + ip['country_name']
-#
-#     today = datetime.datetime.now().strftime("%Y-%m-%d")
-#
-#     try:
-#         w = urllib.request.urlopen(WEATHER_STUB.format(json_data['Weather'], ip['latitude'], ip['longitude']))
-#     except Exception as e:
-#         print(e)
-#         return render_template('error.html', err = e)
-#
-    # # Try to open up content
-    # try:
-    #     f = open('data/content.json', 'r')
-    # except Exception as e:
-    #     f = open('data/content.json', 'x')
-    # try:
-    #     data = json.loads(f.read())
-    # except Exception as e:
-    #     data = {}
-    # f.close()
-    #
-    # # if it is time to update/never had it
-    # # update it
-    # if today not in data:
-    #     # still works with w and n defined in the try/except
-    #     # w = urllib.request.urlopen(WEATHER_STUB.format(json_data['Weather'], ip['latitude'], ip['longitude'])) # based on your ip address location
-    #     weather = json.loads(w.read())
-    #
-    #     # Create our own json file for easier read/less space taken
-    #     data[today] = dict()
-    #     data[today]['weather-summary'] = weather['daily']['summary']
-    #     data[today]['weather-hourly'] = []
-    #     data[today]['weather-icon'] = ICONS[weather['currently']['icon']]
-    #     # Weather hourly is a list of dictionaries containing weather info for each hour
-    #     for hour in weather['hourly']['data']:
-    #         d = dict()
-    #         data[today]['weather-hourly'] += [d]
-    #         d['time'] = hour['time']
-    #         d['icon'] = ICONS[hour['icon']]
-    #         temp = float(hour['temperature'])
-    #         d['temp-f'] = str(temp).split('.')[0]
-    #         d['temp-c'] = str((temp - 32.) * 5 / 9).split('.')[0]
-    #         d['summary'] = hour['summary']
-    #
-    # need_to_warn = False
-    # # POPUP once per session warning of IP use
-    # if 'warned' not in session:
-    #     session['warned'] = True
-    #     need_to_warn = True
-    # f = float(data[today]['weather-hourly'][session['current-hour']]['temp-f'])
-    # c = (f - 32.) * 5 / 9
-    # session['temp-f'] = str(f).split('.')[0] + '°'
-    # session['temp-c'] = str(c).split('.')[0] + '°'
-    # return render_template('home.html', data = data[today], session = session, warning = need_to_warn)
+@app.route('/')
+def home():
+
+    # read json file containing the api keys
+    with open('data/API_Keys/keys.json') as json_file:
+        json_data = json.loads(json_file.read())
+
+    # Checking the longitude and latitiude based on the ip address
+    p = urllib.request.urlopen(IPAPI_STUB.format(getIP()))
+    ip = json.loads(p.read())
+    location = ""
+    location += ip['city'] + ", " + ip['country_name']
+
+    today = datetime.datetime.now().strftime("%Y-%m-%d")
+
+    try:
+        w = urllib.request.urlopen(WEATHER_STUB.format(json_data['Weather'], ip['latitude'], ip['longitude']))
+    except Exception as e:
+        print(e)
+        return render_template('error.html', err = e)
+
+    # Try to open up content
+    try:
+        f = open('data/content.json', 'r')
+    except Exception as e:
+        f = open('data/content.json', 'x')
+    try:
+        data = json.loads(f.read())
+    except Exception as e:
+        data = {}
+    f.close()
+
+    # if it is time to update/never had it
+    # update it
+    if today not in data:
+        # still works with w and n defined in the try/except
+        # w = urllib.request.urlopen(WEATHER_STUB.format(json_data['Weather'], ip['latitude'], ip['longitude'])) # based on your ip address location
+        weather = json.loads(w.read())
+
+        # Create our own json file for easier read/less space taken
+        data[today] = dict()
+        data[today]['weather-summary'] = weather['daily']['summary']
+        data[today]['weather-hourly'] = []
+        data[today]['weather-icon'] = ICONS[weather['currently']['icon']]
+        # Weather hourly is a list of dictionaries containing weather info for each hour
+        for hour in weather['hourly']['data']:
+            d = dict()
+            data[today]['weather-hourly'] += [d]
+            d['time'] = hour['time']
+            d['icon'] = ICONS[hour['icon']]
+            temp = float(hour['temperature'])
+            d['temp-f'] = str(temp).split('.')[0]
+            d['temp-c'] = str((temp - 32.) * 5 / 9).split('.')[0]
+            d['summary'] = hour['summary']
+        # Add it all to our own file
+        f = open('data/content.json', 'w')
+        f.write(json.dumps(data, indent=4))
+        f.close()
+        
+    session['location'] = location
+    session['current-hour'] = datetime.datetime.now().hour
+    session['date'] = today
+
+    need_to_warn = False
+    # POPUP once per session warning of IP use
+    if 'warned' not in session:
+        session['warned'] = True
+        need_to_warn = True
+    f = float(data[today]['weather-hourly'][session['current-hour']]['temp-f'])
+    c = (f - 32.) * 5 / 9
+    session['temp-f'] = str(f).split('.')[0] + '°'
+    session['temp-c'] = str(c).split('.')[0] + '°'
+    return render_template('home.html', data = data[today], session = session, warning = need_to_warn)
 
 
 @app.route('/login')
