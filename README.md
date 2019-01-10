@@ -5,16 +5,17 @@
 
 ## What is the Pokemon Dungeon?
 
+
 _Pokemon Dungeon_ is a gaming website that is, as the name implies it, the classic pokemon game with the weather affecting the wild pokemon that appear. There will also be (hopefully) item drops, pokemon trainers to battle, a gym leader, and even a tomagatchi mode. The tomagatchi mode will allow users to take another path to raising the level of their pokemon by taking care of them and feeding them. The site uses each user's IP address (after given permission, of course) to find the weather data of their location using the IP API and Darksky API. The Ipify API is used to procure the client's IP address.
 ---
 
 ## RESTful APIs Used
 
-_Pokemon Dungeon_ makes use of **5** RESTful APIs. Each API, along with an explanation and link, are listed below.
+_Pokemon Dungeon_ makes use of **3** RESTful APIs. Each API, along with an explanation and link, are listed below.
 
 - <span style="color:#ff496c">DarkSky API</span>
 
-The [DarkSky API](https://darksky.net/dev) provides extensive information about a location's weather, along with a daily and weekly summary. We have used this API to display the client's local weather. **An API key is required to use this REST API, see below to see [how to get one](../master/README.md#For-DarkSky-API).**
+The [DarkSky API](https://darksky.net/dev) provides extensive information about a location's weather, along with a daily and weekly summary. We have used this API to display the client's local weather and shows how it affects the pokemon appearances. **An API key is required to use this REST API, see below to see [how to get one](../master/README.md#For-DarkSky-API).**
 
 - <span style="color:#ff496c">IPAPI</span>
 
@@ -24,9 +25,9 @@ A helpful and powerful API, [IPAPI](https://ipapi.co/) takes an IP address and r
 
 Simple and easy to use, [this REST API](https://www.ipify.org/) can give easily gives us the client's IP address. We have used this API in conjunction with IPAPI to get the client's location in longitude and latitude form.
 
-- <span style="color:#ff496c">XKCD</span>
+- <span style="color:#ff496c">Poke API</span>
 
-Humorous and thought-provoking, the [XKCD API](https://xkcd.com/json.html) allows us to pull straight from [xkcd](https://www.xkcd.com) and display a memorable comic for the client.
+Containing all the stats and pokemon, the [Poke API](https://pokeapi.co/) is the main API that generates all the pokemon and allows for battle. All its stats include (attack power, health, levels, evolutions, etc.).
 
 ---
 
