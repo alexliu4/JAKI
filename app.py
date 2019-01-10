@@ -208,6 +208,10 @@ def logout():
         session.pop('user')
     return redirect(url_for('home'))
 
+@app.route('/starter', methods = ['GET'])
+def starter():
+    return render_template('starter_pokemon.html')
 
 if __name__ == "__main__":
+    app.debug = True #change to False before our demo
     app.run()
