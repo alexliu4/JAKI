@@ -232,3 +232,11 @@ pip install jinja2
 ```bash
 pip install passlib
 ```
+
+- Datetime
+
+`Datetime` is a Python libary used to get the current date and time. This is used to set limits on refreshes to avoid rate limits being exceeded. It can be installed with the following command:
+
+```bash
+pip install datetime
+```
