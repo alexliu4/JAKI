@@ -1,5 +1,5 @@
 import sqlite3
-DB = "data/accounts.db"
+DB = "data/allData.db"
 
 
 def add_user(username, hashed_pass):
@@ -67,8 +67,9 @@ def get_all_users():
 # MAKE TABLES AND DATABASE IF THEY DONT EXIST
 db = sqlite3.connect(DB)
 c = db.cursor()
-commands = []
-commands += ["CREATE TABLE IF NOT EXISTS users(username TEXT, password TEXT, question TEXT, answer TEXT, favorite TEXT)"]
-# commands += ["CREATE TABLE IF NOT EXISTS pages(link TEXT, weather TEXT, comic TEXT)"]
+commands = ["CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password_hash TEXT, question TEXT, answer TEXT, xcor INTEGER, ycor INTEGER)"]
+commands.append("CREATE TABLE IF NOT EXISTS moves(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, uses INTEGER, max_uses INTEGER, damage INTEGER)")
+commands.append("CREATE TABLE IF NOT EXISTS user_pokemons(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, type TEXT, user_id TEXT, health INTEGER, max_health INTEGER, move_1_id INTEGER, move_2_id INTEGER, move_3_id INTEGER, move_4_id INTEGER, exp INTEGER, next_exp INTEGER, level INTEGER, player_has BOOLEAN, description TEXT)")
+commands.append("CREATE TABLE IF NOT EXISTS items(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, type TEXT, quantity INTEGER, user_id INTEGER)")
 for command in commands:
     c.execute(command)
