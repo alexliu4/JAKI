@@ -1,4 +1,4 @@
-var animate, left=0, right=800, img1=null, img2=null;
+var animate, left=0, right=0, img1=null, img2=null;
 
 function init(){
 
@@ -10,8 +10,8 @@ function init(){
 
    img2 = document.getElementById('pokemon2');
    img2.style.position= 'absolute';
-   img2.style.top = '0px';
-   img2.style.left = '1000px';
+   img2.style.top = '100px';
+   img2.style.left = (window.innerWidth + 100) + 'px';
    img2.style.visibility='hidden';
 
    move();
@@ -21,7 +21,7 @@ function move(){
     left = parseInt(img1.style.left, 10);
     right = parseInt(img2.style.left, 10);
 
-    if (100 >= left) {
+    if (300 >= left) {
         img1.style.left = (left + 5) + 'px';
         img1.style.visibility='visible';
 
