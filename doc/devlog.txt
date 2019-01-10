@@ -77,4 +77,5 @@ karenL -- 2018-1-8 22:06
 --------------------------------------------------------------
 1. Added base template to extend.
 2. Added starter_pokemon template.
+3. Uploaded changes to design doc.
 ==============================================================
