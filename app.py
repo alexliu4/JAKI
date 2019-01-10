@@ -36,6 +36,12 @@ def getIP():
     # decode else binary
     return(qwerty.read().decode('utf-8'))
 
+@app.route('/game')
+def game():
+    return render_template('game.html')
+
+
+
 @app.route('/')
 def home():
 
@@ -94,7 +100,7 @@ def home():
         f = open('data/content.json', 'w')
         f.write(json.dumps(data, indent=4))
         f.close()
-        
+
     session['location'] = location
     session['current-hour'] = datetime.datetime.now().hour
     session['date'] = today
