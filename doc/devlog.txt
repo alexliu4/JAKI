@@ -66,3 +66,31 @@ karenL -- 2018-1-8 22:09
 2. Created timeline.
 3. Uploaded new design document.
 ==============================================================
+
+karenL -- 2018-1-8 22:06
+--------------------------------------------------------------
+1. Added base template to extend.
+2. Added starter_pokemon template.
+3. Uploaded changes to design doc.
+==============================================================
+
+alexL -- 2018-1-9 19:30
+--------------------------------------------------------------
+1. Worked on the README
+2. Fixed the login and signup page.
+==============================================================
+
+imadB -- 2018-1-10 22:06
+--------------------------------------------------------------
+1. Added necessary files for battle execution
+2. Made images move across the screen
+==============================================================
+
+karenL -- 2018-1-11 02:21
+--------------------------------------------------------------
+1. Made functions to retrieve starter pokemon images from
+Poke API.
+2. Modifed starter_pokemon template.
+3. Starter pokemon images are displayed on starter pokemon
+screen.
+==============================================================

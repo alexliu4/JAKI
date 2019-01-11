@@ -2,6 +2,10 @@ import json
 import urllib
 import os
 
+from util import starter
+
+#REMINDER: CLEAN UP IMPORT STATEMENTS TO CONFORM TO STANDARDS
+
 from flask import Flask, render_template, request, session, url_for, redirect, flash, jsonify
 from passlib.hash import md5_crypt
 import datetime
@@ -35,6 +39,12 @@ def getIP():
     qwerty = urllib.request.urlopen('https://api.ipify.org')
     # decode else binary
     return(qwerty.read().decode('utf-8'))
+
+@app.route('/game')
+def game():
+    return render_template('game.html')
+
+
 
 @app.route('/')
 def home():
@@ -94,7 +104,7 @@ def home():
         f = open('data/content.json', 'w')
         f.write(json.dumps(data, indent=4))
         f.close()
-        
+
     session['location'] = location
     session['current-hour'] = datetime.datetime.now().hour
     session['date'] = today
@@ -208,6 +218,11 @@ def logout():
         session.pop('user')
     return redirect(url_for('home'))
 
+@app.route('/starter_pokemon', methods = ['GET'])
+def starter_pokemon():
+    images = starter.starter_images()
+    return render_template('starter_pokemon.html', **images)
 
 if __name__ == "__main__":
+    app.debug = True #change to False before our demo
     app.run()

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Starter Pokemon
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="text-center">
+	<img src={{bulbasaur}} class="img-rounded" alt="bulbasaur" width="100%">
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="text-center">
+	<img src={{charmander}} class="img-rounded" alt="charmander" width="100%">
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="text-center">
+	<img src={{squirtle}} class="img-rounded" alt="squirtle" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
