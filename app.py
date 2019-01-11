@@ -2,7 +2,7 @@ import json
 import urllib
 import os
 
-from util import starter
+from util import starter, API
 
 #REMINDER: CLEAN UP IMPORT STATEMENTS TO CONFORM TO STANDARDS
 
@@ -19,20 +19,6 @@ from util import db
 
 app = Flask(__name__)
 app.secret_key = os.urandom(32)
-# stubs for paths to REST APIs
-WEATHER_STUB = "https://api.darksky.net/forecast/{}/{},{}" # api key, longitude, latitude
-IPAPI_STUB = "https://ipapi.co/{}/json/"
-ICONS = dict()
-ICONS['clear-day'] = '/static/icons/day.svg'
-ICONS['clear-night'] = '/static/icons/night.svg'
-ICONS['cloudy'] = '/static/icons/cloudy.svg'
-ICONS['rain'] = '/static/icons/rainy-1.svg'
-ICONS['snow'] = '/static/icons/snowy-1.svg'
-ICONS['sleet'] = '/static/icons/rainy-7.svg'
-ICONS['wind'] = '/static/icons/cloudy-day-1.svg'
-ICONS['fog'] = '/static/icons/cloudy.svg'
-ICONS['partly-cloudy-day'] = '/static/icons/cloudy-day-2.svg'
-ICONS['partly-cloudy-night'] = '/static/icons/cloudy-night-2.svg'
 
 def getIP():
     # use another api to get ip, returns a text
@@ -44,8 +30,6 @@ def getIP():
 def game():
     return render_template('game.html')
 
-
-
 @app.route('/')
 def home():
 
@@ -53,6 +37,13 @@ def home():
     with open('data/API_Keys/keys.json') as json_file:
         json_data = json.loads(json_file.read())
 
+    if "poke_data" not in session:
+        print("hello")
+        API.store_poke_api()
+
+
+    return render_template('home.html')
+''''
     # Checking the longitude and latitiude based on the ip address
     p = urllib.request.urlopen(IPAPI_STUB.format(getIP()))
     ip = json.loads(p.read())
@@ -118,7 +109,8 @@ def home():
     c = (f - 32.) * 5 / 9
     session['temp-f'] = str(f).split('.')[0] + '°'
     session['temp-c'] = str(c).split('.')[0] + '°'
-    return render_template('home.html', data = data[today], session = session, warning = need_to_warn)
+    '''
+
 
 
 @app.route('/login')

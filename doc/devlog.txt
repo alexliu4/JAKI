@@ -100,3 +100,10 @@ jasonL -- 2018-1-11 03:38
 1. Created database for Pokemon
 2. Wrote functions for increasing the level of and adding Pokemon
 ==============================================================
+
+jasonL -- 2018-1-11 04:44
+--------------------------------------------------------------
+1. Made database for items and moves
+2. Included the get functions and tested it
+3. Made seeding data
+==============================================================
