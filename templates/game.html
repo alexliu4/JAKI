@@ -9,11 +9,11 @@
 <body onload="startGame()">
 <script>
 
-var myGamePiece;
+var pokeTrainer;
 
 function startGame() {
     myGameArea.start();
-    myGamePiece = new component(30, 30, "red", 10, 120);
+    pokeTrainer = new component(30, 30, "red", 10, 120);
 }
 
 var myGameArea = {
@@ -59,14 +59,14 @@ function component(width, height, color, x, y) {
 
 function updateGameArea() {
     myGameArea.clear();
-    myGamePiece.speedX = 0;
-    myGamePiece.speedY = 0;
-    if (myGameArea.keys && myGameArea.keys[37]) {myGamePiece.speedX = -1; }
-    if (myGameArea.keys && myGameArea.keys[39]) {myGamePiece.speedX = 1; }
-    if (myGameArea.keys && myGameArea.keys[38]) {myGamePiece.speedY = -1; }
-    if (myGameArea.keys && myGameArea.keys[40]) {myGamePiece.speedY = 1; }
-    myGamePiece.newPos();
-    myGamePiece.update();
+    pokeTrainer.speedX = 0;
+    pokeTrainer.speedY = 0;
+    if (myGameArea.keys && myGameArea.keys[37]) {pokeTrainer.speedX = -1; }
+    if (myGameArea.keys && myGameArea.keys[39]) {pokeTrainer.speedX = 1; }
+    if (myGameArea.keys && myGameArea.keys[38]) {pokeTrainer.speedY = -1; }
+    if (myGameArea.keys && myGameArea.keys[40]) {pokeTrainer.speedY = 1; }
+    pokeTrainer.newPos();
+    pokeTrainer.update();
 }
 </script>
 </body>
