@@ -30,6 +30,10 @@ def getIP():
 def game():
     return render_template('game.html')
 
+@app.route("/map")
+def map():
+    return render_template("map.html")
+
 @app.route('/')
 def home():
 
