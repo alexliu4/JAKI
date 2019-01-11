@@ -41,9 +41,17 @@ def home():
     with open('data/API_Keys/keys.json') as json_file:
         json_data = json.loads(json_file.read())
 
-    if "poke_data" not in session:
-        print("hello")
-        API.store_poke_api()
+    # cookie size too small
+    #all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
+    all_memory = ["slow","pokemon"]
+    for cookie in all_memory:
+        if cookie not in session:
+            if cookie == "pokemon":
+                session["pokemon"] = API.create_pokemon_list()
+            else:
+                session[cookie] = API.create_growth_dict(cookie)
+        else:
+            print(cookie + " is in session")
 
 
     return render_template('home.html')
