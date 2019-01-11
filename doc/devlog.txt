@@ -85,3 +85,12 @@ imadB -- 2018-1-10 22:06
 1. Added necessary files for battle execution
 2. Made images move across the screen
 ==============================================================
+
+karenL -- 2018-1-11 02:21
+--------------------------------------------------------------
+1. Made functions to retrieve starter pokemon images from
+Poke API.
+2. Modifed starter_pokemon template.
+3. Starter pokemon images are displayed on starter pokemon
+screen.
+==============================================================
