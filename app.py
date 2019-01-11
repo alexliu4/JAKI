@@ -4,11 +4,12 @@ import os
 
 from util import starter, API
 
-#REMINDER: CLEAN UP IMPORT STATEMENTS TO CONFORM TO STANDARDS
+# REMINDER: CLEAN UP IMPORT STATEMENTS TO CONFORM TO STANDARDS
 
 from flask import Flask, render_template, request, session, url_for, redirect, flash, jsonify
 from passlib.hash import md5_crypt
 import datetime
+import random
 
 from util import db
 
@@ -26,6 +27,16 @@ def getIP():
     # decode else binary
     return(qwerty.read().decode('utf-8'))
 
+def encounters(steps):
+    when = (random.randint(4, 18))
+    if (steps == when):
+        return "pokemon encountered"
+
+def chance():
+    db.get_all_pokemon
+
+
+
 @app.route('/game')
 def game():
     return render_template('game.html')
@@ -37,13 +48,11 @@ def map():
 @app.route('/')
 def home():
 
-    # read json file containing the api keys
-    with open('data/API_Keys/keys.json') as json_file:
-        json_data = json.loads(json_file.read())
+    json_data = "8b3d6a5f90fbe26c7e29aaef01b9875e"
 
     # cookie size too small
-    #all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
-    all_memory = ["slow","pokemon"]
+    # all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
+    all_memory = ["slow", "pokemon"]
     for cookie in all_memory:
         if cookie not in session:
             if cookie == "pokemon":
