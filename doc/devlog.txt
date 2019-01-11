@@ -94,3 +94,9 @@ Poke API.
 3. Starter pokemon images are displayed on starter pokemon
 screen.
 ==============================================================
+
+jasonL -- 2018-1-11 03:38
+--------------------------------------------------------------
+1. Created database for Pokemon
+2. Wrote functions for increasing the level of and adding Pokemon
+==============================================================
