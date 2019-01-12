@@ -120,6 +120,14 @@ imadB -- 2018-1-11 13:10
 2. Cleaned up animation, works across platforms
 ==============================================================
 
+alexL -- 2018-1-11 13:20
+--------------------------------------------------------------
+1. Fixed the API keys bug (Got a weather API key too).
+2. Worked on the pokemon encounters:
+  - normal encounters based on steps taken
+  - increased chances of certain types of pokemon based on weather
+==============================================================
+
 karenL -- 2018-1-12 11:00
 --------------------------------------------------------------
 1. Added buttons to starter Pokemon page.
@@ -127,4 +135,9 @@ karenL -- 2018-1-12 11:00
 3. Created protective measures against users selecting
 multiple starter pokemon and users who are not logged in.
 4. Resolved a bug in the pokemon_dict function.
+==============================================================
+
+alexL -- 2018-1-12 15:24
+--------------------------------------------------------------
+1. Changed the footer and the nav bar.
 ==============================================================
