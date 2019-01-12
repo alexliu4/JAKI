@@ -28,7 +28,7 @@ def getIP():
 
 @app.route('/game')
 def game():
-    return render_template('game.html')
+    return render_template('battle.html')
 
 @app.route("/map")
 def map():
@@ -43,13 +43,12 @@ def home():
 
     # cookie size too small
     #all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
-    all_memory = ["slow","pokemon"]
+    all_memory = ["fast","pokemon"]
     for cookie in all_memory:
-        if cookie not in session:
-            if cookie == "pokemon":
-                session["pokemon"] = API.create_pokemon_list()
-            else:
-                session[cookie] = API.create_growth_dict(cookie)
+        if cookie == "pokemon":
+            session["pokemon"] = API.create_pokemon_list()
+        elif cookie == "fast":
+            session["fast"] = API.create_growth_dict()
         else:
             print(cookie + " is in session")
 

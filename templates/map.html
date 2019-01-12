@@ -8,66 +8,10 @@
 </head>
 <body>
 
+  <img src="../static/map.jpg" height="1400" width = "1600" id="map">
   <img src="../static/pikachu.jpg" height="100" width = "200" id="pokemon1">
 
-  <script >
-      var image = document.getElementById("pokemon1");
-      image.style.position= 'absolute';
-      image.style.left = "10px";
-      image.style.top = "10px";
-
-      var up = 0;
-      var down = 0;
-      var left = 0;
-      var right = 0;
-
-      var handle_key = (e) => {
-          if (e.type === "keyup"){
-              if (e.code === "KeyW"){
-                  up = 0;
-              }
-              if (e.code === "KeyA"){
-                  left = 0;
-              }
-              if (e.code === "KeyS"){
-                  down = 0;
-              }
-              if (e.code === "KeyD"){
-                  right = 0;
-              }
-          }
-          else if (e.type === "keydown"){
-              if (e.code === "KeyW"){
-                  up = 1;
-              }
-              if (e.code === "KeyA"){
-                  left = 1;
-              }
-              if (e.code === "KeyS"){
-                  down = 1;
-              }
-              if (e.code === "KeyD"){
-                  right = 1;
-              }
-          }
-      }
-
-      document.addEventListener("keydown", handle_key);
-      document.addEventListener("keyup", handle_key);
-
-      window.setInterval(() => {
-          image.style.top = parseInt(image.style.top) + 5*(down-up) + 'px';
-          image.style.left = parseInt(image.style.left) + 5*(right-left) + 'px';
-      }, 20);
-
-
-      /*
-          image.style.top = parseInt(image.style.top) + 5*(down-up) + 'px';
-          image.style.left = parseInt(image.style.left) + 5*(right-left) + 'px';
-          console.log(up + " " + right + " " + down + " " + left);
-          */
-
-  </script>
+  <script src="../static/map.js"></script>
 
 </body>
 
