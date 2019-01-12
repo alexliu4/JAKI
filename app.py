@@ -38,8 +38,8 @@ def map():
 def home():
 
     # read json file containing the api keys
-    with open('data/API_Keys/keys.json') as json_file:
-        json_data = json.loads(json_file.read())
+    #with open('data/API_Keys/keys.json') as json_file:
+    #    json_data = json.loads(json_file.read())
 
     # cookie size too small
     #all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
