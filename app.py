@@ -65,7 +65,7 @@ def typeChance():
 
 @app.route('/game')
 def game():
-    return render_template('game.html')
+    return render_template('battle.html')
 
 @app.route("/map")
 def map():
@@ -74,6 +74,21 @@ def map():
 
 @app.route('/')
 def home():
+
+    # read json file containing the api keys
+    #with open('data/API_Keys/keys.json') as json_file:
+    #    json_data = json.loads(json_file.read())
+
+    # cookie size too small
+    #all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
+    all_memory = ["fast","pokemon"]
+    for cookie in all_memory:
+        if cookie == "pokemon":
+            session["pokemon"] = API.create_pokemon_list()
+        elif cookie == "fast":
+            session["fast"] = API.create_growth_dict()
+        else:
+            print(cookie + " is in session")
 
     WEATHER_STUB = "https://api.darksky.net/forecast/{}/{},{}" # api key, longitude, latitude
     IPAPI_STUB = "https://ipapi.co/{}/json/"
