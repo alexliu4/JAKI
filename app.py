@@ -37,7 +37,29 @@ def encounters(steps):
     if (steps == when):
         return "pokemon encountered"
 
-def chance():
+def typeChance():
+    # Try to open up content
+    try:
+        f = open('data/content.json', 'r')
+    except Exception as e:
+        f = open('data/content.json', 'x')
+    try:
+        data = json.loads(f.read())
+    except Exception as e:
+        data = {}
+    f.close()
+    # find precipitation data
+    today = datetime.datetime.now().strftime("%Y-%m-%d")
+    prob = data[today]['prob']
+    if (prob > 0):
+        type = data[today]['type']
+        if (type == "rain"):
+            print("water types will occur more often")
+        if (type == "snow" or type == "sleet"):
+            print("ice types will occur more often")
+    else:
+        print("all pokemon have equal chances of occuring")
+
     db.get_all_pokemon
 
 
