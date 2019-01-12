@@ -1,17 +1,10 @@
-import json
-import urllib
-import os
-
-from util import starter, API
-
-# REMINDER: CLEAN UP IMPORT STATEMENTS TO CONFORM TO STANDARDS
+import json, urllib, os, datetime, random
 
 from flask import Flask, render_template, request, session, url_for, redirect, flash, jsonify
-from passlib.hash import md5_crypt
-import datetime
-import random
 
-from util import db
+from passlib.hash import md5_crypt
+
+from util import pokemon, API, db
 
 ''' Rate Limits for APIs:
     # Dark Sky API - 1000/day (needs to be credited)
@@ -34,7 +27,6 @@ def encounters(steps):
 
 def chance():
     db.get_all_pokemon
-
 
 
 @app.route('/game')
@@ -233,8 +225,32 @@ def logout():
 
 @app.route('/starter_pokemon', methods = ['GET'])
 def starter_pokemon():
-    images = starter.starter_images()
-    return render_template('starter_pokemon.html', **images)
+    if 'user' in session:
+        pokemon_list = db.get_pokemon_from_username(session['user'])
+        print(pokemon_list)
+        if pokemon_list:
+            return redirect(url_for('home'))
+        images = pokemon.starter_images()
+        return render_template('starter_pokemon.html', **images)
+    return redirect(url_for('home'))
+
+@app.route('/start', methods = ['GET'])
+def start():
+    if 'user' in session:
+        pokemon_list = db.get_pokemon_from_username(session['user'])
+        print(pokemon_list)
+        if pokemon_list:
+            return redirect(url_for('home'))
+        if 'starter' in request.args:
+            name = request.args['starter']
+            image = pokemon.get_pokemon_image(name)
+
+            #still need to add the starter to the db
+            
+            return render_template('start_game.html',
+                                   starter_name=name,
+                                   starter_image=image)
+    return redirect(url_for('home'))
 
 if __name__ == "__main__":
     app.debug = True #change to False before our demo

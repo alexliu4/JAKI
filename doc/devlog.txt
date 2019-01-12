@@ -108,7 +108,6 @@ jasonL -- 2018-1-11 04:44
 3. Made seeding data
 ==============================================================
 
-
 jasonL -- 2018-1-11 09:25
 --------------------------------------------------------------
 1. Movement works
@@ -119,4 +118,13 @@ imadB -- 2018-1-11 13:10
 --------------------------------------------------------------
 1. Added table for actions in battle
 2. Cleaned up animation, works across platforms
+==============================================================
+
+karenL -- 2018-1-12 11:00
+--------------------------------------------------------------
+1. Added buttons to starter Pokemon page.
+2. Added a Pokemon confirmation and start game page.
+3. Created protective measures against users selecting
+multiple starter pokemon and users who are not logged in.
+4. Resolved a bug in the pokemon_dict function.
 ==============================================================
