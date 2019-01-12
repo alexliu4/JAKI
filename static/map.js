@@ -178,6 +178,10 @@ var move = () => {
 }
 
 
+var isUnwalkable = () => {
+
+}
+
 window.setInterval(() => {
     var change_row = document.getElementById("0,0").style.top.toString();
     var change_col = document.getElementById("0,0").style.left.toString();
@@ -185,16 +189,24 @@ window.setInterval(() => {
     change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))-37) / 75);
     console.log(change_row+ " " + change_col);
     if (down - up > 0){
-        move();
+        if (!isUnwalkable(change_row,change_col-1)){
+            move();
+        }
     }
     else if (down - up < 0){
-        move();
+        if (!isUnwalkable(change_row,change_col+1)){
+            move();
+        }
     }
     else if (right - left > 0){
-        move();
+        if (!isUnwalkable(change_row-1,change_col)){
+            move();
+        }
     }
     else if (right - left < 0){
-        move();
+        if (!isUnwalkable(change_row+1,change_col)){
+            move();
+        }
     }
 }, 80);
 
