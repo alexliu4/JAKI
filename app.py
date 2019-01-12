@@ -53,7 +53,6 @@ def map():
 @app.route('/')
 def home():
 
-<<<<<<< HEAD
     # read json file containing the api keys
     #with open('data/API_Keys/keys.json') as json_file:
     #    json_data = json.loads(json_file.read())
@@ -68,10 +67,9 @@ def home():
             session["fast"] = API.create_growth_dict()
         else:
             print(cookie + " is in session")
-=======
+
     WEATHER_STUB = "https://api.darksky.net/forecast/{}/{},{}" # api key, longitude, latitude
     IPAPI_STUB = "https://ipapi.co/{}/json/"
->>>>>>> 834fec58c2ade8e80c35b45226976679fdde91bf
 
     json_data = "8b3d6a5f90fbe26c7e29aaef01b9875e"
 
@@ -126,7 +124,7 @@ def home():
             d['prob'] = str(hour['precipProbability'])
             if ( hour['precipProbability'] > 0):
                 d['type'] = hour['precipType']
-                
+
         # Add it all to our own file
         f = open('data/content.json', 'w')
         f.write(json.dumps(data, indent=4))
