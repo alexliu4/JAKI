@@ -1,7 +1,7 @@
 import sqlite3
 DB = "data/allData.db"
 
-#===================== USER STUFF==========================
+# ===================== USER STUFF==========================
 def add_user(username, hashed_pass):
     '''adds users to use table'''
     db = sqlite3.connect(DB)
@@ -16,7 +16,7 @@ def add_userFull(username, hashed_pass, question, hashed_ans):
     db = sqlite3.connect(DB)
     c = db.cursor()
     command = "INSERT INTO users (username, password_hash, question, answer, xcor, ycor)VALUES(?,?,?,?,?,?);"
-    c.execute(command, (username, hashed_pass, question, hashed_ans,0,0))
+    c.execute(command, (username, hashed_pass, question, hashed_ans, 0, 0))
     db.commit()
     db.close()
 
@@ -73,10 +73,10 @@ def get_user_id_from_username(username):
     db.close()
     return info[0]
 
-#========================== POKEMON STUFF ================================
+# ========================== POKEMON STUFF ================================
 
 def pokemon_dict(list):
-    pokedict = {};
+    pokedict = {}
     if list:
         pokedict["id"] = list[0]
         pokedict["name"] = list[1]
@@ -92,14 +92,14 @@ def pokemon_dict(list):
         pokedict["level"] = list[11]
         pokedict["player_has"] = list[12]
         pokedict["description"] = list[13]
-    return pokedict;
+    return pokedict
 
 def add_Pokemon(username, poke_name, poke_type, poke_max_health, poke_move_list, poke_level, has_room, description):
     '''adds pokemon to use table'''
     db = sqlite3.connect(DB)
     c = db.cursor()
     command = "INSERT INTO user_pokemons(name, type, user_id, health, max_health, move_1_id, move_2_id, move_3_id, move_4_id, exp, level, player_has, description, attack, defense)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);"
-    c.execute(command, (poke_name, poke_type, get_user_id_from_username(username), poke_max_health, poke_max_health,poke_move_list[0], poke_move_list[1],poke_move_list[2], poke_move_list[3],0,poke_level,has_room,description,10,5))
+    c.execute(command, (poke_name, poke_type, get_user_id_from_username(username), poke_max_health, poke_max_health, poke_move_list[0], poke_move_list[1], poke_move_list[2], poke_move_list[3], 0, poke_level, has_room, description, 10, 5))
     db.commit()
     db.close()
 
@@ -140,11 +140,11 @@ def increment_pokemon_exp(poke_id, experience):
     new_exp = get_pokemon_from_id(poke_id)[exp] + experience
     command = "UPDATE user_pokemons SET exp=" + new_exp + " WHERE id=" + poke_id + ";"
     c.execute(command)
-    #UPDATE LEVEL HERE if requiredexp(level+1) < current exp: level++
+    # UPDATE LEVEL HERE if requiredexp(level+1) < current exp: level++
     db.commit()
     db.close()
 
-#=====================MOVES========================
+# =====================MOVES========================
 
 def move_dict(list):
     move = {}
@@ -153,7 +153,7 @@ def move_dict(list):
     move["uses"] = list[2]
     move["max_uses"] = list[3]
     move["damage"] = list[4]
-    return move;
+    return move
 
 def add_moves(move_name, move_uses, move_max_uses, damage):
     db = sqlite3.connect(DB)
@@ -177,7 +177,7 @@ def get_move_from_id(move_id):
     db.close()
     return move_dict(info)
 
-#==========================ITEMS==========================
+# ==========================ITEMS==========================
 
 def item_dict(list):
     item = {}
@@ -236,7 +236,7 @@ commands.append("CREATE TABLE IF NOT EXISTS items(id INTEGER PRIMARY KEY AUTOINC
 for command in commands:
     c.execute(command)
 
-#SEEDING DATA
+# SEEDING DATA
 '''
 add_userFull("jack", "wow", "cool", "nice")
 add_userFull("bobby", "wow", "cool", "nice")
