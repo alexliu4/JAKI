@@ -152,7 +152,7 @@ def home():
             if cookie == "pokemon":
                 session["pokemon"] = API.create_pokemon_list()
             else:
-                session[cookie] = API.create_growth_dict(cookie)
+                session[cookie] = API.create_growth_dict()
         else:
             print(cookie + " is in session")
 

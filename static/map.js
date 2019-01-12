@@ -166,16 +166,20 @@ var handle_key = (e) => {
 
 document.addEventListener("keydown", handle_key);
 document.addEventListener("keyup", handle_key);
-
-window.setInterval(() => {
+var move = () => {
     map_array = document.getElementsByClassName("map");
     var i;
     for (i=0; i<map_array.length; i++){
         var current = map_array[i];
-        current.style.top = parseInt(current.style.top) + 5*(down-up) + 'px';
-        current.style.left = parseInt(current.style.left) + 5*(right-left) + 'px';
+        current.style.top = parseInt(current.style.top) + 15*(down-up) + 'px';
+        current.style.left = parseInt(current.style.left) + 15*(right-left) + 'px';
     }
-}, 20);
+}
+
+
+window.setInterval(() => {
+    
+}, 80);
 
 var previous_direction = "down";
 var num = 2;
@@ -264,4 +268,4 @@ window.setInterval(() => {
         num = 2;
         document.getElementById(previous_direction + "2").style.zIndex = 3;
     }
-},100);
+},80);
