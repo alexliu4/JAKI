@@ -140,4 +140,6 @@ multiple starter pokemon and users who are not logged in.
 alexL -- 2018-1-12 15:24
 --------------------------------------------------------------
 1. Changed the footer and the nav bar.
+2. Fixed the weather icons
+3. Got weather api to also find the preciptype and precipProbability
 ==============================================================
