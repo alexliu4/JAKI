@@ -99,8 +99,8 @@ for (i = 0; i<map.length; i++){
         tile.setAttribute("width","75");
         tile.setAttribute("height","75");
         tile.style.position = "absolute";
-        tile.style.left = (5+75*j) + "px";
-        tile.style.top = (5+75*i) + "px";
+        tile.style.left = (75*j) + "px";
+        tile.style.top = (75*i) + "px";
         tile.style.zIndex = 1;
         body.appendChild(tile);
     }
@@ -181,19 +181,20 @@ var move = () => {
 window.setInterval(() => {
     var change_row = document.getElementById("0,0").style.top.toString();
     var change_col = document.getElementById("0,0").style.left.toString();
-    change_row = parseInt(change_row.substring(0,change_row.length-2));
-    change_col = parseInt(change_col.substring(0,change_col.length-2));
+    change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))+37) / 75);
+    change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))-37) / 75);
+    console.log(change_row+ " " + change_col);
     if (down - up > 0){
-
+        move();
     }
     else if (down - up < 0){
-
+        move();
     }
     else if (right - left > 0){
-
+        move();
     }
     else if (right - left < 0){
-
+        move();
     }
 }, 80);
 
