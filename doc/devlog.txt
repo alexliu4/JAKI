@@ -80,7 +80,7 @@ alexL -- 2018-1-9 19:30
 2. Fixed the login and signup page.
 ==============================================================
 
-imadB -- 2018-1-10 22:06
+imadB -- 2018-1-10 13:00
 --------------------------------------------------------------
 1. Added necessary files for battle execution
 2. Made images move across the screen
@@ -108,9 +108,38 @@ jasonL -- 2018-1-11 04:44
 3. Made seeding data
 ==============================================================
 
-
 jasonL -- 2018-1-11 09:25
 --------------------------------------------------------------
 1. Movement works
 2. It is very very smooth :)
+==============================================================
+
+imadB -- 2018-1-11 13:10
+--------------------------------------------------------------
+1. Added table for actions in battle
+2. Cleaned up animation, works across platforms
+==============================================================
+
+alexL -- 2018-1-11 13:20
+--------------------------------------------------------------
+1. Fixed the API keys bug (Got a weather API key too).
+2. Worked on the pokemon encounters:
+  - normal encounters based on steps taken
+  - increased chances of certain types of pokemon based on weather
+==============================================================
+
+karenL -- 2018-1-12 11:00
+--------------------------------------------------------------
+1. Added buttons to starter Pokemon page.
+2. Added a Pokemon confirmation and start game page.
+3. Created protective measures against users selecting
+multiple starter pokemon and users who are not logged in.
+4. Resolved a bug in the pokemon_dict function.
+==============================================================
+
+alexL -- 2018-1-12 15:24
+--------------------------------------------------------------
+1. Changed the footer and the nav bar.
+2. Fixed the weather icons
+3. Got weather api to also find the preciptype and precipProbability
 ==============================================================

@@ -77,20 +77,21 @@ def get_user_id_from_username(username):
 
 def pokemon_dict(list):
     pokedict = {};
-    pokedict["id"] = list[0]
-    pokedict["name"] = list[1]
-    pokedict["type"] = list[2]
-    pokedict["user_id"] = list[3]
-    pokedict["health"] = list[4]
-    pokedict["max_health"] = list[5]
-    pokedict["move_1_id"] = list[6]
-    pokedict["move_2_id"] = list[7]
-    pokedict["move_3_id"] = list[8]
-    pokedict["move_4_id"] = list[9]
-    pokedict["exp"] = list[10]
-    pokedict["level"] = list[11]
-    pokedict["player_has"] = list[12]
-    pokedict["description"] = list[13]
+    if list:
+        pokedict["id"] = list[0]
+        pokedict["name"] = list[1]
+        pokedict["type"] = list[2]
+        pokedict["user_id"] = list[3]
+        pokedict["health"] = list[4]
+        pokedict["max_health"] = list[5]
+        pokedict["move_1_id"] = list[6]
+        pokedict["move_2_id"] = list[7]
+        pokedict["move_3_id"] = list[8]
+        pokedict["move_4_id"] = list[9]
+        pokedict["exp"] = list[10]
+        pokedict["level"] = list[11]
+        pokedict["player_has"] = list[12]
+        pokedict["description"] = list[13]
     return pokedict;
 
 def add_Pokemon(username, poke_name, poke_type, poke_max_health, poke_move_list, poke_level, has_room, description):
@@ -115,7 +116,7 @@ def get_all_pokemon():
         output.append(pokemon_dict(pokemon))
     return output
 
-def get_pokemons_from_username(username):
+def get_pokemon_from_username(username):
     db = sqlite3.connect(DB)
     c = db.cursor()
     command = "SELECT * FROM user_pokemons WHERE user_id = ?;"

@@ -1,16 +1,10 @@
-import json
-import urllib
-import os
-
-from util import starter, API
-
-#REMINDER: CLEAN UP IMPORT STATEMENTS TO CONFORM TO STANDARDS
+import json, urllib, os, datetime, random
 
 from flask import Flask, render_template, request, session, url_for, redirect, flash, jsonify
-from passlib.hash import md5_crypt
-import datetime
 
-from util import db
+from passlib.hash import md5_crypt
+
+from util import pokemon, API, db
 
 ''' Rate Limits for APIs:
     # Dark Sky API - 1000/day (needs to be credited)
@@ -19,12 +13,33 @@ from util import db
 
 app = Flask(__name__)
 app.secret_key = os.urandom(32)
+# weather icons
+ICONS = dict()
+ICONS['clear-day'] = '/static/icons/day.svg'
+ICONS['clear-night'] = '/static/icons/night.svg'
+ICONS['cloudy'] = '/static/icons/cloudy.svg'
+ICONS['rain'] = '/static/icons/rainy-1.svg'
+ICONS['snow'] = '/static/icons/snowy-1.svg'
+ICONS['sleet'] = '/static/icons/rainy-7.svg'
+ICONS['wind'] = '/static/icons/cloudy-day-1.svg'
+ICONS['fog'] = '/static/icons/cloudy.svg'
+ICONS['partly-cloudy-day'] = '/static/icons/cloudy-day-2.svg'
+ICONS['partly-cloudy-night'] = '/static/icons/cloudy-night-2.svg'
 
 def getIP():
     # use another api to get ip, returns a text
     qwerty = urllib.request.urlopen('https://api.ipify.org')
     # decode else binary
     return(qwerty.read().decode('utf-8'))
+
+def encounters(steps):
+    when = (random.randint(4, 18))
+    if (steps == when):
+        return "pokemon encountered"
+
+def chance():
+    db.get_all_pokemon
+
 
 @app.route('/game')
 def game():
@@ -34,9 +49,11 @@ def game():
 def map():
     return render_template("map.html")
 
+
 @app.route('/')
 def home():
 
+<<<<<<< HEAD
     # read json file containing the api keys
     #with open('data/API_Keys/keys.json') as json_file:
     #    json_data = json.loads(json_file.read())
@@ -51,10 +68,13 @@ def home():
             session["fast"] = API.create_growth_dict()
         else:
             print(cookie + " is in session")
+=======
+    WEATHER_STUB = "https://api.darksky.net/forecast/{}/{},{}" # api key, longitude, latitude
+    IPAPI_STUB = "https://ipapi.co/{}/json/"
+>>>>>>> 834fec58c2ade8e80c35b45226976679fdde91bf
 
+    json_data = "8b3d6a5f90fbe26c7e29aaef01b9875e"
 
-    return render_template('home.html')
-''''
     # Checking the longitude and latitiude based on the ip address
     p = urllib.request.urlopen(IPAPI_STUB.format(getIP()))
     ip = json.loads(p.read())
@@ -64,7 +84,7 @@ def home():
     today = datetime.datetime.now().strftime("%Y-%m-%d")
 
     try:
-        w = urllib.request.urlopen(WEATHER_STUB.format(json_data['Weather'], ip['latitude'], ip['longitude']))
+        w = urllib.request.urlopen(WEATHER_STUB.format(json_data, ip['latitude'], ip['longitude']))
     except Exception as e:
         print(e)
         return render_template('error.html', err = e)
@@ -102,6 +122,11 @@ def home():
             d['temp-f'] = str(temp).split('.')[0]
             d['temp-c'] = str((temp - 32.) * 5 / 9).split('.')[0]
             d['summary'] = hour['summary']
+            # print("\nPrecipitation:" + str(hour['precipProbability']) + "\n")
+            d['prob'] = str(hour['precipProbability'])
+            if ( hour['precipProbability'] > 0):
+                d['type'] = hour['precipType']
+                
         # Add it all to our own file
         f = open('data/content.json', 'w')
         f.write(json.dumps(data, indent=4))
@@ -120,8 +145,21 @@ def home():
     c = (f - 32.) * 5 / 9
     session['temp-f'] = str(f).split('.')[0] + '°'
     session['temp-c'] = str(c).split('.')[0] + '°'
-    '''
 
+    # cookie size too small
+    # all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
+    all_memory = ["slow", "pokemon"]
+    for cookie in all_memory:
+        if cookie not in session:
+            if cookie == "pokemon":
+                session["pokemon"] = API.create_pokemon_list()
+            else:
+                session[cookie] = API.create_growth_dict(cookie)
+        else:
+            print(cookie + " is in session")
+
+
+    return render_template('home.html', data = data[today], session = session, warning = need_to_warn)
 
 
 @app.route('/login')
@@ -223,8 +261,32 @@ def logout():
 
 @app.route('/starter_pokemon', methods = ['GET'])
 def starter_pokemon():
-    images = starter.starter_images()
-    return render_template('starter_pokemon.html', **images)
+    if 'user' in session:
+        pokemon_list = db.get_pokemon_from_username(session['user'])
+        print(pokemon_list)
+        if pokemon_list:
+            return redirect(url_for('home'))
+        images = pokemon.starter_images()
+        return render_template('starter_pokemon.html', **images)
+    return redirect(url_for('home'))
+
+@app.route('/start', methods = ['GET'])
+def start():
+    if 'user' in session:
+        pokemon_list = db.get_pokemon_from_username(session['user'])
+        print(pokemon_list)
+        if pokemon_list:
+            return redirect(url_for('home'))
+        if 'starter' in request.args:
+            name = request.args['starter']
+            image = pokemon.get_pokemon_image(name)
+
+            # still need to add the starter to the db
+
+            return render_template('start_game.html',
+                                   starter_name=name,
+                                   starter_image=image)
+    return redirect(url_for('home'))
 
 if __name__ == "__main__":
     app.debug = True #change to False before our demo
