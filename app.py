@@ -38,7 +38,11 @@ def encounters(steps):
         return "pokemon encountered"
 
 def typeChance():
-    # Try to open up content
+    # get all pokemon
+    output = []
+    output = db.get_all_pokemon
+
+    # Try to open up content for weather stuff
     try:
         f = open('data/content.json', 'r')
     except Exception as e:
@@ -54,13 +58,19 @@ def typeChance():
     if (prob > 0):
         type = data[today]['type']
         if (type == "rain"):
-            print("water types will occur more often")
+            print("water types will occur x3 more often")
+            output = db.add_water # adds each water type 2 more times
+            chosen = (random.choice(output))
         if (type == "snow" or type == "sleet"):
-            print("ice types will occur more often")
+            print("ice types will occur x3 more often")
+            output = db.add_ice # adds each ice type 2 more times
+            chosen = (random.choice(output))
+
     else:
         print("all pokemon have equal chances of occuring")
-
-    db.get_all_pokemon
+        chosen = (random.choice(output))
+    print (chosen)
+    return chosen
 
 
 @app.route('/game')
@@ -76,12 +86,12 @@ def map():
 def home():
 
     # read json file containing the api keys
-    #with open('data/API_Keys/keys.json') as json_file:
+    # with open('data/API_Keys/keys.json') as json_file:
     #    json_data = json.loads(json_file.read())
 
     # cookie size too small
-    #all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
-    all_memory = ["fast","pokemon"]
+    # all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
+    all_memory = ["fast", "pokemon"]
     for cookie in all_memory:
         if cookie == "pokemon":
             session["pokemon"] = API.create_pokemon_list()
@@ -90,6 +100,20 @@ def home():
         else:
             print(cookie + " is in session")
 
+    # cookie size too small
+    # all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
+    all_memory = ["slow", "pokemon"]
+    for cookie in all_memory:
+        if cookie not in session:
+            if cookie == "pokemon":
+                session["pokemon"] = API.create_pokemon_list()
+            else:
+                session[cookie] = API.create_growth_dict()
+        else:
+            print(cookie + " is in session")
+
+##########################################################################################################
+    # code for the weather
     WEATHER_STUB = "https://api.darksky.net/forecast/{}/{},{}" # api key, longitude, latitude
     IPAPI_STUB = "https://ipapi.co/{}/json/"
 
@@ -165,19 +189,6 @@ def home():
     c = (f - 32.) * 5 / 9
     session['temp-f'] = str(f).split('.')[0] + '°'
     session['temp-c'] = str(c).split('.')[0] + '°'
-
-    # cookie size too small
-    # all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
-    all_memory = ["slow", "pokemon"]
-    for cookie in all_memory:
-        if cookie not in session:
-            if cookie == "pokemon":
-                session["pokemon"] = API.create_pokemon_list()
-            else:
-                session[cookie] = API.create_growth_dict()
-        else:
-            print(cookie + " is in session")
-
 
     return render_template('home.html', data = data[today], session = session, warning = need_to_warn)
 
