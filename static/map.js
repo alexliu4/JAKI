@@ -98,8 +98,8 @@ for (i = 0; i<map.length; i++){
         tile.setAttribute("width","75");
         tile.setAttribute("height","75");
         tile.style.position = "absolute";
-        tile.style.left = (200 + 75*j) + "px";
-        tile.style.top = (200 + 75*i) + "px";
+        tile.style.left = (75*j) + "px";
+        tile.style.top = (75*i) + "px";
         tile.style.zIndex = 1;
         body.appendChild(tile);
     }
