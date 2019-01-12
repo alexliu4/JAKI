@@ -14,14 +14,14 @@ def create_growth_dict():
     return growth_dict
 
 def create_pokemon_list():
-    pokemon_list = []
     stub = "https://pokeapi.co/api/v2/pokemon/"
     req = urllib.request.Request(stub, headers={'User-Agent': 'Mozilla/5.0'})
     object = urllib.request.urlopen(req)
     info = object.read()
     data = json.loads(info)
 
+    result = {}
     for pokemon in data["results"]:
         if (int)(pokemon["url"].split("/")[-2]) < 252:
-            pokemon_list.append(pokemon["name"])
+            result[pokemon["name"]] = pokemon["url"]
     return pokemon_list

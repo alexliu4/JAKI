@@ -76,7 +76,7 @@ def get_user_id_from_username(username):
 #========================== POKEMON STUFF ================================
 
 def pokemon_dict(list):
-    pokedict = {};
+    pokedict = {}
     if list:
         pokedict["id"] = list[0]
         pokedict["name"] = list[1]
@@ -92,7 +92,7 @@ def pokemon_dict(list):
         pokedict["level"] = list[11]
         pokedict["player_has"] = list[12]
         pokedict["description"] = list[13]
-    return pokedict;
+    return pokedict
 
 def add_Pokemon(username, poke_name, poke_type, poke_max_health, poke_move_list, poke_level, has_room, description):
     '''adds pokemon to use table'''
