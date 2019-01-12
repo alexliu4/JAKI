@@ -38,7 +38,11 @@ def encounters(steps):
         return "pokemon encountered"
 
 def typeChance():
-    # Try to open up content
+    # get all pokemon
+    output = []
+    output = db.get_all_pokemon
+
+    # Try to open up content for weather stuff
     try:
         f = open('data/content.json', 'r')
     except Exception as e:
@@ -54,13 +58,19 @@ def typeChance():
     if (prob > 0):
         type = data[today]['type']
         if (type == "rain"):
-            print("water types will occur more often")
+            print("water types will occur x3 more often")
+            output = db.add_water # adds each water type 2 more times
+            chosen = (random.choice(output))
         if (type == "snow" or type == "sleet"):
-            print("ice types will occur more often")
+            print("ice types will occur x3 more often")
+            output = db.add_ice # adds each ice type 2 more times
+            chosen = (random.choice(output))
+
     else:
         print("all pokemon have equal chances of occuring")
-
-    db.get_all_pokemon
+        chosen = (random.choice(output))
+    print (chosen)
+    return chosen
 
 
 @app.route('/game')

@@ -116,6 +116,38 @@ def get_all_pokemon():
         output.append(pokemon_dict(pokemon))
     return output
 
+def add_water(list):
+    '''Returns a list of all of the water type pokemon'''
+    db = sqlite3.connect(DB)
+    c = db.cursor()
+    command = "SELECT * FROM user_pokemons WHERE type = 'water';"
+    c.execute(command)
+    info = c.fetchall()
+    db.close()
+    output = []
+    final = []
+    for pokemon in info:
+        output.append(pokemon_dict(pokemon))
+    final = list + output
+    final += output
+    return final
+
+def add_ice(list):
+    '''Returns a list of all of the ice type pokemon'''
+    db = sqlite3.connect(DB)
+    c = db.cursor()
+    command = "SELECT * FROM user_pokemons WHERE type = 'ice';"
+    c.execute(command)
+    info = c.fetchall()
+    db.close()
+    output = []
+    final = []
+    for pokemon in info:
+        output.append(pokemon_dict(pokemon))
+    final = list + output
+    final += output
+    return final
+
 def get_pokemon_from_username(username):
     db = sqlite3.connect(DB)
     c = db.cursor()
