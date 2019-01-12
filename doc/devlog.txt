@@ -151,3 +151,10 @@ alexL -- 2018-1-12 17:03
 3. Fixed minor bugs in db.py
 4. Started the about page
 ==============================================================
+
+jasonL -- 2018-1-12 18:35
+--------------------------------------------------------------
+1. Made the map and sprites.
+2. Player can animate when moving.
+3. Fixed some of the API and database functions.
+==============================================================
