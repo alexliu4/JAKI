@@ -272,6 +272,7 @@ def update_item(item_id, new_quantity):
     db.close()
 
 
+
 # MAKE TABLES AND DATABASE IF THEY DONT EXIST
 db = sqlite3.connect(DB)
 c = db.cursor()
