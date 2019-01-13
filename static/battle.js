@@ -155,12 +155,34 @@ tr.addEventListener("click", function(e) {
     " used " + data[pokemon_num * 10 + 4] + "!</tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
     pkmn_health -= data[pokemon_num * 10 + 5];
-    pkmn_health_elem.innerHTML = pkmn_health;
+    if(pkmn_health < 0){
+      pkmn_health = 0;
+    }
+    pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
     function after(){
-      table.innerHTML = temp;
-      document.getElementById("move").innerHTML = "";
-      mode = 0;
-      setup();
+      if(pkmn_health == 0){
+        document.getElementById("table").innerHTML = "<tr><td>You won!</td></tr>"
+        function after2(){
+          window.location.replace("/map");
+        }
+        function keydownHandler(e){
+            if (e.keyCode == 13) {
+                after2();
+            }
+        }
+
+        if (document.addEventListener) {
+            document.addEventListener('keydown', keydownHandler, false);
+        }
+        else if (document.attachEvent) {
+            document.attachEvent('onkeydown', keydownHandler);
+        }
+      }else{
+        table.innerHTML = temp;
+        document.getElementById("move").innerHTML = "";
+        mode = 0;
+        setup();
+      }
     }
     function keydownHandler(e){
         if (e.keyCode == 13) {
@@ -182,18 +204,41 @@ bl.addEventListener("click", function(e) {
     " used " + data[pokemon_num * 10 + 6] + "!</tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
     pkmn_health -= data[pokemon_num * 10 + 7];
-    pkmn_health_elem.innerHTML = pkmn_health;
+    if(pkmn_health < 0){
+      pkmn_health = 0;
+    }
+    pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
     function after(){
-      table.innerHTML = temp;
-      document.getElementById("move").innerHTML = "";
-      mode = 0;
-      setup();
+      if(pkmn_health == 0){
+        document.getElementById("table").innerHTML = "<tr><td>You won!</td></tr>"
+        function after2(){
+          window.location.replace("/map");
+        }
+        function keydownHandler(e){
+            if (e.keyCode == 13) {
+                after2();
+            }
+        }
+
+        if (document.addEventListener) {
+            document.addEventListener('keydown', keydownHandler, false);
+        }
+        else if (document.attachEvent) {
+            document.attachEvent('onkeydown', keydownHandler);
+        }
+      }else{
+        table.innerHTML = temp;
+        document.getElementById("move").innerHTML = "";
+        mode = 0;
+        setup();
+      }
     }
     function keydownHandler(e){
         if (e.keyCode == 13) {
             after();
         }
     }
+
     if (document.addEventListener) {
         document.addEventListener('keydown', keydownHandler, false);
     }
@@ -211,12 +256,34 @@ br.addEventListener("click", function(e) {
     " used " + data[pokemon_num * 10 + 8] + "!</tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
     pkmn_health -= data[pokemon_num * 10 + 9];
-    pkmn_health_elem.innerHTML = pkmn_health;
+    if(pkmn_health < 0){
+      pkmn_health = 0;
+    }
+    pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
     function after(){
-      table.innerHTML = temp;
-      document.getElementById("move").innerHTML = "";
-      mode = 0;
-      setup();
+      if(pkmn_health == 0){
+        document.getElementById("table").innerHTML = "<tr><td>You won!</td></tr>"
+        function after2(){
+          window.location.replace("/map");
+        }
+        function keydownHandler(e){
+            if (e.keyCode == 13) {
+                after2();
+            }
+        }
+
+        if (document.addEventListener) {
+            document.addEventListener('keydown', keydownHandler, false);
+        }
+        else if (document.attachEvent) {
+            document.attachEvent('onkeydown', keydownHandler);
+        }
+      }else{
+        table.innerHTML = temp;
+        document.getElementById("move").innerHTML = "";
+        mode = 0;
+        setup();
+      }
     }
     function keydownHandler(e){
         if (e.keyCode == 13) {
