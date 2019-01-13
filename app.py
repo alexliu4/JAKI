@@ -297,7 +297,7 @@ def start():
         if 'starter' in request.args:
             name = request.args['starter']
             image = pokemon.get_pokemon_image(name)
-
+            pokemon.add_pokemon(session['user'],name)
             # still need to add the starter to the db
 
             return render_template('start_game.html',

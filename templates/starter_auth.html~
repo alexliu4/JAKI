@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}
+Start Game
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center"> Get ready to play with {{starter_name}} </h1>
+{% endblock %}

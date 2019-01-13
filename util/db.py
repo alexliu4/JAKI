@@ -149,13 +149,27 @@ def add_ice(list):
     return final
 
 def get_pokemon_from_username(username):
+    pokemon_list = []
     db = sqlite3.connect(DB)
     c = db.cursor()
     command = "SELECT * FROM user_pokemons WHERE user_id = ?;"
     c.execute(command, (get_user_id_from_username(username),))
     info = c.fetchall()
     db.close()
-    return pokemon_dict(info)
+    for pokemon in info:
+        pokemon_list.append(pokemon_dict(info))
+    return pokemon_list
+
+def get_user_active_pokemon(username):
+    db = sqlite3.connect(DB)
+    c = db.cursor()
+    command = "SELECT * FROM user_pokemons WHERE user_id = ? AND player_has = ?;"
+    c.execute(command, (get_user_id_from_username(username), True))
+    info = c.fetchall()
+    db.close()
+    for pokemon in info:
+        pokemon_list.append(pokemon_dict(info))
+    return pokemon_list
 
 def get_pokemon_from_id(poke_id):
     db = sqlite3.connect(DB)
