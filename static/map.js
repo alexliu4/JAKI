@@ -9,19 +9,19 @@ grass = 7
 floor = 0
 */
 var map = [
-    [3,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,4],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,7,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
+    [3,6,6,6,6,6,6,6,6,6,6,6,4,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,4],
+    [5,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
+    [5,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
+    [5,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
+    [5,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
+    [5,0,0,0,0,0,7,7,7,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
+    [5,0,0,0,0,0,0,0,7,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
+    [5,0,0,0,0,0,7,0,7,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
+    [5,0,0,0,0,0,7,7,7,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
+    [5,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
+    [5,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
+    [5,6,6,6,6,6,6,6,6,6,6,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
+    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
     [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
     [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
     [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
@@ -65,34 +65,34 @@ for (i = 0; i<map.length; i++){
     for (j=0; j<map.length; j++){
         tile = document.createElement("img");
         if (map[i][j] === 1){
-            tile.setAttribute("src","../static/bottomleft.png");
+            tile.setAttribute("src","../static/images/bottomleft.png");
         }
         else if (map[i][j] === 2){
-            tile.setAttribute("src","../static/bottomright.png");
+            tile.setAttribute("src","../static/images/bottomright.png");
         }
         else if (map[i][j] === 3){
-            tile.setAttribute("src","../static/topleft.png");
+            tile.setAttribute("src","../static/images/topleft.png");
         }
         else if (map[i][j] === 4){
-            tile.setAttribute("src","../static/topright.png");
+            tile.setAttribute("src","../static/images/topright.png");
         }
         else if (map[i][j] === 5){
-            tile.setAttribute("src","../static/side.png");
+            tile.setAttribute("src","../static/images/side.png");
         }
         else if (map[i][j] === 6){
-            tile.setAttribute("src","../static/top.png");
+            tile.setAttribute("src","../static/images/top.png");
         }
         else if (map[i][j] === 7){
-            tile.setAttribute("src","../static/grass.png");
+            tile.setAttribute("src","../static/images/grass.png");
         }
         else if (map[i][j] === 101){
-            tile.setAttribute("src","../static/floor1.png");
+            tile.setAttribute("src","../static/images/floor1.png");
         }
         else if (map[i][j] === 102){
-            tile.setAttribute("src","../static/floor2.png");
+            tile.setAttribute("src","../static/images/floor2.png");
         }
         else if (map[i][j] === 103){
-            tile.setAttribute("src","../static/floor3.png");
+            tile.setAttribute("src","../static/images/floor3.png");
         }
         tile.setAttribute("class","map");
         tile.setAttribute("id",i + "," + j);
@@ -110,7 +110,7 @@ directions = ["up","down","left","right"]
 for (i=0; i<directions.length; i++){
     for (j=1; j<4; j++){
         var player = document.createElement("img");
-        player.setAttribute("src","../static/boywalk" + directions[i] + j+".png");
+        player.setAttribute("src","../static/images/boywalk" + directions[i] + j+".png");
         player.setAttribute("width","75");
         player.setAttribute("height","75");
         player.setAttribute("id",directions[i] + j);
@@ -172,39 +172,59 @@ var move = () => {
     var i;
     for (i=0; i<map_array.length; i++){
         var current = map_array[i];
-        current.style.top = parseInt(current.style.top) + 15*(down-up) + 'px';
-        current.style.left = parseInt(current.style.left) + 15*(right-left) + 'px';
+        if (Math.abs(down-up) > 0){
+            current.style.top = parseInt(current.style.top) + 15*(down-up) + 'px';
+        }
+        else if (Math.abs(right-left) > 0){
+            current.style.left = parseInt(current.style.left) + 15*(right-left) + 'px';
+        }
     }
 }
 
 
-var isUnwalkable = () => {
-
+var isUnwalkable = (row,col) => {
+    var bad = [1,2,3,4,5,6];
+    console.log(map[row][col]);
+    for (var i=0; i<6; i++){
+        if (map[row][col] === bad[i]){
+            return true;
+        }
+    }
+    return false;
 }
 
 window.setInterval(() => {
     var change_row = document.getElementById("0,0").style.top.toString();
     var change_col = document.getElementById("0,0").style.left.toString();
-    change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))+37) / 75);
-    change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))-37) / 75);
-    console.log(change_row+ " " + change_col);
-    if (down - up > 0){
-        if (!isUnwalkable(change_row,change_col-1)){
-            move();
-        }
-    }
-    else if (down - up < 0){
-        if (!isUnwalkable(change_row,change_col+1)){
-            move();
-        }
-    }
-    else if (right - left > 0){
+    if (down - up > 0){//up
+        change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))-37) / 75);
+        change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
+        console.log(change_row+ " " + change_col);
         if (!isUnwalkable(change_row-1,change_col)){
             move();
         }
     }
-    else if (right - left < 0){
+    else if (down - up < 0){//down
+        change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))+70) / 75);
+        change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
+        console.log(change_row+ " " + change_col);
         if (!isUnwalkable(change_row+1,change_col)){
+            move();
+        }
+    }
+    else if (right - left > 0){//right
+        change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
+        change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))-50) / 75);
+        console.log(change_row+ " " + change_col);
+        if (!isUnwalkable(change_row,change_col-1)){
+            move();
+        }
+    }
+    else if (right - left < 0){//left
+        change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
+        change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))+37) / 75);
+        console.log(change_row+ " " + change_col);
+        if (!isUnwalkable(change_row,change_col+1)){
             move();
         }
     }
