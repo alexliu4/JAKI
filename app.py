@@ -193,6 +193,39 @@ def home():
     return render_template('home.html', data = data[today], session = session, warning = need_to_warn)
 
 
+# ==========================STARTER POKEMON==========================
+
+@app.route('/starter_pokemon', methods = ['GET'])
+def starter_pokemon():
+    if 'user' in session:
+        pokemon_list = db.get_pokemon_from_username(session['user'])
+        print(pokemon_list)
+        if pokemon_list:
+            return redirect(url_for('home'))
+        images = pokemon.starter_images()
+        return render_template('starter_pokemon.html', **images)
+    return redirect(url_for('home'))
+
+@app.route('/start', methods = ['GET'])
+def start():
+    if 'user' in session:
+        pokemon_list = db.get_pokemon_from_username(session['user'])
+        print(pokemon_list)
+        if pokemon_list:
+            return redirect(url_for('home'))
+        if 'starter' in request.args:
+            name = request.args['starter']
+            image = pokemon.get_pokemon_image(name)
+
+            # still need to add the starter to the db
+
+            return render_template('start_game.html',
+                                   starter_name=name,
+                                   starter_image=image)
+    return redirect(url_for('home'))
+
+# ==========================USER LOGIN, RESET, REGISTER==========================
+
 @app.route('/login')
 def login():
     if 'user' in session:
@@ -288,35 +321,6 @@ def reset():
 def logout():
     if 'user' in session:
         session.pop('user')
-    return redirect(url_for('home'))
-
-@app.route('/starter_pokemon', methods = ['GET'])
-def starter_pokemon():
-    if 'user' in session:
-        pokemon_list = db.get_pokemon_from_username(session['user'])
-        print(pokemon_list)
-        if pokemon_list:
-            return redirect(url_for('home'))
-        images = pokemon.starter_images()
-        return render_template('starter_pokemon.html', **images)
-    return redirect(url_for('home'))
-
-@app.route('/start', methods = ['GET'])
-def start():
-    if 'user' in session:
-        pokemon_list = db.get_pokemon_from_username(session['user'])
-        print(pokemon_list)
-        if pokemon_list:
-            return redirect(url_for('home'))
-        if 'starter' in request.args:
-            name = request.args['starter']
-            image = pokemon.get_pokemon_image(name)
-
-            # still need to add the starter to the db
-
-            return render_template('start_game.html',
-                                   starter_name=name,
-                                   starter_image=image)
     return redirect(url_for('home'))
 
 if __name__ == "__main__":

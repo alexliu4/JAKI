@@ -149,5 +149,6 @@ alexL -- 2018-1-12 17:03
 1. Fixed the requirements.txt
 2. Worked on pokemon type probability
 3. Fixed minor bugs in db.py
-4. Started the about page
+4. Added two functions in db.py to change the probability
+5. Started the about page
 ==============================================================
