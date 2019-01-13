@@ -1,4 +1,4 @@
-import urllib.request, json, os
+import urllib.request, json, os, random
 
 from util import db
 
@@ -39,8 +39,17 @@ def get_move_id(move):
     #print(data["id"])
     return data["id"]
 
+def get_random_moves(pokemon):
+    data = get_pokemon_data(pokemon)
+    unprocessed_moves = data["moves"]
+    random.shuffle(unprocessed_moves)
+    processed_moves = [] 
+    for move in unprocessed_moves[:4]:
+        #print(move["move"]["name"])
+        processed_moves.append(get_move_id(move["move"]["name"]))
+    print(processed_moves)
+    return processed_moves
     
-
 def get_pokemon_image(pokemon):
     data = get_pokemon_data(pokemon)
     image_url = data["sprites"]["front_default"]
@@ -70,7 +79,7 @@ def add_pokemon(username, pokemon):
     for move in unprocessed_moves[:4]:
         #print(move["move"]["name"])
         processed_moves.append(get_move_id(move["move"]["name"]))
-    #print(processed_moves)
+    print(processed_moves)
     poke_level = 1        
     has_room = True
     #print(db.get_user_active_pokemon(username))
@@ -78,3 +87,7 @@ def add_pokemon(username, pokemon):
         hasroom = False
     description = ""
     db.add_Pokemon(username, pokemon, poke_type, poke_max_health, processed_moves, poke_level, has_room, description)
+
+
+get_random_moves("charmander")
+
