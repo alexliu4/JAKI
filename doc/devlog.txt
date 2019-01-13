@@ -158,3 +158,8 @@ jasonL -- 2018-1-12 18:35
 2. Player can animate when moving.
 3. Fixed some of the API and database functions.
 ==============================================================
+
+jasonL -- 2018-1-12 21:04
+--------------------------------------------------------------
+1. Grass step counter for pokemon encounters.
+==============================================================
