@@ -68,7 +68,8 @@ for (i = 0; i<map.length; i++){
     }
 }
 
-body = document.getElementById("body");
+body = document.getElementsByTagName("body")[0];
+body.setAttribute("style","overflow:hidden;background:#70C59C");
 for (i = 0; i<map.length; i++){
     for (j=0; j<map.length; j++){
         tile = document.createElement("img");
@@ -245,15 +246,41 @@ var isUnwalkable = (row,col) => {
 var cookie = JSON.parse(document.getElementById("cookie").innerHTML.replace(/'/g,'"'));
 
 var grass_steps = 0;
+var stop_moving = 0;
 
 var battle_encounter = () => {
-    if (grass_steps > 100) {
-        console.log("BATTLE");
+    if (grass_steps > 20) {
         grass_steps = 0;
+        stop_moving = 1;
+        window.location.replace("/game");
     }
 }
 
+var cover_int = 0;
+
 window.setInterval(() => {
+
+    if (stop_moving == 1){
+        if (cover_int < 40){
+            tile = document.createElement("img");
+            tile.setAttribute("src","../static/images/black.png");
+            tile.style.height = screen.height/3 + "px";
+            tile.style.width = screen.width/7 + "px"
+            tile.style.position = "absolute";
+            if (Math.floor(cover_int/10) %2 == 0 ){
+                tile.style.left = (cover_int%10)*screen.width/7 + "px";
+            }
+            else {
+                tile.style.left = (screen.width - (cover_int%10)*screen.width/7) + "px";
+            }
+            tile.style.top = Math.floor(cover_int/10) * screen.height/3 + "px";
+            tile.style.background = "black";
+            tile.style.zIndex = "20";
+            body.appendChild(tile);
+        }
+        cover_int++;
+        return;
+    }
     var change_row = document.getElementById("0,0").style.top.toString();
     var change_col = document.getElementById("0,0").style.left.toString();
     grass_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
