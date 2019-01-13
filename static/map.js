@@ -36,12 +36,12 @@ var map = [
     [5, 8,18,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,14, 0, 0, 0, 0, 0, 0, 5],
     [5, 8,17,16,16,16,16,16,23,19,19,19,22,16,16,16,16,16,16,16,16,16,15, 0, 0, 0, 0, 0, 0, 5],
     [5, 8, 8, 8, 8, 0, 0, 0,17,23,19,22,15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
-    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
-    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
-    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
-    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
-    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
-    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0,18,19,14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0,18,19,14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0,18,19,14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0,18,19,14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0,18,19,14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0,17,16,15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
     [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
     [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
     [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
@@ -259,26 +259,32 @@ var battle_encounter = () => {
 var cover_int = 0;
 
 window.setInterval(() => {
-
     if (stop_moving == 1){
-        if (cover_int < 40){
+        console.log("hello");
+        if (cover_int < 400){
             tile = document.createElement("img");
             tile.setAttribute("src","../static/images/black.png");
-            tile.style.height = screen.height/3 + "px";
-            tile.style.width = screen.width/7 + "px"
+            tile.style.height = screen.height/4 + "px";
+            tile.style.width = screen.width/80 + "px"
             tile.style.position = "absolute";
-            if (Math.floor(cover_int/10) %2 == 0 ){
-                tile.style.left = (cover_int%10)*screen.width/7 + "px";
+            if (Math.floor(cover_int/100) %2 == 0 ){
+                tile.style.left = (cover_int%100)*screen.width/80 + "px";
             }
             else {
-                tile.style.left = (screen.width - (cover_int%10)*screen.width/7) + "px";
+                tile.style.left = (screen.width+160 - (cover_int%100)*screen.width/80) + "px";
             }
-            tile.style.top = Math.floor(cover_int/10) * screen.height/3 + "px";
+            tile.style.top = Math.floor(cover_int/100) * screen.height/4 + "px";
             tile.style.background = "black";
             tile.style.zIndex = "20";
             body.appendChild(tile);
         }
         cover_int++;
+    }
+},0.1);
+
+window.setInterval(() => {
+
+    if (stop_moving == 1){
         return;
     }
     var change_row = document.getElementById("0,0").style.top.toString();
