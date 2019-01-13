@@ -6,49 +6,57 @@ topright = 4
 side = 5
 top = 6
 grass = 7
+smalltree = 8
+
+pathtopleft = 11
+pathtop = 12
+pathtopright = 13
+
+pathright = 14
+pathbottomright = 15
+pathbottom = 16
+
+pathbottomleft = 17
+pathleft = 18
+pathmiddle=19
+
+pathleftup = 20
+pathupright = 21
+pathrightbottom = 22
+pathbottomleft = 23
 floor = 0
 */
 var map = [
-    [3,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,4],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,7,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-    [1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,2],
+    [3, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 4],
+    [5, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 7, 7, 7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0,11,12,13, 0, 0, 7, 7, 7, 7, 7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0,18,19,14, 0, 0, 7, 7, 7, 7, 7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 8, 8, 8, 8, 0, 0, 0,11,20,19,21,13, 0, 7, 7, 7, 7, 7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 8,11,12,12,12,12,12,20,19,19,19,21,12,12,12,12,12,12,12,12,12,13, 0, 0, 0, 0, 0, 0, 5],
+    [5, 8,18,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,14, 0, 0, 0, 0, 0, 0, 5],
+    [5, 8,17,16,16,16,16,16,23,19,19,19,22,16,16,16,16,16,16,16,16,16,15, 0, 0, 0, 0, 0, 0, 5],
+    [5, 8, 8, 8, 8, 0, 0, 0,17,23,19,22,15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [1, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 2],
 ]
 
 var i,j;
@@ -65,42 +73,84 @@ for (i = 0; i<map.length; i++){
     for (j=0; j<map.length; j++){
         tile = document.createElement("img");
         if (map[i][j] === 1){
-            tile.setAttribute("src","../static/bottomleft.png");
+            tile.setAttribute("src","../static/images/bottomleft.png");
         }
         else if (map[i][j] === 2){
-            tile.setAttribute("src","../static/bottomright.png");
+            tile.setAttribute("src","../static/images/bottomright.png");
         }
         else if (map[i][j] === 3){
-            tile.setAttribute("src","../static/topleft.png");
+            tile.setAttribute("src","../static/images/topleft.png");
         }
         else if (map[i][j] === 4){
-            tile.setAttribute("src","../static/topright.png");
+            tile.setAttribute("src","../static/images/topright.png");
         }
         else if (map[i][j] === 5){
-            tile.setAttribute("src","../static/side.png");
+            tile.setAttribute("src","../static/images/side.png");
         }
         else if (map[i][j] === 6){
-            tile.setAttribute("src","../static/top.png");
+            tile.setAttribute("src","../static/images/top.png");
         }
         else if (map[i][j] === 7){
-            tile.setAttribute("src","../static/grass.png");
+            tile.setAttribute("src","../static/images/grass.png");
+        }
+        else if (map[i][j] === 8){
+            tile.setAttribute("src","../static/images/smalltree.png");
+        }
+        else if (map[i][j] === 11){
+            tile.setAttribute("src","../static/images/path1.png");
+        }
+        else if (map[i][j] === 12){
+            tile.setAttribute("src","../static/images/path2.png");
+        }
+        else if (map[i][j] === 13){
+            tile.setAttribute("src","../static/images/path3.png");
+        }
+        else if (map[i][j] === 14){
+            tile.setAttribute("src","../static/images/path4.png");
+        }
+        else if (map[i][j] === 15){
+            tile.setAttribute("src","../static/images/path5.png");
+        }
+        else if (map[i][j] === 16){
+            tile.setAttribute("src","../static/images/path6.png");
+        }
+        else if (map[i][j] === 17){
+            tile.setAttribute("src","../static/images/path7.png");
+        }
+        else if (map[i][j] === 18){
+            tile.setAttribute("src","../static/images/path8.png");
+        }
+        else if (map[i][j] === 19){
+            tile.setAttribute("src","../static/images/path9.png");
+        }
+        else if (map[i][j] === 20){
+            tile.setAttribute("src","../static/images/path10.png");
+        }
+        else if (map[i][j] === 21){
+            tile.setAttribute("src","../static/images/path11.png");
+        }
+        else if (map[i][j] === 22){
+            tile.setAttribute("src","../static/images/path12.png");
+        }
+        else if (map[i][j] === 23){
+            tile.setAttribute("src","../static/images/path13.png");
         }
         else if (map[i][j] === 101){
-            tile.setAttribute("src","../static/floor1.png");
+            tile.setAttribute("src","../static/images/floor1.png");
         }
         else if (map[i][j] === 102){
-            tile.setAttribute("src","../static/floor2.png");
+            tile.setAttribute("src","../static/images/floor2.png");
         }
         else if (map[i][j] === 103){
-            tile.setAttribute("src","../static/floor3.png");
+            tile.setAttribute("src","../static/images/floor3.png");
         }
         tile.setAttribute("class","map");
         tile.setAttribute("id",i + "," + j);
         tile.setAttribute("width","75");
         tile.setAttribute("height","75");
         tile.style.position = "absolute";
-        tile.style.left = (5+75*j) + "px";
-        tile.style.top = (5+75*i) + "px";
+        tile.style.left = (75*j) + "px";
+        tile.style.top = (75*i) + "px";
         tile.style.zIndex = 1;
         body.appendChild(tile);
     }
@@ -110,7 +160,7 @@ directions = ["up","down","left","right"]
 for (i=0; i<directions.length; i++){
     for (j=1; j<4; j++){
         var player = document.createElement("img");
-        player.setAttribute("src","../static/boywalk" + directions[i] + j+".png");
+        player.setAttribute("src","../static/images/boywalk" + directions[i] + j+".png");
         player.setAttribute("width","75");
         player.setAttribute("height","75");
         player.setAttribute("id",directions[i] + j);
@@ -172,28 +222,74 @@ var move = () => {
     var i;
     for (i=0; i<map_array.length; i++){
         var current = map_array[i];
-        current.style.top = parseInt(current.style.top) + 15*(down-up) + 'px';
-        current.style.left = parseInt(current.style.left) + 15*(right-left) + 'px';
+        if (Math.abs(down-up) > 0){
+            current.style.top = parseInt(current.style.top) + 15*(down-up) + 'px';
+        }
+        else if (Math.abs(right-left) > 0){
+            current.style.left = parseInt(current.style.left) + 15*(right-left) + 'px';
+        }
     }
 }
 
 
+var isUnwalkable = (row,col) => {
+    var bad = [1,2,3,4,5,6,8];
+    for (var i=0; i<7; i++){
+        if (map[row][col] === bad[i]){
+            return true;
+        }
+    }
+    return false;
+}
+
+var cookie = JSON.parse(document.getElementById("cookie").innerHTML.replace(/'/g,'"'));
+
+var grass_steps = 0;
+
+var battle_encounter = () => {
+    if (grass_steps > 100) {
+        console.log("BATTLE");
+        grass_steps = 0;
+    }
+}
+
 window.setInterval(() => {
     var change_row = document.getElementById("0,0").style.top.toString();
     var change_col = document.getElementById("0,0").style.left.toString();
-    change_row = parseInt(change_row.substring(0,change_row.length-2));
-    change_col = parseInt(change_col.substring(0,change_col.length-2));
-    if (down - up > 0){
-
+    grass_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
+    grass_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
+    if (map[grass_row][grass_col] === 7 && (Math.abs(right-left) > 0 || Math.abs(down-up) > 0)){
+        grass_steps++;
+        console.log("grass steps :" +grass_steps);
+        battle_encounter();
     }
-    else if (down - up < 0){
-
+    if (down - up > 0){//up
+        change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))-37) / 75);
+        change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
+        if (!isUnwalkable(change_row-1,change_col)){
+            move();
+        }
     }
-    else if (right - left > 0){
-
+    else if (down - up < 0){//down
+        change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))+70) / 75);
+        change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
+        if (!isUnwalkable(change_row+1,change_col)){
+            move();
+        }
     }
-    else if (right - left < 0){
-
+    else if (right - left > 0){//right
+        change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
+        change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))-50) / 75);
+        if (!isUnwalkable(change_row,change_col-1)){
+            move();
+        }
+    }
+    else if (right - left < 0){//left
+        change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
+        change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))+37) / 75);
+        if (!isUnwalkable(change_row,change_col+1)){
+            move();
+        }
     }
 }, 80);
 

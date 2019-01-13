@@ -24,4 +24,5 @@ def create_pokemon_list():
     for pokemon in data["results"]:
         if (int)(pokemon["url"].split("/")[-2]) < 252:
             result[pokemon["name"]] = pokemon["url"]
-    return pokemon_list
+    print("hefdsfads")
+    return result

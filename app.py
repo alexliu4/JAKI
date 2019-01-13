@@ -40,7 +40,7 @@ def encounters(steps):
 def typeChance():
     # get all pokemon
     output = []
-    output = db.get_all_pokemon
+    output = db.get_all_pokemon()
 
     # Try to open up content for weather stuff
     try:
@@ -79,8 +79,10 @@ def game():
 
 @app.route("/map")
 def map():
-    return render_template("map.html")
-
+    if 'pokemon' not in session:
+        session['pokemon'] = API.create_pokemon_list()
+    data = session['pokemon']
+    return render_template("map.html",cookie = data)
 
 @app.route('/')
 def home():
@@ -91,26 +93,10 @@ def home():
 
     # cookie size too small
     # all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
-    all_memory = ["fast", "pokemon"]
-    for cookie in all_memory:
-        if cookie == "pokemon":
-            session["pokemon"] = API.create_pokemon_list()
-        elif cookie == "fast":
-            session["fast"] = API.create_growth_dict()
-        else:
-            print(cookie + " is in session")
-
-    # cookie size too small
-    # all_memory = ["slow","medium","fast","medium-slow","slow-then-very-fast","fast-then-very-slow","pokemon"]
-    all_memory = ["slow", "pokemon"]
-    for cookie in all_memory:
-        if cookie not in session:
-            if cookie == "pokemon":
-                session["pokemon"] = API.create_pokemon_list()
-            else:
-                session[cookie] = API.create_growth_dict()
-        else:
-            print(cookie + " is in session")
+    if 'pokemon' not in session:
+        session['pokemon'] = API.create_pokemon_list()
+    if "fast" not in session:
+        session["fast"] = API.create_growth_dict()
 
 ##########################################################################################################
     # code for the weather
