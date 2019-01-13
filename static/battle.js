@@ -47,6 +47,16 @@ var tr = document.getElementById("tr");
 var bl = document.getElementById("bl");
 var br = document.getElementById("br");
 
+var data = JSON.parse(document.getElementById("data").innerHTML)
+var pokemon_num = 0;
+var mode = 0;
+var table = document.getElementsByTagName("table")[0];
+var temp = table.innerHTML;
+var pkmn_health = document.getElementById("pkmn_health");
+var user_health = document.getElementById("user_health");
+pkmn_health.innerHTML = "Helth: " + data[0];
+user_health.innerHTML = "Helth: " + data[10];
+
 tl.addEventListener("mouseover", function(e) {
   tl.style.backgroundColor = "silver";
 });
@@ -74,6 +84,34 @@ br.addEventListener("mouseout", function(e) {
 });
 
 tl.addEventListener("click", function(e) {
-  var cookie = document.cookie;
-  console.log(cookie);
+  if(mode == 0){
+    tl.innerHTML = data[pokemon_num * 10 + 2]
+    tr.innerHTML = data[pokemon_num * 10 + 4]
+    bl.innerHTML = data[pokemon_num * 10 + 6]
+    br.innerHTML = data[pokemon_num * 10 + 8]
+    mode = 1;
+  }
+  else if(mode == 1){
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10 + 1] +
+    " used " + data[pokemon_num * 10 + 2] + "!</tr>";
+    document.getElementById("move").innerHTML = "Press enter to continue";
+    function after(){
+      table.innerHTML = temp;
+      console.log(temp);
+      document.getElementById("move").innerHTML = "";
+      mode = 0;
+    }
+    function keydownHandler(e){
+        if (e.keyCode == 13) {
+            after();
+        }
+    }
+
+    if (document.addEventListener) {
+        document.addEventListener('keydown', keydownHandler, false);
+    }
+    else if (document.attachEvent) {
+        document.attachEvent('onkeydown', keydownHandler);
+    }
+  }
 });

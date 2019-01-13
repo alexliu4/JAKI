@@ -1,6 +1,6 @@
 import json, urllib, os, datetime, random
 
-from flask import Flask, render_template, request, session, url_for, redirect, flash, jsonify
+from flask import Flask, render_template, request, session, url_for, redirect, flash, json, jsonify
 
 from passlib.hash import md5_crypt
 
@@ -75,11 +75,25 @@ def typeChance():
 
 @app.route('/game')
 def game():
-    pokemon_list = db.get_pokemon_from_username(session['user'])
-    user_pokemon_url = pokemon.get_pokemon_image(pokemon_list[0]['name'])
+    user_list = db.get_user_active_pokemon(session['user'])
+    user_pokemon_url = pokemon.get_pokemon_image(user_list[0]['name'])
     wild_pokemon = random.choice(list(session['pokemon']))
     wild_pokemon_url = pokemon.get_pokemon_image(wild_pokemon)
-    return render_template('battle.html', user_pkmn = user_pokemon_url, wild_pkmn = wild_pokemon_url)
+    data = []
+    damage = pokemon.get_pokemon_data(wild_pokemon)['stats'][5]['base_stat']
+    for pokemons in  user_list:
+        data.append(damage)
+        data.append(pokemons['name'])
+        data.append(db.get_move_from_id(pokemons['move_1_id'])['name'])
+        data.append(db.get_move_from_id(pokemons['move_1_id'])['damage'])
+        data.append(db.get_move_from_id(pokemons['move_2_id'])['name'])
+        data.append(db.get_move_from_id(pokemons['move_2_id'])['damage'])
+        data.append(db.get_move_from_id(pokemons['move_3_id'])['name'])
+        data.append(db.get_move_from_id(pokemons['move_3_id'])['damage'])
+        data.append(db.get_move_from_id(pokemons['move_4_id'])['name'])
+        data.append(db.get_move_from_id(pokemons['move_4_id'])['damage'])
+        data.append(pokemons['health'])
+    return render_template('battle.html', user_pkmn = user_pokemon_url, wild_pkmn = wild_pokemon_url, data=data)
 
 @app.route("/map")
 def map():
