@@ -102,7 +102,7 @@ def map():
     if 'user' in session:
         if 'pokemon' not in session:
             session['pokemon'] = API.create_pokemon_list()
-            data = session['pokemon']
+        data = session['pokemon']
         return render_template("map.html",cookie = data)
     return redirect(url_for('login'))
 
