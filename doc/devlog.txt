@@ -171,3 +171,9 @@ karenL -- 2018-1-13 00:44
 name.
 2. Starter Pokemon and all required stats are added to database.
 ==============================================================
+
+jasonL -- 2018-1-13 10:15
+--------------------------------------------------------------
+1. Made transition to battle.
+2. Animation of wild pokemon encounter.
+==============================================================
