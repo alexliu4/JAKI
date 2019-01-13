@@ -184,7 +184,6 @@ var move = () => {
 
 var isUnwalkable = (row,col) => {
     var bad = [1,2,3,4,5,6];
-    console.log(map[row][col]);
     for (var i=0; i<6; i++){
         if (map[row][col] === bad[i]){
             return true;
@@ -193,13 +192,20 @@ var isUnwalkable = (row,col) => {
     return false;
 }
 
+var grass_steps = 0;
+
 window.setInterval(() => {
     var change_row = document.getElementById("0,0").style.top.toString();
     var change_col = document.getElementById("0,0").style.left.toString();
+    grass_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
+    grass_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
+    if (map[grass_row][grass_col] === 7 && (Math.abs(right-left) > 0 || Math.abs(down-up) > 0)){
+        grass_steps++;
+        console.log(grass_steps);
+    }
     if (down - up > 0){//up
         change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))-37) / 75);
         change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
-        console.log(change_row+ " " + change_col);
         if (!isUnwalkable(change_row-1,change_col)){
             move();
         }
@@ -207,7 +213,6 @@ window.setInterval(() => {
     else if (down - up < 0){//down
         change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))+70) / 75);
         change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
-        console.log(change_row+ " " + change_col);
         if (!isUnwalkable(change_row+1,change_col)){
             move();
         }
@@ -215,7 +220,6 @@ window.setInterval(() => {
     else if (right - left > 0){//right
         change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
         change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))-50) / 75);
-        console.log(change_row+ " " + change_col);
         if (!isUnwalkable(change_row,change_col-1)){
             move();
         }
@@ -223,7 +227,6 @@ window.setInterval(() => {
     else if (right - left < 0){//left
         change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
         change_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))+37) / 75);
-        console.log(change_row+ " " + change_col);
         if (!isUnwalkable(change_row,change_col+1)){
             move();
         }
