@@ -75,7 +75,11 @@ def typeChance():
 
 @app.route('/game')
 def game():
-    return render_template('battle.html')
+    pokemon_list = db.get_pokemon_from_username(session['user'])
+    user_pokemon_url = pokemon.get_pokemon_image(pokemon_list[0]['name'])
+    wild_pokemon = random.choice(list(session['pokemon']))
+    wild_pokemon_url = pokemon.get_pokemon_image(wild_pokemon)
+    return render_template('battle.html', user_pkmn = user_pokemon_url, wild_pkmn = wild_pokemon_url)
 
 @app.route("/map")
 def map():
@@ -195,12 +199,12 @@ def starter_pokemon():
 @app.route('/start', methods = ['GET'])
 def start():
     if 'user' in session:
-        if pokemon_list:
-            return redirect(url_for('home'))
+        #if pokemon_list:
+        #    return redirect(url_for('home'))
         if 'starter' in request.args:
             name = request.args['starter']
             image = pokemon.get_pokemon_image(name)
-            pokemon.add_pokemon(session['user'], name)         
+            pokemon.add_pokemon(session['user'], name)
             return render_template('start_game.html',
                                    starter_name=name,
                                    starter_image=image)

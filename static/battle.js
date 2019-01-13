@@ -28,7 +28,7 @@ function move(){
         img2.style.left = (right - 5) + 'px';
         img2.style.visibility='visible';
 
-        animate = setTimeout(function(){move();},20);
+        animate = setTimeout(function(){move();},10);
 
     } else {
         stop();
@@ -41,3 +41,39 @@ function stop(){
 }
 
 window.onload = function() {init();};
+
+var tl = document.getElementById("tl");
+var tr = document.getElementById("tr");
+var bl = document.getElementById("bl");
+var br = document.getElementById("br");
+
+tl.addEventListener("mouseover", function(e) {
+  tl.style.backgroundColor = "silver";
+});
+tr.addEventListener("mouseover", function(e) {
+  tr.style.backgroundColor = "silver";
+});
+bl.addEventListener("mouseover", function(e) {
+  bl.style.backgroundColor = "silver";
+});
+br.addEventListener("mouseover", function(e) {
+  br.style.backgroundColor = "silver";
+});
+
+tl.addEventListener("mouseout", function(e) {
+  tl.style.backgroundColor = "white";
+});
+tr.addEventListener("mouseout", function(e) {
+  tr.style.backgroundColor = "white";
+});
+bl.addEventListener("mouseout", function(e) {
+  bl.style.backgroundColor = "white";
+});
+br.addEventListener("mouseout", function(e) {
+  br.style.backgroundColor = "white";
+});
+
+tl.addEventListener("click", function(e) {
+  var cookie = document.cookie;
+  console.log(cookie);
+});
