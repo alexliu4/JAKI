@@ -78,12 +78,3 @@ def add_pokemon(username, pokemon):
         hasroom = False
     description = ""
     db.add_Pokemon(username, pokemon, poke_type, poke_max_health, processed_moves, poke_level, has_room, description)
-
-#print("---------------------------\n")
-add_pokemon("karen", "charmander")
-#print("---------------------------\n")
-add_pokemon("karen", "squirtle")
-#print("---------------------------\n")
-print(db.get_pokemon_from_username("karen"))
-print("---------------------------\n")
-print(db.get_user_active_pokemon("karen"))
