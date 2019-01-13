@@ -157,10 +157,11 @@ def get_pokemon_from_username(username):
     info = c.fetchall()
     db.close()
     for pokemon in info:
-        pokemon_list.append(pokemon_dict(info))
+        pokemon_list.append(pokemon_dict(pokemon))
     return pokemon_list
 
 def get_user_active_pokemon(username):
+    pokemon_list = []
     db = sqlite3.connect(DB)
     c = db.cursor()
     command = "SELECT * FROM user_pokemons WHERE user_id = ? AND player_has = ?;"
@@ -168,7 +169,7 @@ def get_user_active_pokemon(username):
     info = c.fetchall()
     db.close()
     for pokemon in info:
-        pokemon_list.append(pokemon_dict(info))
+        pokemon_list.append(pokemon_dict(pokemon))
     return pokemon_list
 
 def get_pokemon_from_id(poke_id):

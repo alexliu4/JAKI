@@ -5,27 +5,48 @@ from util import db
 def get_pokemon_data(pokemon):
     url_stub = "https://pokeapi.co/api/v2/pokemon/"
     url = url_stub + pokemon.lower()
-    print("---------------------------\n")
-    print( url)
-    print("---------------------------\n")
+    #print("---------------------------\n")
+    #print( url)
+    #print("---------------------------\n")
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     url_object = urllib.request.urlopen(req)
-    print("---------------------------\n")
-    print(url_object)
-    print("---------------------------\n")
+    #print("---------------------------\n")
+    #print(url_object)
+    #print("---------------------------\n")
     info = url_object.read()
-    print("---------------------------\n")
-    print(info)
-    print("---------------------------\n")
+    #print("---------------------------\n")
+    #print(info)
+    #print("---------------------------\n")
     data = json.loads(info)
     return data
+
+def get_move_id(move):
+    url_stub = "https://pokeapi.co/api/v2/move/"
+    url = url_stub + move.lower()
+    #print("---------------------------\n")
+    #print( url)
+    #print("---------------------------\n")
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    url_object = urllib.request.urlopen(req)
+    #print("---------------------------\n")
+    #print(url_object)
+    #print("---------------------------\n")
+    info = url_object.read()
+    #print("---------------------------\n")
+    #print(info)
+    #print("---------------------------\n")
+    data = json.loads(info)
+    #print(data["id"])
+    return data["id"]
+
+    
 
 def get_pokemon_image(pokemon):
     data = get_pokemon_data(pokemon)
     image_url = data["sprites"]["front_default"]
-    print("---------------------------\n")
-    print(image_url)
-    print("---------------------------\n")
+    #print("---------------------------\n")
+    #print(image_url)
+    #print("---------------------------\n")
     return image_url
 
 
@@ -34,19 +55,35 @@ def starter_images():
     starter_pokemon = ["bulbasaur", "charmander", "squirtle"]
     for pokemon in starter_pokemon:
         dict[pokemon] = get_pokemon_image(pokemon)
-    print("---------------------------\n")
-    print(dict)
-    print("---------------------------\n")
+    #print("---------------------------\n")
+    #print(dict)
+    #print("---------------------------\n")
     return dict
 
 def add_pokemon(username, pokemon):
+    data = get_pokemon_data(pokemon)
     poke_type = ""
     poke_max_health = 0
-    poke_move_list = []
+    unprocessed_moves = data["moves"]
+    #print(unprocessed_moves)
+    processed_moves = [] 
+    for move in unprocessed_moves[:4]:
+        #print(move["move"]["name"])
+        processed_moves.append(get_move_id(move["move"]["name"]))
+    #print(processed_moves)
     poke_level = 1        
-    has_room = False
-    print(db.get_user_active_pokemon(username))
-    if strlen(db.get_user_active_pokemon(username)) < 6:
-        hasroom = True
-    db.add_pokemon(username, pokemon, poke_type, poke_max_health, poke_move_list, poke_level, has_room, description)
+    has_room = True
+    #print(db.get_user_active_pokemon(username))
+    if len(db.get_user_active_pokemon(username)) >= 6:
+        hasroom = False
+    description = ""
+    db.add_Pokemon(username, pokemon, poke_type, poke_max_health, processed_moves, poke_level, has_room, description)
 
+#print("---------------------------\n")
+add_pokemon("karen", "charmander")
+#print("---------------------------\n")
+add_pokemon("karen", "squirtle")
+#print("---------------------------\n")
+print(db.get_pokemon_from_username("karen"))
+print("---------------------------\n")
+print(db.get_user_active_pokemon("karen"))
