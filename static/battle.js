@@ -52,10 +52,13 @@ var pokemon_num = 0;
 var mode = 0;
 var table = document.getElementsByTagName("table")[0];
 var temp = table.innerHTML;
-var pkmn_health = document.getElementById("pkmn_health");
-var user_health = document.getElementById("user_health");
-pkmn_health.innerHTML = "Helth: " + data[0];
-user_health.innerHTML = "Helth: " + data[10];
+var pkmn_health_elem = document.getElementById("pkmn_health");
+var user_health_elem = document.getElementById("user_health");
+var pkmn_health = data[0];
+var user_health = data[10];
+
+pkmn_health_elem.innerHTML = "Helth: " + data[0];
+user_health_elem.innerHTML = "Helth: " + data[10];
 
 tl.addEventListener("mouseover", function(e) {
   tl.style.backgroundColor = "silver";
@@ -95,9 +98,91 @@ tl.addEventListener("click", function(e) {
     document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10 + 1] +
     " used " + data[pokemon_num * 10 + 2] + "!</tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
+    pkmn_health -= data[pokemon_num * 10 + 3];
+    pkmn_health_elem.innerHTML = pkmn_health;
     function after(){
       table.innerHTML = temp;
       console.log(temp);
+      document.getElementById("move").innerHTML = "";
+      mode = 0;
+    }
+    function keydownHandler(e){
+        if (e.keyCode == 13) {
+            after();
+        }
+    }
+
+    if (document.addEventListener) {
+        document.addEventListener('keydown', keydownHandler, false);
+    }
+    else if (document.attachEvent) {
+        document.attachEvent('onkeydown', keydownHandler);
+    }
+  }
+});
+tr.addEventListener("click", function(e) {
+  if(mode == 1){
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10 + 1] +
+    " used " + data[pokemon_num * 10 + 4] + "!</tr>";
+    document.getElementById("move").innerHTML = "Press enter to continue";
+    pkmn_health -= data[pokemon_num * 10 + 5];
+    pkmn_health_elem.innerHTML = pkmn_health;
+    function after(){
+      table.innerHTML = temp;
+      console.log(temp);
+      document.getElementById("move").innerHTML = "";
+      mode = 0;
+    }
+    function keydownHandler(e){
+        if (e.keyCode == 13) {
+            after();
+        }
+    }
+
+    if (document.addEventListener) {
+        document.addEventListener('keydown', keydownHandler, false);
+    }
+    else if (document.attachEvent) {
+        document.attachEvent('onkeydown', keydownHandler);
+    }
+  }
+});
+bl.addEventListener("click", function(e) {
+  if(mode == 1){
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10 + 1] +
+    " used " + data[pokemon_num * 10 + 6] + "!</tr>";
+    document.getElementById("move").innerHTML = "Press enter to continue";
+    pkmn_health -= data[pokemon_num * 10 + 7];
+    pkmn_health_elem.innerHTML = pkmn_health;
+    function after(){
+      table.innerHTML = temp;
+      console.log(temp);
+      document.getElementById("move").innerHTML = "";
+      mode = 0;
+    }
+    function keydownHandler(e){
+        if (e.keyCode == 13) {
+            after();
+        }
+    }
+
+    if (document.addEventListener) {
+        document.addEventListener('keydown', keydownHandler, false);
+    }
+    else if (document.attachEvent) {
+        document.attachEvent('onkeydown', keydownHandler);
+    }
+  }
+});
+br.addEventListener("click", function(e) {
+  if(mode == 1){
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10 + 1] +
+    " used " + data[pokemon_num * 10 + 8] + "!</tr>";
+    document.getElementById("move").innerHTML = "Press enter to continue";
+    pkmn_health -= data[pokemon_num * 10 + 9];
+    pkmn_health_elem.innerHTML = pkmn_health;
+    function after(){
+      table.innerHTML = temp;
       document.getElementById("move").innerHTML = "";
       mode = 0;
     }
