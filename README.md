@@ -145,7 +145,7 @@ To recursively download the required modules, run the following commands:
 
 ```bash
 cd path/to/cloned/repo
-pip install -r < requirements.txt
+pip install -r requirements.txt
 ```
 
 This will change the current working directory to the cloned repo directory, then recursively install all the dependencies listed in the [requirements.txt](../master/requirements.txt) file located in the root of the repo directory. _Note: This assumes that you do not have a virtual environment to work in. If you do, please do activate it or create a new environment in order to keep your current versions._
