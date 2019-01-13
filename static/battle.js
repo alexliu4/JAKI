@@ -42,24 +42,31 @@ function stop(){
 
 window.onload = function() {init();};
 
-var tl = document.getElementById("tl");
-var tr = document.getElementById("tr");
-var bl = document.getElementById("bl");
-var br = document.getElementById("br");
+var tl;
+var tr;
+var bl;
+var br;
+var table;
+var temp;
 
 var data = JSON.parse(document.getElementById("data").innerHTML)
 var pokemon_num = 0;
 var mode = 0;
-var table = document.getElementsByTagName("table")[0];
-var temp = table.innerHTML;
 var pkmn_health_elem = document.getElementById("pkmn_health");
 var user_health_elem = document.getElementById("user_health");
 var pkmn_health = data[0];
 var user_health = data[10];
 
-pkmn_health_elem.innerHTML = "Helth: " + data[0];
-user_health_elem.innerHTML = "Helth: " + data[10];
+pkmn_health_elem.innerHTML = "Health: " + data[0];
+user_health_elem.innerHTML = "Health: " + data[10];
 
+function setup(){
+  tl = document.getElementById("tl");
+  tr = document.getElementById("tr");
+  bl = document.getElementById("bl");
+  br = document.getElementById("br");
+  table = document.getElementsByTagName("table")[0];
+  temp = table.innerHTML;
 tl.addEventListener("mouseover", function(e) {
   tl.style.backgroundColor = "silver";
 });
@@ -96,15 +103,37 @@ tl.addEventListener("click", function(e) {
   }
   else if(mode == 1){
     document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10 + 1] +
-    " used " + data[pokemon_num * 10 + 2] + "!</tr>";
+    " used " + data[pokemon_num * 10 + 2] + "!</td></tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
     pkmn_health -= data[pokemon_num * 10 + 3];
-    pkmn_health_elem.innerHTML = pkmn_health;
+    if(pkmn_health < 0){
+      pkmn_health = 0;
+    }
+    pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
     function after(){
-      table.innerHTML = temp;
-      console.log(temp);
-      document.getElementById("move").innerHTML = "";
-      mode = 0;
+      if(pkmn_health == 0){
+        document.getElementById("table").innerHTML = "<tr><td>You won!</td></tr>"
+        function after2(){
+          window.location.replace("/map");
+        }
+        function keydownHandler(e){
+            if (e.keyCode == 13) {
+                after2();
+            }
+        }
+
+        if (document.addEventListener) {
+            document.addEventListener('keydown', keydownHandler, false);
+        }
+        else if (document.attachEvent) {
+            document.attachEvent('onkeydown', keydownHandler);
+        }
+      }else{
+        table.innerHTML = temp;
+        document.getElementById("move").innerHTML = "";
+        mode = 0;
+        setup();
+      }
     }
     function keydownHandler(e){
         if (e.keyCode == 13) {
@@ -129,9 +158,9 @@ tr.addEventListener("click", function(e) {
     pkmn_health_elem.innerHTML = pkmn_health;
     function after(){
       table.innerHTML = temp;
-      console.log(temp);
       document.getElementById("move").innerHTML = "";
       mode = 0;
+      setup();
     }
     function keydownHandler(e){
         if (e.keyCode == 13) {
@@ -156,16 +185,15 @@ bl.addEventListener("click", function(e) {
     pkmn_health_elem.innerHTML = pkmn_health;
     function after(){
       table.innerHTML = temp;
-      console.log(temp);
       document.getElementById("move").innerHTML = "";
       mode = 0;
+      setup();
     }
     function keydownHandler(e){
         if (e.keyCode == 13) {
             after();
         }
     }
-
     if (document.addEventListener) {
         document.addEventListener('keydown', keydownHandler, false);
     }
@@ -175,6 +203,9 @@ bl.addEventListener("click", function(e) {
   }
 });
 br.addEventListener("click", function(e) {
+  if(mode == 0){
+    window.location.replace("/map");
+  }
   if(mode == 1){
     document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10 + 1] +
     " used " + data[pokemon_num * 10 + 8] + "!</tr>";
@@ -185,6 +216,7 @@ br.addEventListener("click", function(e) {
       table.innerHTML = temp;
       document.getElementById("move").innerHTML = "";
       mode = 0;
+      setup();
     }
     function keydownHandler(e){
         if (e.keyCode == 13) {
@@ -200,3 +232,6 @@ br.addEventListener("click", function(e) {
     }
   }
 });
+}
+
+setup();
