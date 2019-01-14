@@ -150,7 +150,7 @@ def tobattle():
         locations = request.form.get('location').split(" ")
         x = locations[0]
         y = locations[1]
-        db.modify_user_coordinates(x,y,session['user'])
+        db.modify_user_coordinates(x, y, session['user'])
         return redirect(url_for('game'))
     return redirect(url_for('login'))
 
@@ -160,8 +160,8 @@ def heal():
         pokemon_list = db.get_user_active_pokemon(session['user'])
         for a_pokemon in pokemon_list:
             a_pokemon["image"] = pokemon.get_pokemon_image(a_pokemon['name'])
-            a_pokemon["percent"] = math.floor(a_pokemon['health']/a_pokemon['max_health']* 100)
-        return render_template("heal.html",list = pokemon_list)
+            a_pokemon["percent"] = math.floor(a_pokemon['health'] / a_pokemon ['max_health'] * 100)
+        return render_template("heal.html", list = pokemon_list)
     return redirect(url_for('login'))
 
 @app.route("/healall")
@@ -169,7 +169,7 @@ def healall():
     if 'user' in session:
         pokemon_list = db.get_user_active_pokemon(session['user'])
         for pokemon in pokemon_list:
-            db.update_health(pokemon["id"],pokemon["max_health"])
+            db.update_health(pokemon["id"], pokemon["max_health"])
         return redirect(url_for("heal"))
     return redirect(url_for('login'))
 
@@ -178,7 +178,7 @@ def home():
     if 'user' not in session:
         return redirect(url_for('login'))
     current_id = db.get_user_id_from_username(session['user'])
-    all_pokemon = db.get_all_pokemon();
+    all_pokemon = db.get_all_pokemon()
 
     has_pokemon = False
     for pokemon in all_pokemon:
@@ -198,8 +198,8 @@ def home():
     if "fast" not in session:
         session["fast"] = API.create_growth_dict()
 
-    #EXAMPLE ON HOW TO DO INCREMENT
-    db.increment_pokemon_exp(1,20,session["fast"])
+    # EXAMPLE ON HOW TO DO INCREMENT
+    db.increment_pokemon_exp(1, 20, session["fast"])
 
 ##########################################################################################################
     # code for the weather
@@ -298,7 +298,7 @@ def starter_pokemon():
 @app.route('/start', methods = ['GET'])
 def start():
     if 'user' in session:
-        #if pokemon_list:
+        # if pokemon_list:
         #    return redirect(url_for('home'))
         if 'starter' in request.args:
             name = request.args['starter']
