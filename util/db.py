@@ -227,6 +227,12 @@ def increment_pokemon_exp(poke_id, experience, growth_rate):
         command = "UPDATE user_pokemons SET level=" +str(current_pokemon['level']+1) + " WHERE id= " + str(poke_id) + ";"
         c.execute(command)
         db.commit()
+        command = "UPDATE user_pokemons SET attack=" +str(current_pokemon['attack']+1) + " WHERE id= " + str(poke_id) + ";"
+        c.execute(command)
+        db.commit()
+        command = "UPDATE user_pokemons SET defense=" +str(current_pokemon['defense']+1) + " WHERE id= " + str(poke_id) + ";"
+        c.execute(command)
+        db.commit()
     db.close()
 
 def update_health(poke_id,health):
