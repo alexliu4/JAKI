@@ -49,7 +49,13 @@ var br;
 var table;
 var temp;
 
+var has_potion = false;
+var has_super_potion = false;
+var has_ultra_potion = false;
+var potion;
+
 var data = JSON.parse(document.getElementById("data").innerHTML)
+var items = JSON.parse(document.getElementById("items").innerHTML)
 var pokemon_num = 0;
 var mode = 0;
 var pkmn_health_elem = document.getElementById("pkmn_health");
@@ -112,16 +118,220 @@ tl.addEventListener("click", function(e) {
     pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
     function after(){
       if(pkmn_health == 0){
-        document.getElementById("table").innerHTML = "<tr><td>You won!</td></tr>"
+        var type = Math.floor(Math.random() * 3);
+
+        if(type == 0){
+          potion = "potion";
+        }
+        if(type == 1){
+          potion = "super potion";
+        }
+        if(type == 2){
+          potion = "ultra potion";
+        }
+        document.getElementById("table").innerHTML = "<tr><td>You won! Enemy dropped a " + potion + "!</td></tr>"
         function after2(){
           var form = document.createElement("form");
           form.setAttribute("method","POST");
-          form.setAttribute("action","/update_health")
+          form.setAttribute("action","/updates")
           var input = document.createElement("input");
-          input.setAttribute("type","number");
+          input.setAttribute("type","text");
           input.setAttribute("hidden","True");
-          input.setAttribute("name","health")
-          input.setAttribute("value", user_health);
+          input.setAttribute("name","update")
+          input.setAttribute("value", user_health + " " + potion);
+          form.appendChild(input);
+          document.getElementsByTagName("body")[0].appendChild(form);
+          form.submit();
+        }
+        function keydownHandler(e){
+            if (e.keyCode == 13) {
+                after2();
+            }
+        }
+
+        if (document.addEventListener) {
+            document.addEventListener('keydown', keydownHandler, false);
+        }
+        else if (document.attachEvent) {
+            document.attachEvent('onkeydown', keydownHandler);
+        }
+      }else{
+        var pkmn_move = data[data.length - (Math.floor(Math.random() * 4) + 1)];
+        document.getElementById("table").innerHTML = "<tr><td>" + data[data.length - 6] +
+        " used " + pkmn_move + "!</tr>";
+        document.getElementById("move").innerHTML = "Press enter to continue";
+        user_health -= Math.floor(Math.random() * 8);
+        if(user_health < 0){
+          user_health = 0;
+        }
+        user_health_elem.innerHTML = "Health:" + user_health;
+        function after3() {
+          if(user_health == 0){
+            document.getElementById("table").innerHTML = "<tr><td>You lost!</td></tr>"
+            function after4(){
+              var form = document.createElement("form");
+              form.setAttribute("method","POST");
+              form.setAttribute("action","/update")
+              var input = document.createElement("input");
+              input.setAttribute("type","number");
+              input.setAttribute("hidden","True");
+              input.setAttribute("name","health")
+              input.setAttribute("value", 0);
+              form.appendChild(input);
+              document.getElementsByTagName("body")[0].appendChild(form);
+              form.submit();
+            }
+            function keydownHandler(e){
+                if (e.keyCode == 13) {
+                    after4();
+                }
+            }
+
+            if (document.addEventListener) {
+                document.addEventListener('keydown', keydownHandler, false);
+            }
+            else if (document.attachEvent) {
+                document.attachEvent('onkeydown', keydownHandler);
+            }
+          }else{
+            table.innerHTML = temp;
+            document.getElementById("move").innerHTML = "";
+            mode = 0;
+            setup();
+          }
+        }
+        function keydownHandler(e){
+            if (e.keyCode == 13) {
+                after3();
+            }
+        }
+
+        if (document.addEventListener) {
+          document.addEventListener('keydown', keydownHandler, false);
+        }
+        else if (document.attachEvent) {
+            document.attachEvent('onkeydown', keydownHandler);
+        }
+      }
+    }
+    function keydownHandler(e){
+        if (e.keyCode == 13) {
+            after();
+        }
+    }
+
+    if (document.addEventListener) {
+        document.addEventListener('keydown', keydownHandler, false);
+    }
+    else if (document.attachEvent) {
+        document.attachEvent('onkeydown', keydownHandler);
+    }
+  }
+  else if(mode == 2){
+    if(has_potion){
+      user_health += 10;
+      user_health_elem.innerHTML = "Health:" + user_health;
+      has_potion = false;
+      var len = items.length;
+      var i;
+      for(i = 0; i < len; i++){
+        if(items[i]['name'] == "potion"){
+          items.splice(i);
+          break;
+        }
+      }
+    }
+    table.innerHTML = temp;
+    document.getElementById("move").innerHTML = "";
+    mode = 0;
+    setup();
+  }
+});
+tr.addEventListener("click", function(e) {
+  if(mode == 0){
+    if(items.length == 0){
+      document.getElementById("table").innerHTML = "<tr><td>You have no items!</td></tr>";
+      document.getElementById("move").innerHTML = "Press enter to continue";
+      function keydownHandler(e){
+          if (e.keyCode == 13) {
+            table.innerHTML = temp;
+            document.getElementById("move").innerHTML = "";
+            mode = 0;
+            setup();
+          }
+      }
+
+      if (document.addEventListener) {
+          document.addEventListener('keydown', keydownHandler, false);
+      }
+      else if (document.attachEvent) {
+          document.attachEvent('onkeydown', keydownHandler);
+      }
+    }else{
+      var len = items.length;
+      var i;
+      for(i = 0; i < len; i++){
+        if(items[i]['name'] == "potion"){
+          has_potion = true;
+        }
+        if(items[i]['name'] == "super_potion"){
+          has_super_potion = true;
+        }
+        if(items[i]['name'] == "ultra_potion"){
+          has_ultra_potion = true;
+        }
+      }
+      if(has_potion){
+        tl.innerHTML = "potion";
+      }else{
+        tl.innerHTML = "";
+      }
+      if(has_super_potion){
+        tr.innerHTML = "super potion";
+      }else{
+        tr.innerHTML = "";
+      }
+      if(has_ultra_potion){
+        bl.innerHTML = "ultra potion";
+      }else{
+        bl.innerHTML = "";
+      }
+      br.innerHTML = "back";
+      mode = 2;
+    }
+  }
+  else if(mode == 1){
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10] +
+    " used " + data[pokemon_num * 10 + 3] + "!</tr>";
+    document.getElementById("move").innerHTML = "Press enter to continue";
+    pkmn_health -= (data[pokemon_num * 10 + 4] + 25);
+    if(pkmn_health < 0){
+      pkmn_health = 0;
+    }
+    pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
+    function after(){
+      if(pkmn_health == 0){
+        var type = Math.floor(Math.random() * 3);
+
+        if(type == 0){
+          potion = "potion";
+        }
+        if(type == 1){
+          potion = "super potion";
+        }
+        if(type == 2){
+          potion = "ultra potion";
+        }
+        document.getElementById("table").innerHTML = "<tr><td>You won! Enemy dropped a " + potion + "!</td></tr>"
+        function after2(){
+          var form = document.createElement("form");
+          form.setAttribute("method","POST");
+          form.setAttribute("action","/updates")
+          var input = document.createElement("input");
+          input.setAttribute("type","text");
+          input.setAttribute("hidden","True");
+          input.setAttribute("name","update")
+          input.setAttribute("value", user_health + " " + potion);
           form.appendChild(input);
           document.getElementsByTagName("body")[0].appendChild(form);
           form.submit();
@@ -210,116 +420,24 @@ tl.addEventListener("click", function(e) {
         document.attachEvent('onkeydown', keydownHandler);
     }
   }
-});
-tr.addEventListener("click", function(e) {
-  if(mode == 1){
-    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10] +
-    " used " + data[pokemon_num * 10 + 3] + "!</tr>";
-    document.getElementById("move").innerHTML = "Press enter to continue";
-    pkmn_health -= (data[pokemon_num * 10 + 4] + 25);
-    if(pkmn_health < 0){
-      pkmn_health = 0;
-    }
-    pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
-    function after(){
-      if(pkmn_health == 0){
-        document.getElementById("table").innerHTML = "<tr><td>You won!</td></tr>"
-        function after2(){
-          var form = document.createElement("form");
-          form.setAttribute("method","POST");
-          form.setAttribute("action","/update_health")
-          var input = document.createElement("input");
-          input.setAttribute("type","number");
-          input.setAttribute("hidden","True");
-          input.setAttribute("name","health")
-          input.setAttribute("value", user_health);
-          form.appendChild(input);
-          document.getElementsByTagName("body")[0].appendChild(form);
-          form.submit();
-        }
-        function keydownHandler(e){
-            if (e.keyCode == 13) {
-                after2();
-            }
-        }
-
-        if (document.addEventListener) {
-            document.addEventListener('keydown', keydownHandler, false);
-        }
-        else if (document.attachEvent) {
-            document.attachEvent('onkeydown', keydownHandler);
-        }
-      }else{
-        var pkmn_move = data[data.length - (Math.floor(Math.random() * 4) + 1)];
-        document.getElementById("table").innerHTML = "<tr><td>" + data[data.length - 6] +
-        " used " + pkmn_move + "!</tr>";
-        document.getElementById("move").innerHTML = "Press enter to continue";
-        user_health -= Math.floor(Math.random() * 8);
-        if(user_health < 0){
-          user_health = 0;
-        }
-        user_health_elem.innerHTML = "Health:" + user_health;
-        function after3() {
-          if(user_health == 0){
-            document.getElementById("table").innerHTML = "<tr><td>You lost!</td></tr>"
-            function after4(){
-              var form = document.createElement("form");
-              form.setAttribute("method","POST");
-              form.setAttribute("action","/update_health")
-              var input = document.createElement("input");
-              input.setAttribute("type","number");
-              input.setAttribute("hidden","True");
-              input.setAttribute("name","health")
-              input.setAttribute("value", 0);
-              form.appendChild(input);
-              document.getElementsByTagName("body")[0].appendChild(form);
-              form.submit();
-            }
-            function keydownHandler(e){
-                if (e.keyCode == 13) {
-                    after4();
-                }
-            }
-
-            if (document.addEventListener) {
-                document.addEventListener('keydown', keydownHandler, false);
-            }
-            else if (document.attachEvent) {
-                document.attachEvent('onkeydown', keydownHandler);
-            }
-          }else{
-            table.innerHTML = temp;
-            document.getElementById("move").innerHTML = "";
-            mode = 0;
-            setup();
-          }
-        }
-        function keydownHandler(e){
-            if (e.keyCode == 13) {
-                after3();
-            }
-        }
-
-        if (document.addEventListener) {
-          document.addEventListener('keydown', keydownHandler, false);
-        }
-        else if (document.attachEvent) {
-            document.attachEvent('onkeydown', keydownHandler);
+  else if(mode == 2){
+    if(has_super_potion){
+      user_health += 20;
+      user_health_elem.innerHTML = "Health:" + user_health;
+      has_super_potion = false;
+      var len = items.length;
+      var i;
+      for(i = 0; i < len; i++){
+        if(items[i]['name'] == "super potion"){
+          items.splice(i);
+          break;
         }
       }
     }
-    function keydownHandler(e){
-        if (e.keyCode == 13) {
-            after();
-        }
-    }
-
-    if (document.addEventListener) {
-        document.addEventListener('keydown', keydownHandler, false);
-    }
-    else if (document.attachEvent) {
-        document.attachEvent('onkeydown', keydownHandler);
-    }
+    table.innerHTML = temp;
+    document.getElementById("move").innerHTML = "";
+    mode = 0;
+    setup()
   }
 });
 bl.addEventListener("click", function(e) {
@@ -353,16 +471,27 @@ bl.addEventListener("click", function(e) {
     pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
     function after(){
       if(pkmn_health == 0){
-        document.getElementById("table").innerHTML = "<tr><td>You won!</td></tr>"
+        var type = Math.floor(Math.random() * 3);
+
+        if(type == 0){
+          potion = "potion";
+        }
+        if(type == 1){
+          potion = "super potion";
+        }
+        if(type == 2){
+          potion = "ultra potion";
+        }
+        document.getElementById("table").innerHTML = "<tr><td>You won! Enemy dropped a " + potion + "!</td></tr>"
         function after2(){
           var form = document.createElement("form");
           form.setAttribute("method","POST");
-          form.setAttribute("action","/update_health")
+          form.setAttribute("action","/updates")
           var input = document.createElement("input");
-          input.setAttribute("type","number");
+          input.setAttribute("type","text");
           input.setAttribute("hidden","True");
-          input.setAttribute("name","health")
-          input.setAttribute("value", user_health);
+          input.setAttribute("name","update")
+          input.setAttribute("value", user_health + " " + potion);
           form.appendChild(input);
           document.getElementsByTagName("body")[0].appendChild(form);
           form.submit();
@@ -450,6 +579,25 @@ bl.addEventListener("click", function(e) {
     else if (document.attachEvent) {
         document.attachEvent('onkeydown', keydownHandler);
     }
+  }
+  else if(mode == 2){
+    if(has_ultra_potion){
+      user_health += 30;
+      user_health_elem.innerHTML = "Health:" + user_health;
+      has_ultra_potion = false;
+      var len = items.length;
+      var i;
+      for(i = 0; i < len; i++){
+        if(items[i]['name'] == "ultra potion"){
+          items.splice(i);
+          break;
+        }
+      }
+    }
+    table.innerHTML = temp;
+    document.getElementById("move").innerHTML = "";
+    mode = 0;
+    setup();
   }
 });
 br.addEventListener("click", function(e) {
@@ -467,16 +615,26 @@ br.addEventListener("click", function(e) {
     pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
     function after(){
       if(pkmn_health == 0){
-        document.getElementById("table").innerHTML = "<tr><td>You won!</td></tr>"
+        var type = Math.floor(Math.random() * 3);
+        if(type == 0){
+          potion = "potion";
+        }
+        if(type == 1){
+          potion = "super potion";
+        }
+        if(type == 2){
+          potion = "ultra potion";
+        }
+        document.getElementById("table").innerHTML = "<tr><td>You won! Enemy dropped a " + potion + "!</td></tr>"
         function after2(){
           var form = document.createElement("form");
           form.setAttribute("method","POST");
-          form.setAttribute("action","/update_health")
+          form.setAttribute("action","/updates")
           var input = document.createElement("input");
-          input.setAttribute("type","number");
+          input.setAttribute("type","text");
           input.setAttribute("hidden","True");
-          input.setAttribute("name","health")
-          input.setAttribute("value", user_health);
+          input.setAttribute("name","update")
+          input.setAttribute("value", user_health + " " + potion);
           form.appendChild(input);
           document.getElementsByTagName("body")[0].appendChild(form);
           form.submit();
@@ -564,6 +722,12 @@ br.addEventListener("click", function(e) {
     else if (document.attachEvent) {
         document.attachEvent('onkeydown', keydownHandler);
     }
+  }
+  else if(mode == 2){
+    table.innerHTML = temp;
+    document.getElementById("move").innerHTML = "";
+    mode = 0;
+    setup();
   }
 });
 }

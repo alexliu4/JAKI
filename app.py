@@ -93,8 +93,8 @@ def game():
         wild_moves = pokemon.get_random_moves(wild_pokemon)
         for move in wild_moves:
             data.append(move)
-        print(data)
-        return render_template('battle.html', user_pkmn = user_pokemon_url, wild_pkmn = wild_pokemon_url, data=data)
+        items = db.get_item_from_username(session['user'])
+        return render_template('battle.html', user_pkmn = user_pokemon_url, wild_pkmn = wild_pokemon_url, data=data, items=items)
     return redirect(url_for('login'))
 
 @app.route("/map")
@@ -125,6 +125,16 @@ def update_health():
         user_pkmn = db.get_user_active_pokemon(session['user'])[0]['id']
         health = request.form.get('health')
         db.update_health(user_pkmn, health)
+        return redirect(url_for('map'))
+    return redirect(url_for('login'))
+
+@app.route("/updates", methods=["POST"])
+def updates():
+    if 'user' in session:
+        user_pkmn = db.get_user_active_pokemon(session['user'])[0]['id']
+        update = request.form.get('update').split(" ")
+        db.update_health(user_pkmn, int(update[0]))
+        db.add_item(session['user'], update[1], "potion", 1)
         return redirect(url_for('map'))
     return redirect(url_for('login'))
 
