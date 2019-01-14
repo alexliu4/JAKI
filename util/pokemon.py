@@ -3,6 +3,7 @@ import urllib.request, json, os, random
 from util import db
 
 def get_pokemon_data(pokemon):
+    '''Gets data about a specific Pokemon from Poke API'''
     url_stub = "https://pokeapi.co/api/v2/pokemon/"
     url = url_stub + pokemon.lower()
     #print("---------------------------\n")
@@ -21,6 +22,7 @@ def get_pokemon_data(pokemon):
     return data
 
 def get_move_id(move):
+    '''Retrieves a move's id number given its name'''
     url_stub = "https://pokeapi.co/api/v2/move/"
     url = url_stub + move.lower()
     #print("---------------------------\n")
@@ -40,17 +42,17 @@ def get_move_id(move):
     return data["id"]
 
 def get_random_moves(pokemon):
+    '''Returns four random moves of a Pokemon'''
     data = get_pokemon_data(pokemon)
     unprocessed_moves = data["moves"]
     random.shuffle(unprocessed_moves)
     processed_moves = []
     for move in unprocessed_moves[:4]:
-        #print(move["move"]["name"])
-        processed_moves.append(get_move_id(move["move"]["name"]))
-    print(processed_moves)
+        processed_moves.append(move["move"]["name"])
     return processed_moves
 
 def get_pokemon_image(pokemon):
+    '''Returns the image link for a Pokemon'''
     data = get_pokemon_data(pokemon)
     image_url = data["sprites"]["front_default"]
     #print("---------------------------\n")
@@ -60,6 +62,7 @@ def get_pokemon_image(pokemon):
 
 
 def starter_images():
+    '''Returns a dictionary of starter Pokemon images'''
     dict = {}
     starter_pokemon = ["bulbasaur", "charmander", "squirtle"]
     for pokemon in starter_pokemon:
@@ -70,6 +73,7 @@ def starter_images():
     return dict
 
 def add_pokemon(username, pokemon):
+    '''Link a Pokemon to a user in the database'''
     data = get_pokemon_data(pokemon)
     poke_type = ""
     poke_max_health = 40
@@ -85,6 +89,3 @@ def add_pokemon(username, pokemon):
         hasroom = False
     description = ""
     db.add_Pokemon(username, pokemon, poke_type, poke_max_health, processed_moves, poke_level, has_room)
-
-
-get_random_moves("charmander")

@@ -8,6 +8,7 @@ Start Game
 {% endblock %}
 
 {% block content %}
+<br><br><br><br>
 <h1 class="text-center"> You chose {{starter_name}} </h1>
 <br>
 <div class="container">
@@ -18,9 +19,11 @@ Start Game
 	  <br>
 	  <h4>{{starter_name}}</h4>
       </div>
-      <button type="button" class="btn btn-primary btn-lg btn-block">
-	Start game!
-      </button>
+      <form action="/map">
+	<button type="submit" class="btn btn-primary btn-lg btn-block">
+	  Start game!
+	</button>
+      </form>
     </div>
   </div>
 </div>

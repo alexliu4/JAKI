@@ -81,9 +81,7 @@ def game():
         wild_pokemon = random.choice(list(session['pokemon']))
         wild_pokemon_url = pokemon.get_pokemon_image(wild_pokemon)
         data = []
-        damage = pokemon.get_pokemon_data(wild_pokemon)['stats'][5]['base_stat']
         for pokemons in  user_list:
-            data.append(damage)
             data.append(pokemons['name'])
             data.append(db.get_move_from_id(pokemons['move_1_id'])['name'])
             data.append(db.get_move_from_id(pokemons['move_1_id'])['damage'])
@@ -94,7 +92,14 @@ def game():
             data.append(db.get_move_from_id(pokemons['move_4_id'])['name'])
             data.append(db.get_move_from_id(pokemons['move_4_id'])['damage'])
             data.append(pokemons['health'])
-            return render_template('battle.html', user_pkmn = user_pokemon_url, wild_pkmn = wild_pokemon_url, data=data)
+        data.append(wild_pokemon)
+        damage = pokemon.get_pokemon_data(wild_pokemon)['stats'][5]['base_stat']
+        data.append(damage)
+        wild_moves = pokemon.get_random_moves(wild_pokemon)
+        for move in wild_moves:
+            data.append(move)
+        print(data)
+        return render_template('battle.html', user_pkmn = user_pokemon_url, wild_pkmn = wild_pokemon_url, data=data)
     return redirect(url_for('login'))
 
 @app.route("/map")
