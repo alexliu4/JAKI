@@ -208,3 +208,9 @@ imadB -- 2018-1-14 03:50
 1. Pokemon drop potions after battle
 2. User can use potions using bag during battle
 ==============================================================
+
+alexL -- 2018-1-14 12:54
+--------------------------------------------------------------
+1. Created the auth.CSS
+2. Finished the about page to have basic info about the game and the controls
+==============================================================
