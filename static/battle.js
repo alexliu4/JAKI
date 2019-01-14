@@ -171,7 +171,7 @@ tl.addEventListener("click", function(e) {
             function after4(){
               var form = document.createElement("form");
               form.setAttribute("method","POST");
-              form.setAttribute("action","/update")
+              form.setAttribute("action","/update_health")
               var input = document.createElement("input");
               input.setAttribute("type","number");
               input.setAttribute("hidden","True");
