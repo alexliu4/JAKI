@@ -1,845 +1,1249 @@
 {
     "2019-01-12": {
-        "weather-summary": "Rain next Saturday, with high temperatures rising to 50\u00b0F next Saturday.",
         "weather-hourly": [
             {
-                "time": 1547330400,
                 "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "31",
-                "temp-c": "-0",
+                "prob": "0",
                 "summary": "Mostly Cloudy",
-                "prob": "0"
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547330400
             },
             {
-                "time": 1547334000,
                 "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "31",
-                "temp-c": "-0",
+                "prob": "0",
                 "summary": "Mostly Cloudy",
-                "prob": "0"
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547334000
             },
             {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0.01",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "30",
                 "time": 1547337600,
-                "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "30",
-                "temp-c": "-0",
-                "summary": "Mostly Cloudy",
-                "prob": "0.01",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0.01",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "30",
                 "time": 1547341200,
-                "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "30",
-                "temp-c": "-0",
-                "summary": "Mostly Cloudy",
-                "prob": "0.01",
                 "type": "snow"
             },
             {
-                "time": 1547344800,
                 "icon": "/static/icons/cloudy.svg",
-                "temp-f": "30",
-                "temp-c": "-0",
+                "prob": "0",
                 "summary": "Overcast",
-                "prob": "0"
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547344800
             },
             {
-                "time": 1547348400,
                 "icon": "/static/icons/cloudy.svg",
-                "temp-f": "30",
-                "temp-c": "-0",
+                "prob": "0",
                 "summary": "Overcast",
-                "prob": "0"
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547348400
             },
             {
-                "time": 1547352000,
                 "icon": "/static/icons/cloudy.svg",
-                "temp-f": "30",
-                "temp-c": "-0",
+                "prob": "0",
                 "summary": "Overcast",
-                "prob": "0"
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547352000
             },
             {
-                "time": 1547355600,
                 "icon": "/static/icons/cloudy.svg",
-                "temp-f": "30",
+                "prob": "0",
+                "summary": "Overcast",
                 "temp-c": "-1",
-                "summary": "Overcast",
-                "prob": "0"
+                "temp-f": "30",
+                "time": 1547355600
             },
             {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.01",
+                "summary": "Overcast",
+                "temp-c": "-1",
+                "temp-f": "30",
                 "time": 1547359200,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "30",
-                "temp-c": "-1",
-                "summary": "Overcast",
-                "prob": "0.01",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.01",
+                "summary": "Overcast",
+                "temp-c": "-1",
+                "temp-f": "29",
                 "time": 1547362800,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "29",
-                "temp-c": "-1",
-                "summary": "Overcast",
-                "prob": "0.01",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.02",
+                "summary": "Overcast",
+                "temp-c": "-1",
+                "temp-f": "29",
                 "time": 1547366400,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "29",
-                "temp-c": "-1",
-                "summary": "Overcast",
-                "prob": "0.02",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0.02",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-1",
+                "temp-f": "28",
                 "time": 1547370000,
-                "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "28",
-                "temp-c": "-1",
-                "summary": "Mostly Cloudy",
-                "prob": "0.02",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0.02",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "28",
                 "time": 1547373600,
-                "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "28",
-                "temp-c": "-2",
-                "summary": "Mostly Cloudy",
-                "prob": "0.02",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0.03",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "27",
                 "time": 1547377200,
-                "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "27",
-                "temp-c": "-2",
-                "summary": "Mostly Cloudy",
-                "prob": "0.03",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.05",
+                "summary": "Overcast",
+                "temp-c": "-3",
+                "temp-f": "26",
                 "time": 1547380800,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "26",
-                "temp-c": "-3",
-                "summary": "Overcast",
-                "prob": "0.05",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.05",
+                "summary": "Overcast",
+                "temp-c": "-3",
+                "temp-f": "26",
                 "time": 1547384400,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "26",
-                "temp-c": "-3",
-                "summary": "Overcast",
-                "prob": "0.05",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.04",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "27",
                 "time": 1547388000,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "27",
-                "temp-c": "-2",
-                "summary": "Mostly Cloudy",
-                "prob": "0.04",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.04",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "27",
                 "time": 1547391600,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "27",
-                "temp-c": "-2",
-                "summary": "Mostly Cloudy",
-                "prob": "0.04",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.03",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-1",
+                "temp-f": "28",
                 "time": 1547395200,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "28",
-                "temp-c": "-1",
-                "summary": "Mostly Cloudy",
-                "prob": "0.03",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.03",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-1",
+                "temp-f": "29",
                 "time": 1547398800,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "29",
-                "temp-c": "-1",
-                "summary": "Mostly Cloudy",
-                "prob": "0.03",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.03",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "31",
                 "time": 1547402400,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "31",
-                "temp-c": "-0",
-                "summary": "Mostly Cloudy",
-                "prob": "0.03",
                 "type": "snow"
             },
             {
-                "time": 1547406000,
                 "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "32",
-                "temp-c": "0",
+                "prob": "0",
                 "summary": "Mostly Cloudy",
-                "prob": "0"
-            },
-            {
-                "time": 1547409600,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "32",
                 "temp-c": "0",
-                "summary": "Overcast",
-                "prob": "0"
+                "temp-f": "32",
+                "time": 1547406000
             },
             {
-                "time": 1547413200,
                 "icon": "/static/icons/cloudy.svg",
+                "prob": "0",
+                "summary": "Overcast",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547409600
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0",
+                "summary": "Overcast",
+                "temp-c": "-0",
                 "temp-f": "31",
-                "temp-c": "-0",
-                "summary": "Overcast",
-                "prob": "0"
+                "time": 1547413200
             },
             {
-                "time": 1547416800,
                 "icon": "/static/icons/cloudy.svg",
-                "temp-f": "30",
-                "temp-c": "-0",
+                "prob": "0",
                 "summary": "Overcast",
-                "prob": "0"
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547416800
             },
             {
-                "time": 1547420400,
                 "icon": "/static/icons/cloudy.svg",
-                "temp-f": "30",
-                "temp-c": "-0",
+                "prob": "0",
                 "summary": "Overcast",
-                "prob": "0"
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547420400
             },
             {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.03",
+                "summary": "Overcast",
+                "temp-c": "-1",
+                "temp-f": "29",
                 "time": 1547424000,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "29",
-                "temp-c": "-1",
-                "summary": "Overcast",
-                "prob": "0.03",
                 "type": "snow"
             },
             {
-                "time": 1547427600,
                 "icon": "/static/icons/cloudy.svg",
-                "temp-f": "29",
-                "temp-c": "-1",
+                "prob": "0",
                 "summary": "Overcast",
-                "prob": "0"
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547427600
             },
             {
-                "time": 1547431200,
                 "icon": "/static/icons/cloudy.svg",
-                "temp-f": "29",
-                "temp-c": "-1",
+                "prob": "0",
                 "summary": "Overcast",
-                "prob": "0"
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547431200
             },
             {
-                "time": 1547434800,
                 "icon": "/static/icons/cloudy.svg",
+                "prob": "0",
+                "summary": "Overcast",
+                "temp-c": "-1",
                 "temp-f": "28",
-                "temp-c": "-1",
-                "summary": "Overcast",
-                "prob": "0"
+                "time": 1547434800
             },
             {
-                "time": 1547438400,
                 "icon": "/static/icons/cloudy.svg",
+                "prob": "0",
+                "summary": "Overcast",
+                "temp-c": "-2",
                 "temp-f": "28",
-                "temp-c": "-2",
-                "summary": "Overcast",
-                "prob": "0"
+                "time": 1547438400
             },
             {
-                "time": 1547442000,
                 "icon": "/static/icons/cloudy.svg",
+                "prob": "0",
+                "summary": "Overcast",
+                "temp-c": "-2",
                 "temp-f": "27",
-                "temp-c": "-2",
-                "summary": "Overcast",
-                "prob": "0"
+                "time": 1547442000
             },
             {
-                "time": 1547445600,
                 "icon": "/static/icons/cloudy.svg",
+                "prob": "0",
+                "summary": "Overcast",
+                "temp-c": "-2",
                 "temp-f": "27",
-                "temp-c": "-2",
-                "summary": "Overcast",
-                "prob": "0"
+                "time": 1547445600
             },
             {
-                "time": 1547449200,
                 "icon": "/static/icons/cloudy.svg",
+                "prob": "0",
+                "summary": "Overcast",
+                "temp-c": "-2",
                 "temp-f": "27",
-                "temp-c": "-2",
-                "summary": "Overcast",
-                "prob": "0"
+                "time": 1547449200
             },
             {
-                "time": 1547452800,
                 "icon": "/static/icons/cloudy.svg",
+                "prob": "0",
+                "summary": "Overcast",
+                "temp-c": "-2",
                 "temp-f": "26",
-                "temp-c": "-2",
-                "summary": "Overcast",
-                "prob": "0"
+                "time": 1547452800
             },
             {
-                "time": 1547456400,
                 "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "26",
-                "temp-c": "-3",
+                "prob": "0",
                 "summary": "Mostly Cloudy",
-                "prob": "0"
+                "temp-c": "-3",
+                "temp-f": "26",
+                "time": 1547456400
             },
             {
-                "time": 1547460000,
                 "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-3",
                 "temp-f": "25",
-                "temp-c": "-3",
-                "summary": "Mostly Cloudy",
-                "prob": "0"
+                "time": 1547460000
             },
             {
-                "time": 1547463600,
                 "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "24",
-                "temp-c": "-4",
+                "prob": "0",
                 "summary": "Mostly Cloudy",
-                "prob": "0"
+                "temp-c": "-4",
+                "temp-f": "24",
+                "time": 1547463600
             },
             {
-                "time": 1547467200,
                 "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "24",
-                "temp-c": "-4",
+                "prob": "0",
                 "summary": "Mostly Cloudy",
-                "prob": "0"
+                "temp-c": "-4",
+                "temp-f": "24",
+                "time": 1547467200
             },
             {
-                "time": 1547470800,
                 "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "24",
-                "temp-c": "-4",
+                "prob": "0",
                 "summary": "Partly Cloudy",
-                "prob": "0"
+                "temp-c": "-4",
+                "temp-f": "24",
+                "time": 1547470800
             },
             {
-                "time": 1547474400,
                 "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-3",
                 "temp-f": "25",
-                "temp-c": "-3",
-                "summary": "Partly Cloudy",
-                "prob": "0"
+                "time": 1547474400
             },
             {
-                "time": 1547478000,
                 "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-3",
                 "temp-f": "26",
-                "temp-c": "-3",
-                "summary": "Partly Cloudy",
-                "prob": "0"
+                "time": 1547478000
             },
             {
-                "time": 1547481600,
                 "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "27",
+                "prob": "0",
+                "summary": "Partly Cloudy",
                 "temp-c": "-2",
-                "summary": "Partly Cloudy",
-                "prob": "0"
+                "temp-f": "27",
+                "time": 1547481600
             },
             {
-                "time": 1547485200,
                 "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "29",
+                "prob": "0",
+                "summary": "Partly Cloudy",
                 "temp-c": "-1",
-                "summary": "Partly Cloudy",
-                "prob": "0"
+                "temp-f": "29",
+                "time": 1547485200
             },
             {
-                "time": 1547488800,
                 "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "31",
+                "prob": "0",
+                "summary": "Partly Cloudy",
                 "temp-c": "-0",
-                "summary": "Partly Cloudy",
-                "prob": "0"
+                "temp-f": "31",
+                "time": 1547488800
             },
             {
-                "time": 1547492400,
                 "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "33",
-                "temp-c": "0",
+                "prob": "0",
                 "summary": "Partly Cloudy",
-                "prob": "0"
-            },
-            {
-                "time": 1547496000,
-                "icon": "/static/icons/day.svg",
-                "temp-f": "33",
-                "temp-c": "1",
-                "summary": "Clear",
-                "prob": "0"
-            },
-            {
-                "time": 1547499600,
-                "icon": "/static/icons/day.svg",
-                "temp-f": "33",
-                "temp-c": "1",
-                "summary": "Clear",
-                "prob": "0"
-            },
-            {
-                "time": 1547503200,
-                "icon": "/static/icons/night.svg",
-                "temp-f": "33",
                 "temp-c": "0",
+                "temp-f": "33",
+                "time": 1547492400
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
                 "summary": "Clear",
-                "prob": "0"
+                "temp-c": "1",
+                "temp-f": "33",
+                "time": 1547496000
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "1",
+                "temp-f": "33",
+                "time": 1547499600
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "0",
+                "temp-f": "33",
+                "time": 1547503200
             }
         ],
-        "weather-icon": "/static/icons/cloudy-night-2.svg"
+        "weather-icon": "/static/icons/cloudy-night-2.svg",
+        "weather-summary": "Rain next Saturday, with high temperatures rising to 50\u00b0F next Saturday."
     },
     "2019-01-13": {
-        "weather-summary": "Mixed precipitation throughout the week, with high temperatures rising to 50\u00b0F on Saturday.",
         "weather-hourly": [
             {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.01",
+                "summary": "Overcast",
+                "temp-c": "-1",
+                "temp-f": "28",
                 "time": 1547355600,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "28",
-                "temp-c": "-1",
-                "summary": "Overcast",
-                "prob": "0.01",
                 "type": "snow"
             },
             {
-                "time": 1547359200,
                 "icon": "/static/icons/snowy-1.svg",
-                "temp-f": "28",
-                "temp-c": "-1",
-                "summary": "Light Snow",
                 "prob": "1",
+                "summary": "Light Snow",
+                "temp-c": "-1",
+                "temp-f": "28",
+                "time": 1547359200,
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.04",
+                "summary": "Overcast",
+                "temp-c": "-1",
+                "temp-f": "28",
                 "time": 1547362800,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "28",
-                "temp-c": "-1",
-                "summary": "Overcast",
-                "prob": "0.04",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.02",
+                "summary": "Overcast",
+                "temp-c": "-2",
+                "temp-f": "28",
                 "time": 1547366400,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "28",
-                "temp-c": "-2",
-                "summary": "Overcast",
-                "prob": "0.02",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0.02",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "27",
                 "time": 1547370000,
-                "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "27",
-                "temp-c": "-2",
-                "summary": "Mostly Cloudy",
-                "prob": "0.02",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0.02",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "26",
                 "time": 1547373600,
-                "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "26",
-                "temp-c": "-2",
-                "summary": "Mostly Cloudy",
-                "prob": "0.02",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0.03",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-3",
+                "temp-f": "25",
                 "time": 1547377200,
-                "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "25",
-                "temp-c": "-3",
-                "summary": "Mostly Cloudy",
-                "prob": "0.03",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0.04",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-3",
+                "temp-f": "25",
                 "time": 1547380800,
-                "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "25",
-                "temp-c": "-3",
-                "summary": "Mostly Cloudy",
-                "prob": "0.04",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.05",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-3",
+                "temp-f": "25",
                 "time": 1547384400,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "25",
-                "temp-c": "-3",
-                "summary": "Mostly Cloudy",
-                "prob": "0.05",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.03",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "26",
                 "time": 1547388000,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "26",
-                "temp-c": "-2",
-                "summary": "Mostly Cloudy",
-                "prob": "0.03",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.04",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "27",
                 "time": 1547391600,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "27",
-                "temp-c": "-2",
-                "summary": "Mostly Cloudy",
-                "prob": "0.04",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.05",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "28",
                 "time": 1547395200,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "28",
-                "temp-c": "-2",
-                "summary": "Mostly Cloudy",
-                "prob": "0.05",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.05",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-1",
+                "temp-f": "29",
                 "time": 1547398800,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "29",
-                "temp-c": "-1",
-                "summary": "Mostly Cloudy",
-                "prob": "0.05",
                 "type": "snow"
             },
             {
-                "time": 1547402400,
                 "icon": "/static/icons/cloudy.svg",
-                "temp-f": "30",
-                "temp-c": "-0",
+                "prob": "0",
                 "summary": "Overcast",
-                "prob": "0"
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547402400
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.07",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "30",
                 "time": 1547406000,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "30",
-                "temp-c": "-0",
-                "summary": "Mostly Cloudy",
-                "prob": "0.07",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.07",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "31",
                 "time": 1547409600,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "31",
-                "temp-c": "-0",
-                "summary": "Mostly Cloudy",
-                "prob": "0.07",
                 "type": "snow"
             },
             {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.07",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "30",
                 "time": 1547413200,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "30",
-                "temp-c": "-0",
-                "summary": "Mostly Cloudy",
-                "prob": "0.07",
                 "type": "snow"
             },
             {
-                "time": 1547416800,
                 "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "30",
-                "temp-c": "-1",
-                "summary": "Mostly Cloudy",
                 "prob": "0.05",
-                "type": "snow"
-            },
-            {
-                "time": 1547420400,
-                "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "29",
-                "temp-c": "-1",
                 "summary": "Mostly Cloudy",
-                "prob": "0.04",
-                "type": "snow"
-            },
-            {
-                "time": 1547424000,
-                "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "29",
                 "temp-c": "-1",
-                "summary": "Mostly Cloudy",
-                "prob": "0.03",
-                "type": "snow"
-            },
-            {
-                "time": 1547427600,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "29",
-                "temp-c": "-1",
-                "summary": "Overcast",
-                "prob": "0.03",
-                "type": "snow"
-            },
-            {
-                "time": 1547431200,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "28",
-                "temp-c": "-1",
-                "summary": "Overcast",
-                "prob": "0.03",
-                "type": "snow"
-            },
-            {
-                "time": 1547434800,
-                "icon": "/static/icons/snowy-1.svg",
-                "temp-f": "28",
-                "temp-c": "-2",
-                "summary": "Possible Light Snow",
-                "prob": "0.03",
-                "type": "snow"
-            },
-            {
-                "time": 1547438400,
-                "icon": "/static/icons/snowy-1.svg",
-                "temp-f": "27",
-                "temp-c": "-2",
-                "summary": "Possible Light Snow",
-                "prob": "0.03",
-                "type": "snow"
-            },
-            {
-                "time": 1547442000,
-                "icon": "/static/icons/snowy-1.svg",
-                "temp-f": "26",
-                "temp-c": "-2",
-                "summary": "Possible Light Snow",
-                "prob": "0.03",
-                "type": "snow"
-            },
-            {
-                "time": 1547445600,
-                "icon": "/static/icons/snowy-1.svg",
-                "temp-f": "26",
-                "temp-c": "-3",
-                "summary": "Possible Light Snow",
-                "prob": "0.03",
-                "type": "snow"
-            },
-            {
-                "time": 1547449200,
-                "icon": "/static/icons/snowy-1.svg",
-                "temp-f": "26",
-                "temp-c": "-3",
-                "summary": "Possible Light Snow",
-                "prob": "0.04",
-                "type": "snow"
-            },
-            {
-                "time": 1547452800,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "25",
-                "temp-c": "-3",
-                "summary": "Overcast",
-                "prob": "0.03",
-                "type": "snow"
-            },
-            {
-                "time": 1547456400,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "25",
-                "temp-c": "-3",
-                "summary": "Overcast",
-                "prob": "0.02",
-                "type": "snow"
-            },
-            {
-                "time": 1547460000,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "24",
-                "temp-c": "-4",
-                "summary": "Overcast",
-                "prob": "0.01",
-                "type": "snow"
-            },
-            {
-                "time": 1547463600,
-                "icon": "/static/icons/cloudy.svg",
-                "temp-f": "23",
-                "temp-c": "-4",
-                "summary": "Overcast",
-                "prob": "0.01",
-                "type": "snow"
-            },
-            {
-                "time": 1547467200,
-                "icon": "/static/icons/cloudy-night-2.svg",
-                "temp-f": "23",
-                "temp-c": "-4",
-                "summary": "Mostly Cloudy",
-                "prob": "0"
-            },
-            {
-                "time": 1547470800,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "23",
-                "temp-c": "-4",
-                "summary": "Mostly Cloudy",
-                "prob": "0"
-            },
-            {
-                "time": 1547474400,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "24",
-                "temp-c": "-4",
-                "summary": "Partly Cloudy",
-                "prob": "0"
-            },
-            {
-                "time": 1547478000,
-                "icon": "/static/icons/cloudy-day-2.svg",
-                "temp-f": "25",
-                "temp-c": "-3",
-                "summary": "Partly Cloudy",
-                "prob": "0"
-            },
-            {
-                "time": 1547481600,
-                "icon": "/static/icons/day.svg",
-                "temp-f": "27",
-                "temp-c": "-2",
-                "summary": "Clear",
-                "prob": "0"
-            },
-            {
-                "time": 1547485200,
-                "icon": "/static/icons/day.svg",
-                "temp-f": "29",
-                "temp-c": "-1",
-                "summary": "Clear",
-                "prob": "0"
-            },
-            {
-                "time": 1547488800,
-                "icon": "/static/icons/day.svg",
-                "temp-f": "31",
-                "temp-c": "-0",
-                "summary": "Clear",
-                "prob": "0"
-            },
-            {
-                "time": 1547492400,
-                "icon": "/static/icons/day.svg",
-                "temp-f": "33",
-                "temp-c": "0",
-                "summary": "Clear",
-                "prob": "0"
-            },
-            {
-                "time": 1547496000,
-                "icon": "/static/icons/day.svg",
-                "temp-f": "34",
-                "temp-c": "1",
-                "summary": "Clear",
-                "prob": "0"
-            },
-            {
-                "time": 1547499600,
-                "icon": "/static/icons/day.svg",
-                "temp-f": "33",
-                "temp-c": "1",
-                "summary": "Clear",
-                "prob": "0.02",
-                "type": "snow"
-            },
-            {
-                "time": 1547503200,
-                "icon": "/static/icons/night.svg",
-                "temp-f": "32",
-                "temp-c": "0",
-                "summary": "Clear",
-                "prob": "0"
-            },
-            {
-                "time": 1547506800,
-                "icon": "/static/icons/night.svg",
-                "temp-f": "31",
-                "temp-c": "-0",
-                "summary": "Clear",
-                "prob": "0"
-            },
-            {
-                "time": 1547510400,
-                "icon": "/static/icons/night.svg",
                 "temp-f": "30",
-                "temp-c": "-0",
-                "summary": "Clear",
-                "prob": "0"
+                "time": 1547416800,
+                "type": "snow"
             },
             {
-                "time": 1547514000,
-                "icon": "/static/icons/night.svg",
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0.04",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-1",
                 "temp-f": "29",
+                "time": 1547420400,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0.03",
+                "summary": "Mostly Cloudy",
                 "temp-c": "-1",
-                "summary": "Clear",
-                "prob": "0"
+                "temp-f": "29",
+                "time": 1547424000,
+                "type": "snow"
             },
             {
-                "time": 1547517600,
-                "icon": "/static/icons/night.svg",
-                "temp-f": "28",
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.03",
+                "summary": "Overcast",
                 "temp-c": "-1",
-                "summary": "Clear",
-                "prob": "0"
+                "temp-f": "29",
+                "time": 1547427600,
+                "type": "snow"
             },
             {
-                "time": 1547521200,
-                "icon": "/static/icons/night.svg",
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.03",
+                "summary": "Overcast",
+                "temp-c": "-1",
                 "temp-f": "28",
-                "temp-c": "-2",
-                "summary": "Clear",
-                "prob": "0"
+                "time": 1547431200,
+                "type": "snow"
             },
             {
-                "time": 1547524800,
-                "icon": "/static/icons/night.svg",
-                "temp-f": "27",
+                "icon": "/static/icons/snowy-1.svg",
+                "prob": "0.03",
+                "summary": "Possible Light Snow",
                 "temp-c": "-2",
-                "summary": "Clear",
-                "prob": "0"
+                "temp-f": "28",
+                "time": 1547434800,
+                "type": "snow"
             },
             {
-                "time": 1547528400,
-                "icon": "/static/icons/night.svg",
-                "temp-f": "27",
+                "icon": "/static/icons/snowy-1.svg",
+                "prob": "0.03",
+                "summary": "Possible Light Snow",
                 "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547438400,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/snowy-1.svg",
+                "prob": "0.03",
+                "summary": "Possible Light Snow",
+                "temp-c": "-2",
+                "temp-f": "26",
+                "time": 1547442000,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/snowy-1.svg",
+                "prob": "0.03",
+                "summary": "Possible Light Snow",
+                "temp-c": "-3",
+                "temp-f": "26",
+                "time": 1547445600,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/snowy-1.svg",
+                "prob": "0.04",
+                "summary": "Possible Light Snow",
+                "temp-c": "-3",
+                "temp-f": "26",
+                "time": 1547449200,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.03",
+                "summary": "Overcast",
+                "temp-c": "-3",
+                "temp-f": "25",
+                "time": 1547452800,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.02",
+                "summary": "Overcast",
+                "temp-c": "-3",
+                "temp-f": "25",
+                "time": 1547456400,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.01",
+                "summary": "Overcast",
+                "temp-c": "-4",
+                "temp-f": "24",
+                "time": 1547460000,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.01",
+                "summary": "Overcast",
+                "temp-c": "-4",
+                "temp-f": "23",
+                "time": 1547463600,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-4",
+                "temp-f": "23",
+                "time": 1547467200
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-4",
+                "temp-f": "23",
+                "time": 1547470800
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-4",
+                "temp-f": "24",
+                "time": 1547474400
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-3",
+                "temp-f": "25",
+                "time": 1547478000
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
                 "summary": "Clear",
-                "prob": "0"
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547481600
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547485200
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547488800
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "0",
+                "temp-f": "33",
+                "time": 1547492400
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "1",
+                "temp-f": "34",
+                "time": 1547496000
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0.02",
+                "summary": "Clear",
+                "temp-c": "1",
+                "temp-f": "33",
+                "time": 1547499600,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547503200
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547506800
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547510400
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547514000
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "28",
+                "time": 1547517600
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-2",
+                "temp-f": "28",
+                "time": 1547521200
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547524800
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547528400
             }
         ],
-        "weather-icon": "/static/icons/snowy-1.svg"
+        "weather-icon": "/static/icons/snowy-1.svg",
+        "weather-summary": "Mixed precipitation throughout the week, with high temperatures rising to 50\u00b0F on Saturday."
+    },
+    "2019-01-14": {
+        "weather-hourly": [
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-4",
+                "temp-f": "23",
+                "time": 1547478000
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.01",
+                "summary": "Partly Cloudy",
+                "temp-c": "-3",
+                "temp-f": "26",
+                "time": 1547481600,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0.01",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547485200,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547488800
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0.01",
+                "summary": "Clear",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547492400,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0.01",
+                "summary": "Clear",
+                "temp-c": "0",
+                "temp-f": "33",
+                "time": 1547496000,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547499600
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0.01",
+                "summary": "Clear",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547503200,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0.01",
+                "summary": "Clear",
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547506800,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "30",
+                "time": 1547510400
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547514000
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547517600
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547521200
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "28",
+                "time": 1547524800
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547528400
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547532000
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547535600
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547539200
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-3",
+                "temp-f": "26",
+                "time": 1547542800
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-3",
+                "temp-f": "25",
+                "time": 1547546400
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-4",
+                "temp-f": "24",
+                "time": 1547550000
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-3",
+                "temp-f": "24",
+                "time": 1547553600
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-3",
+                "temp-f": "25",
+                "time": 1547557200
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547560800
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547564400
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547568000
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "1",
+                "temp-f": "33",
+                "time": 1547571600
+            },
+            {
+                "icon": "/static/icons/day.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "1",
+                "temp-f": "35",
+                "time": 1547575200
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "2",
+                "temp-f": "36",
+                "time": 1547578800
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "2",
+                "temp-f": "36",
+                "time": 1547582400
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "summary": "Mostly Cloudy",
+                "temp-c": "1",
+                "temp-f": "35",
+                "time": 1547586000
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "summary": "Mostly Cloudy",
+                "temp-c": "1",
+                "temp-f": "34",
+                "time": 1547589600
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547593200
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547596800
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547600400
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "30",
+                "time": 1547604000
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547607600
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547611200
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547614800
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "28",
+                "time": 1547618400
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-1",
+                "temp-f": "28",
+                "time": 1547622000
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "summary": "Clear",
+                "temp-c": "-2",
+                "temp-f": "28",
+                "time": 1547625600
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547629200
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547632800
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "26",
+                "time": 1547636400
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547640000
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-1",
+                "temp-f": "28",
+                "time": 1547643600
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-1",
+                "temp-f": "30",
+                "time": 1547647200
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "summary": "Partly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547650800
+            }
+        ],
+        "weather-icon": "/static/icons/cloudy-day-2.svg",
+        "weather-summary": "Mixed precipitation on Thursday through Sunday, with high temperatures peaking at 45\u00b0F on Sunday."
     }
 }

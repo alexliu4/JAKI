@@ -97,6 +97,12 @@ def game():
         return render_template('battle.html', user_pkmn = user_pokemon_url, wild_pkmn = wild_pokemon_url, data=data, items=items)
     return redirect(url_for('login'))
 
+@app.route("/about")
+def about():
+    return render_template('about.html')
+
+
+
 @app.route("/map")
 def map():
     if 'user' in session:
@@ -106,7 +112,7 @@ def map():
         user_info = db.get_user_from_username(session['user'])
         xcor = user_info["xcor"]
         ycor = user_info["ycor"]
-        return render_template("map.html",cookie = data, x=xcor, y=ycor)
+        return render_template("map.html", cookie = data, x=xcor, y=ycor)
     return redirect(url_for('login'))
 
 @app.route("/toheal", methods=["POST"])

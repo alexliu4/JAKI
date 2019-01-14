@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+{% endblock %}
+
+{% block content %}
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="jumbotron">
+  <h1> About Pokemon Dungeon </h1>
+  <hr class="divider">
+  <br>
+
+  <p> _Pokemon Dungeon_ is a gaming website that is, as the name implies it, the classic pokemon game with the weather affecting the wild pokemon that appear. There will also be (hopefully) item drops, pokemon trainers to battle, a gym leader, and even a tomagatchi mode. The tomagatchi mode will allow users to take another path to raising the level of their pokemon by taking care of them and feeding them. The site uses each user's IP address (after given permission, of course) to find the weather data of their location using the IP API and Darksky API. The Ipify API is used to procure the client's IP address. </p>
+
+  <hr class="divider">
+
+  <h3> Basic Controls </h3>
+  <p> Use the WASD keys as the movement keys! </p>
+  <img src ="https://www.chargrilled.co.uk/t-shirts/prodimages/staticimages/square/m0wasdlearningtowalk_m_White.jpg" class="center" height="200" width="200">
+  <br>
+  <p> Move around and walk in grass to encounter pokemon. Once you encounter a pokemon, you can choose to battle, use a item, capture the pokemon, or run
+    <br>
+    <b>MAKE SURE YOU RUN IF THE OPPOSING POKEMON IS TOO STRONG!!!</b>
+    <br>
+    Tip: Lower the opposing opponent's health for the catch rate to be higher
+    Tip: If your health is going low either: use a potion or head to the pokecenter
+    <br>
+    To enter the pokecenter simply walk through the center of the doorway and you will be brought inside to heal your pokemon.
+  </p>
+
+  <hr class="divider">
+
+  <h3> Extra Features </h3>
+  <p> Click the weather button on the navbar. It will show you your physical location and the basic weather at your location. Based on your precipitation--
+    rain or snow-- the chances of rain and ice pokemon will be increased 3 fold. </p>
+
+  </div>
+
+
+
+  <!-- d['type'] = hour['precipType'] -->
+
+<br>
+
+<hr class="divider">
+
+<footer class="footer">
+    <div class="container center">
+        <span class="text-muted">Pokemon Dungeon© <br> Alex Liu, Karen Li, Imad Belkebir, Jason Lin</span>
+    </div>
+</footer>
+{% endblock %}
