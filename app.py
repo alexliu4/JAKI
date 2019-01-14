@@ -119,6 +119,15 @@ def toheal():
         return redirect(url_for('heal'))
     return redirect(url_for('login'))
 
+@app.route("/update_health", methods=["POST"])
+def update_health():
+    if 'user' in session:
+        user_pkmn = db.get_user_active_pokemon(session['user'])[0]['id']
+        health = request.form.get('health')
+        db.update_health(user_pkmn, health)
+        return redirect(url_for('map'))
+    return redirect(url_for('login'))
+
 @app.route("/tobattle", methods=["POST"])
 def tobattle():
     if 'user' in session:
