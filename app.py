@@ -13,6 +13,7 @@ from util import pokemon, API, db
 
 app = Flask(__name__)
 app.secret_key = os.urandom(32)
+
 # weather icons
 ICONS = dict()
 ICONS['clear-day'] = '/static/icons/day.svg'
@@ -76,7 +77,7 @@ def game():
         wild_pokemon = random.choice(list(session['pokemon']))
         wild_pokemon_url = pokemon.get_pokemon_image(wild_pokemon)
         data = []
-        for pokemons in  user_list:
+        for pokemons in user_list:
             data.append(pokemons['name'])
             data.append(db.get_move_from_id(pokemons['move_1_id'])['name'])
             data.append(db.get_move_from_id(pokemons['move_1_id'])['damage'])
