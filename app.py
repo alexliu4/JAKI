@@ -117,7 +117,10 @@ def toheal():
 def heal():
     if 'user' in session:
         pokemon_list = db.get_user_active_pokemon(session['user'])
-        return render_template("pokecenter.html",list = pokemon_list)
+        for a_pokemon in pokemon_list:
+            a_pokemon["image"] = pokemon.get_pokemon_image(a_pokemon['name'])
+            a_pokemon["percent"] = math.floor(a_pokemon['health']/a_pokemon['max_health'])
+        return render_template("heal.html",list = pokemon_list)
     return redirect(url_for('login'))
 
 @app.route('/')

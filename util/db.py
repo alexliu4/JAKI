@@ -73,6 +73,15 @@ def get_user_id_from_username(username):
     db.close()
     return info[0]
 
+def modify_user_coordinates(x,y,username):
+    '''saves the users coordinates'''
+    db = sqlite3.connect(DB)
+    c = db.cursor()
+    command = "UPDATE users SET xcor=" + x + " ycor=" + y +" WHERE username='" + user + "';"
+    c.execute(command, (x,y,username))
+    db.commit()
+    db.close()
+
 # ========================== POKEMON STUFF ================================
 
 def pokemon_dict(list):
@@ -91,7 +100,8 @@ def pokemon_dict(list):
         pokedict["exp"] = list[10]
         pokedict["level"] = list[11]
         pokedict["player_has"] = list[12]
-        pokedict["description"] = list[13]
+        pokedict["attack"] = list[13]
+        pokedict["defense"] = list[14]
     return pokedict
 
 def add_Pokemon(username, poke_name, poke_type, poke_max_health, poke_move_list, poke_level, has_room):
@@ -279,7 +289,7 @@ db = sqlite3.connect(DB)
 c = db.cursor()
 commands = ["CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password_hash TEXT, question TEXT, answer TEXT, xcor INTEGER, ycor INTEGER)"]
 commands.append("CREATE TABLE IF NOT EXISTS moves(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, uses INTEGER, max_uses INTEGER, damage INTEGER)")
-commands.append("CREATE TABLE IF NOT EXISTS user_pokemons(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, type TEXT, user_id INTEGER, health INTEGER, max_health INTEGER, move_1_id INTEGER, move_2_id INTEGER, move_3_id INTEGER, move_4_id INTEGER, exp INTEGER, level INTEGER, player_has BOOLEAN, attack TEXT, defense TEXT)")
+commands.append("CREATE TABLE IF NOT EXISTS user_pokemons(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, type TEXT, user_id INTEGER, health INTEGER, max_health INTEGER, move_1_id INTEGER, move_2_id INTEGER, move_3_id INTEGER, move_4_id INTEGER, exp INTEGER, level INTEGER, player_has BOOLEAN, attack INTEGER, defense INTEGER)")
 commands.append("CREATE TABLE IF NOT EXISTS items(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, type TEXT, quantity INTEGER, user_id INTEGER)")
 for command in commands:
     c.execute(command)

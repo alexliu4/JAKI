@@ -254,7 +254,7 @@ var move = () => {
 
 
 var isUnwalkable = (row,col) => {
-    var bad = [1,2,3,4,5,6,8,24,25,26];
+    var bad = [1,2,3,4,5,6,8,24,25];
     for (var i=0; i<10; i++){
         if (map[row][col] === bad[i]){
             return true;
@@ -303,7 +303,7 @@ window.setInterval(() => {
 
 window.setInterval(() => {
 
-    if (stop_moving == 1){
+    if (stop_moving >= 1){
         return;
     }
     var change_row = document.getElementById("0,0").style.top.toString();
@@ -314,6 +314,21 @@ window.setInterval(() => {
         grass_steps++;
         console.log("grass steps :" +grass_steps);
         battle_encounter();
+    }
+    if (map[grass_row][grass_col] === 26){
+        stop_moving = 2;
+        var form = document.createElement("form");
+        form.setAttribute("method","POST");
+        form.setAttribute("action","/toheal")
+        var input = document.createElement("input");
+        input.setAttribute("type","text");
+        input.setAttribute("hidden","True");
+        grass_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
+        grass_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
+        input.setAttribute("value",grass_row + " " + grass_col);
+        form.appendChild(input);
+        body.appendChild(form);
+        form.submit();
     }
     if (down - up > 0){//up
         change_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))-37) / 75);
