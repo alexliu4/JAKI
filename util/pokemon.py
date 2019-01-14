@@ -43,13 +43,13 @@ def get_random_moves(pokemon):
     data = get_pokemon_data(pokemon)
     unprocessed_moves = data["moves"]
     random.shuffle(unprocessed_moves)
-    processed_moves = [] 
+    processed_moves = []
     for move in unprocessed_moves[:4]:
         #print(move["move"]["name"])
         processed_moves.append(get_move_id(move["move"]["name"]))
     print(processed_moves)
     return processed_moves
-    
+
 def get_pokemon_image(pokemon):
     data = get_pokemon_data(pokemon)
     image_url = data["sprites"]["front_default"]
@@ -72,22 +72,19 @@ def starter_images():
 def add_pokemon(username, pokemon):
     data = get_pokemon_data(pokemon)
     poke_type = ""
-    poke_max_health = 0
+    poke_max_health = 40
     unprocessed_moves = data["moves"]
     #print(unprocessed_moves)
-    processed_moves = [] 
+    processed_moves = []
     for move in unprocessed_moves[:4]:
-        #print(move["move"]["name"])
-        processed_moves.append(get_move_id(move["move"]["name"]))
-    print(processed_moves)
-    poke_level = 1        
+        processed_moves.append(db.add_moves(move["move"]["name"],35,35,10))
+    poke_level = 1
     has_room = True
     #print(db.get_user_active_pokemon(username))
     if len(db.get_user_active_pokemon(username)) >= 6:
         hasroom = False
     description = ""
-    db.add_Pokemon(username, pokemon, poke_type, poke_max_health, processed_moves, poke_level, has_room, description)
+    db.add_Pokemon(username, pokemon, poke_type, poke_max_health, processed_moves, poke_level, has_room)
 
 
 get_random_moves("charmander")
-

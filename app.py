@@ -106,9 +106,34 @@ def map():
         return render_template("map.html",cookie = data)
     return redirect(url_for('login'))
 
+@app.route("/toheal", methods=["POST"])
+def toheal():
+    if 'user' in session:
+        print(request.form)
+        return redirect(url_for('heal'))
+    return redirect(url_for('login'))
+
+@app.route("/heal")
+def heal():
+    if 'user' in session:
+        pokemon_list = db.get_user_active_pokemon(session['user'])
+        return render_template("pokecenter.html",list = pokemon_list)
+    return redirect(url_for('login'))
+
 @app.route('/')
 def home():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+    current_id = db.get_user_id_from_username(session['user'])
+    all_pokemon = db.get_all_pokemon();
 
+    has_pokemon = False
+    for pokemon in all_pokemon:
+        if pokemon['user_id'] == current_id:
+            has_pokemon = True
+
+    if not has_pokemon:
+        return redirect(url_for("starter_pokemon"))
     # read json file containing the api keys
     # with open('data/API_Keys/keys.json') as json_file:
     #    json_data = json.loads(json_file.read())

@@ -25,7 +25,14 @@ pathupright = 21
 pathrightbottom = 22
 pathbottomleft = 23
 floor = 0
+
+
+pokecenter =24
+pokeblock = 25
+pokeenter = 26
 */
+
+// A 2D array of the map.
 var map = [
     [3, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 4],
     [5, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 7, 7, 7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
@@ -40,11 +47,11 @@ var map = [
     [5, 0, 0, 0, 0, 0, 0, 0, 0,18,19,14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
     [5, 0, 0, 0, 0, 0, 0, 0, 0,18,19,14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
     [5, 0, 0, 0, 0, 0, 0, 0, 0,18,19,14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
-    [5, 0, 0, 0, 0, 0, 0, 0, 0,18,19,14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
-    [5, 0, 0, 0, 0, 0, 0, 0, 0,17,16,15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
-    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
-    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
-    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0,18,19,14, 0, 0, 0, 0, 0, 0, 0, 0,25,24,25,25,25, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0,17,16,15, 0, 0, 0, 0, 0, 0, 0, 0,25, 0, 0, 0,25, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,25, 0, 0, 0,25, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,25, 0, 0, 0,25, 0, 0, 0, 0, 5],
+    [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,25,25,26,25,25, 0, 0, 0, 0, 5],
     [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
     [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
     [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
@@ -73,6 +80,14 @@ body.setAttribute("style","overflow:hidden;background:#70C59C");
 for (i = 0; i<map.length; i++){
     for (j=0; j<map.length; j++){
         tile = document.createElement("img");
+        tile.setAttribute("class","map");
+        tile.setAttribute("id",i + "," + j);
+        tile.setAttribute("width","75");
+        tile.setAttribute("height","75");
+        tile.style.position = "absolute";
+        tile.style.left = (75*j) + "px";
+        tile.style.top = (75*i) + "px";
+        tile.style.zIndex = 1;
         if (map[i][j] === 1){
             tile.setAttribute("src","../static/images/bottomleft.png");
         }
@@ -136,6 +151,19 @@ for (i = 0; i<map.length; i++){
         else if (map[i][j] === 23){
             tile.setAttribute("src","../static/images/path13.png");
         }
+        else if (map[i][j] === 24){
+            tile.setAttribute("src","../static/images/pokecenter.png");
+            tile.style.zIndex = 2;
+            tile.setAttribute("width","375");
+            tile.setAttribute("height","375");
+            tile.style.left = (75*(j-1)) + "px";
+        }
+        else if (map[i][j] === 25){
+            tile.setAttribute("src","../static/images/floor1.png");
+        }
+        else if (map[i][j] === 26){
+            tile.setAttribute("src","../static/images/floor1.png");
+        }
         else if (map[i][j] === 101){
             tile.setAttribute("src","../static/images/floor1.png");
         }
@@ -145,14 +173,6 @@ for (i = 0; i<map.length; i++){
         else if (map[i][j] === 103){
             tile.setAttribute("src","../static/images/floor3.png");
         }
-        tile.setAttribute("class","map");
-        tile.setAttribute("id",i + "," + j);
-        tile.setAttribute("width","75");
-        tile.setAttribute("height","75");
-        tile.style.position = "absolute";
-        tile.style.left = (75*j) + "px";
-        tile.style.top = (75*i) + "px";
-        tile.style.zIndex = 1;
         body.appendChild(tile);
     }
 }
@@ -234,8 +254,8 @@ var move = () => {
 
 
 var isUnwalkable = (row,col) => {
-    var bad = [1,2,3,4,5,6,8];
-    for (var i=0; i<7; i++){
+    var bad = [1,2,3,4,5,6,8,24,25,26];
+    for (var i=0; i<10; i++){
         if (map[row][col] === bad[i]){
             return true;
         }
@@ -260,7 +280,6 @@ var cover_int = 0;
 
 window.setInterval(() => {
     if (stop_moving == 1){
-        console.log("hello");
         if (cover_int < 400){
             tile = document.createElement("img");
             tile.setAttribute("src","../static/images/black.png");

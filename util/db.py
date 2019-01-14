@@ -94,12 +94,12 @@ def pokemon_dict(list):
         pokedict["description"] = list[13]
     return pokedict
 
-def add_Pokemon(username, poke_name, poke_type, poke_max_health, poke_move_list, poke_level, has_room, description):
+def add_Pokemon(username, poke_name, poke_type, poke_max_health, poke_move_list, poke_level, has_room):
     '''adds pokemon to use table'''
     db = sqlite3.connect(DB)
     c = db.cursor()
-    command = "INSERT INTO user_pokemons(name, type, user_id, health, max_health, move_1_id, move_2_id, move_3_id, move_4_id, exp, level, player_has, description, attack, defense)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);"
-    c.execute(command, (poke_name, poke_type, get_user_id_from_username(username), poke_max_health, poke_max_health, poke_move_list[0], poke_move_list[1], poke_move_list[2], poke_move_list[3], 0, poke_level, has_room, description, 10, 5))
+    command = "INSERT INTO user_pokemons(name, type, user_id, health, max_health, move_1_id, move_2_id, move_3_id, move_4_id, exp, level, player_has, attack, defense)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?);"
+    c.execute(command, (poke_name, poke_type, get_user_id_from_username(username), poke_max_health, poke_max_health, poke_move_list[0], poke_move_list[1], poke_move_list[2], poke_move_list[3], 0, poke_level, has_room, 10, 5))
     db.commit()
     db.close()
 
@@ -279,7 +279,7 @@ db = sqlite3.connect(DB)
 c = db.cursor()
 commands = ["CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password_hash TEXT, question TEXT, answer TEXT, xcor INTEGER, ycor INTEGER)"]
 commands.append("CREATE TABLE IF NOT EXISTS moves(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, uses INTEGER, max_uses INTEGER, damage INTEGER)")
-commands.append("CREATE TABLE IF NOT EXISTS user_pokemons(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, type TEXT, user_id INTEGER, health INTEGER, max_health INTEGER, move_1_id INTEGER, move_2_id INTEGER, move_3_id INTEGER, move_4_id INTEGER, exp INTEGER, level INTEGER, player_has BOOLEAN, description TEXT, attack TEXT, defense TEXT)")
+commands.append("CREATE TABLE IF NOT EXISTS user_pokemons(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, type TEXT, user_id INTEGER, health INTEGER, max_health INTEGER, move_1_id INTEGER, move_2_id INTEGER, move_3_id INTEGER, move_4_id INTEGER, exp INTEGER, level INTEGER, player_has BOOLEAN, attack TEXT, defense TEXT)")
 commands.append("CREATE TABLE IF NOT EXISTS items(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, type TEXT, quantity INTEGER, user_id INTEGER)")
 for command in commands:
     c.execute(command)
