@@ -16,7 +16,7 @@ def add_userFull(username, hashed_pass, question, hashed_ans):
     db = sqlite3.connect(DB)
     c = db.cursor()
     command = "INSERT INTO users (username, password_hash, question, answer, xcor, ycor)VALUES(?,?,?,?,?,?);"
-    c.execute(command, (username, hashed_pass, question, hashed_ans, 0, 0))
+    c.execute(command, (username, hashed_pass, question, hashed_ans, 6, 9))
     db.commit()
     db.close()
 
@@ -77,11 +77,34 @@ def modify_user_coordinates(x,y,username):
     '''saves the users coordinates'''
     db = sqlite3.connect(DB)
     c = db.cursor()
-    command = "UPDATE users SET xcor=" + x + " ycor=" + y +" WHERE username='" + user + "';"
-    c.execute(command, (x,y,username))
+    command = "UPDATE users SET xcor=" + x + " WHERE username='" + username + "';"
+    c.execute(command)
+    db.commit()
+    command = "UPDATE users SET ycor=" + y + " WHERE username='" + username + "';"
+    c.execute(command)
     db.commit()
     db.close()
 
+def user_dict(list):
+    dict = {}
+    dict["id"] = list[0]
+    dict["username"] = list[1]
+    dict["password_hash"] = list[2]
+    dict["question"] = list[3]
+    dict["answer"] = list[4]
+    dict["xcor"] = list[5]
+    dict["ycor"] = list[6]
+    return dict
+
+def get_user_from_username(username):
+    '''Gives all of the user's information based on username'''
+    db = sqlite3.connect(DB)
+    c = db.cursor()
+    command = "SELECT * FROM users WHERE username = ?;"
+    c.execute(command, (username,))
+    info = c.fetchone()
+    db.close()
+    return user_dict(info)
 # ========================== POKEMON STUFF ================================
 
 def pokemon_dict(list):

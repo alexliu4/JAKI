@@ -75,6 +75,10 @@ for (i = 0; i<map.length; i++){
     }
 }
 
+xcor = parseInt(document.getElementById("x").innerHTML);
+ycor = parseInt(document.getElementById("y").innerHTML);
+console.log(xcor + " " + ycor);
+
 body = document.getElementsByTagName("body")[0];
 body.setAttribute("style","overflow:hidden;background:#70C59C");
 for (i = 0; i<map.length; i++){
@@ -85,8 +89,8 @@ for (i = 0; i<map.length; i++){
         tile.setAttribute("width","75");
         tile.setAttribute("height","75");
         tile.style.position = "absolute";
-        tile.style.left = (75*j) + "px";
-        tile.style.top = (75*i) + "px";
+        tile.style.left = (75*j - 75*xcor) + "px";
+        tile.style.top = (75*i  - 75*ycor) + "px";
         tile.style.zIndex = 1;
         if (map[i][j] === 1){
             tile.setAttribute("src","../static/images/bottomleft.png");
@@ -156,7 +160,7 @@ for (i = 0; i<map.length; i++){
             tile.style.zIndex = 2;
             tile.setAttribute("width","375");
             tile.setAttribute("height","375");
-            tile.style.left = (75*(j-1)) + "px";
+            tile.style.left = (75*(j-1) - 75*xcor + 6) + "px";
         }
         else if (map[i][j] === 25){
             tile.setAttribute("src","../static/images/floor1.png");
@@ -244,10 +248,10 @@ var move = () => {
     for (i=0; i<map_array.length; i++){
         var current = map_array[i];
         if (Math.abs(down-up) > 0){
-            current.style.top = parseInt(current.style.top) + 15*(down-up) + 'px';
+            current.style.top = parseInt(current.style.top) + 30*(down-up) + 'px';
         }
         else if (Math.abs(right-left) > 0){
-            current.style.left = parseInt(current.style.left) + 15*(right-left) + 'px';
+            current.style.left = parseInt(current.style.left) + 30*(right-left) + 'px';
         }
     }
 }
@@ -310,6 +314,7 @@ window.setInterval(() => {
     var change_col = document.getElementById("0,0").style.left.toString();
     grass_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
     grass_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
+    console.log(grass_row + " " + grass_col);
     if (map[grass_row][grass_col] === 7 && (Math.abs(right-left) > 0 || Math.abs(down-up) > 0)){
         grass_steps++;
         console.log("grass steps :" +grass_steps);
@@ -325,7 +330,8 @@ window.setInterval(() => {
         input.setAttribute("hidden","True");
         grass_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
         grass_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
-        input.setAttribute("value",grass_row + " " + grass_col);
+        input.setAttribute("name","location")
+        input.setAttribute("value",(grass_row-6) + " " + (grass_col-10));
         form.appendChild(input);
         body.appendChild(form);
         form.submit();

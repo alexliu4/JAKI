@@ -108,13 +108,20 @@ def map():
         if 'pokemon' not in session:
             session['pokemon'] = API.create_pokemon_list()
         data = session['pokemon']
-        return render_template("map.html",cookie = data)
+        user_info = db.get_user_from_username(session['user'])
+        xcor = user_info["xcor"]
+        ycor = user_info["ycor"]
+        return render_template("map.html",cookie = data, x=xcor, y=ycor)
     return redirect(url_for('login'))
 
 @app.route("/toheal", methods=["POST"])
 def toheal():
     if 'user' in session:
-        print(request.form)
+        locations = request.form.get('location').split(" ")
+        x = locations[0]
+        y = locations[1]
+        print(session['user'])
+        db.modify_user_coordinates(x,y,session['user'])
         return redirect(url_for('heal'))
     return redirect(url_for('login'))
 
