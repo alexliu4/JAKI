@@ -224,10 +224,10 @@ def increment_pokemon_exp(poke_id, experience):
     db.commit()
     db.close()
 
-def heal_pokemon(poke_id,max_health):
+def update_health(poke_id,health):
     db = sqlite3.connect(DB)
     c = db.cursor()
-    command = "UPDATE user_pokemons SET health=" + str(max_health) + " WHERE id=" + str(poke_id) + ";"
+    command = "UPDATE user_pokemons SET health=" + str(health) + " WHERE id=" + str(poke_id) + ";"
     c.execute(command)
     db.commit()
     db.close()

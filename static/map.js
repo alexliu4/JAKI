@@ -305,14 +305,11 @@ window.setInterval(() => {
     var change_col = document.getElementById("0,0").style.left.toString();
     grass_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
     grass_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
-    console.log(grass_row+ " " + grass_col);
     if (map[grass_row][grass_col] === 7 && (Math.abs(right-left) > 0 || Math.abs(down-up) > 0)){
         grass_steps++;
-        console.log("grass steps :" +grass_steps);
         if (grass_steps > 20) {
             grass_steps = 0;
             stop_moving = 1;
-            console.log("hiufds");
             var form = document.createElement("form");
             form.setAttribute("method","POST");
             form.setAttribute("action","/tobattle")

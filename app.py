@@ -130,7 +130,6 @@ def tobattle():
         locations = request.form.get('location').split(" ")
         x = locations[0]
         y = locations[1]
-        print("hello")
         db.modify_user_coordinates(x,y,session['user'])
         return redirect(url_for('game'))
     return redirect(url_for('login'))
@@ -150,7 +149,7 @@ def healall():
     if 'user' in session:
         pokemon_list = db.get_user_active_pokemon(session['user'])
         for pokemon in pokemon_list:
-            db.heal_pokemon(pokemon["id"],pokemon["max_health"])
+            db.update_health(pokemon["id"],pokemon["max_health"])
         return redirect(url_for("heal"))
     return redirect(url_for('login'))
 
