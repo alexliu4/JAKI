@@ -75,9 +75,8 @@ for (i = 0; i<map.length; i++){
     }
 }
 
-xcor = parseInt(document.getElementById("x").innerHTML);
-ycor = parseInt(document.getElementById("y").innerHTML);
-console.log(xcor + " " + ycor);
+drow = parseInt(document.getElementById("x").innerHTML)-6;
+dcol = parseInt(document.getElementById("y").innerHTML)-10;
 
 body = document.getElementsByTagName("body")[0];
 body.setAttribute("style","overflow:hidden;background:#70C59C");
@@ -89,8 +88,8 @@ for (i = 0; i<map.length; i++){
         tile.setAttribute("width","75");
         tile.setAttribute("height","75");
         tile.style.position = "absolute";
-        tile.style.left = (75*j - 75*xcor) + "px";
-        tile.style.top = (75*i  - 75*ycor) + "px";
+        tile.style.left = (75*j - 75*dcol) + "px";
+        tile.style.top = (75*i  - 75*drow) + "px";
         tile.style.zIndex = 1;
         if (map[i][j] === 1){
             tile.setAttribute("src","../static/images/bottomleft.png");
@@ -160,7 +159,7 @@ for (i = 0; i<map.length; i++){
             tile.style.zIndex = 2;
             tile.setAttribute("width","375");
             tile.setAttribute("height","375");
-            tile.style.left = (75*(j-1) - 75*xcor + 6) + "px";
+            tile.style.left = (75*(j-1) - 75*dcol) + "px";
         }
         else if (map[i][j] === 25){
             tile.setAttribute("src","../static/images/floor1.png");
@@ -272,14 +271,6 @@ var cookie = JSON.parse(document.getElementById("cookie").innerHTML.replace(/'/g
 var grass_steps = 0;
 var stop_moving = 0;
 
-var battle_encounter = () => {
-    if (grass_steps > 20) {
-        grass_steps = 0;
-        stop_moving = 1;
-        window.location.replace("/game");
-    }
-}
-
 var cover_int = 0;
 
 window.setInterval(() => {
@@ -314,11 +305,26 @@ window.setInterval(() => {
     var change_col = document.getElementById("0,0").style.left.toString();
     grass_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
     grass_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
-    console.log(grass_row + " " + grass_col);
+    console.log(grass_row+ " " + grass_col);
     if (map[grass_row][grass_col] === 7 && (Math.abs(right-left) > 0 || Math.abs(down-up) > 0)){
         grass_steps++;
         console.log("grass steps :" +grass_steps);
-        battle_encounter();
+        if (grass_steps > 20) {
+            grass_steps = 0;
+            stop_moving = 1;
+            console.log("hiufds");
+            var form = document.createElement("form");
+            form.setAttribute("method","POST");
+            form.setAttribute("action","/tobattle")
+            var input = document.createElement("input");
+            input.setAttribute("type","text");
+            input.setAttribute("hidden","True");
+            input.setAttribute("name","location")
+            input.setAttribute("value",(grass_row) + " " + (grass_col));
+            form.appendChild(input);
+            body.appendChild(form);
+            form.submit();
+        }
     }
     if (map[grass_row][grass_col] === 26){
         stop_moving = 2;
@@ -328,10 +334,8 @@ window.setInterval(() => {
         var input = document.createElement("input");
         input.setAttribute("type","text");
         input.setAttribute("hidden","True");
-        grass_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
-        grass_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
         input.setAttribute("name","location")
-        input.setAttribute("value",(grass_row-6) + " " + (grass_col-10));
+        input.setAttribute("value",(grass_row+1) + " " + (grass_col));
         form.appendChild(input);
         body.appendChild(form);
         form.submit();

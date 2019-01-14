@@ -120,9 +120,19 @@ def toheal():
         locations = request.form.get('location').split(" ")
         x = locations[0]
         y = locations[1]
-        print(session['user'])
         db.modify_user_coordinates(x,y,session['user'])
         return redirect(url_for('heal'))
+    return redirect(url_for('login'))
+
+@app.route("/tobattle", methods=["POST"])
+def tobattle():
+    if 'user' in session:
+        locations = request.form.get('location').split(" ")
+        x = locations[0]
+        y = locations[1]
+        print("hello")
+        db.modify_user_coordinates(x,y,session['user'])
+        return redirect(url_for('game'))
     return redirect(url_for('login'))
 
 @app.route("/heal")
