@@ -133,7 +133,7 @@ tl.addEventListener("click", function(e) {
         document.getElementById("table").innerHTML = "<tr><td>" + data[data.length - 6] +
         " used " + pkmn_move + "!</tr>";
         document.getElementById("move").innerHTML = "Press enter to continue";
-        user_health -= Math.floor(Math.random() * 30);
+        user_health -= Math.floor(Math.random() * 10);
         if(user_health < 0){
           user_health = 0;
         }
@@ -224,7 +224,7 @@ tr.addEventListener("click", function(e) {
         document.getElementById("table").innerHTML = "<tr><td>" + data[data.length - 6] +
         " used " + pkmn_move + "!</tr>";
         document.getElementById("move").innerHTML = "Press enter to continue";
-        user_health -= Math.floor(Math.random() * 30);
+        user_health -= Math.floor(Math.random() * 10);
         if(user_health < 0){
           user_health = 0;
         }
@@ -315,7 +315,7 @@ bl.addEventListener("click", function(e) {
         document.getElementById("table").innerHTML = "<tr><td>" + data[data.length - 6] +
         " used " + pkmn_move + "!</tr>";
         document.getElementById("move").innerHTML = "Press enter to continue";
-        user_health -= Math.floor(Math.random() * 30);
+        user_health -= Math.floor(Math.random() * 10);
         if(user_health < 0){
           user_health = 0;
         }
@@ -409,7 +409,7 @@ br.addEventListener("click", function(e) {
         document.getElementById("table").innerHTML = "<tr><td>" + data[data.length - 6] +
         " used " + pkmn_move + "!</tr>";
         document.getElementById("move").innerHTML = "Press enter to continue";
-        user_health -= Math.floor(Math.random() * 30);
+        user_health -= Math.floor(Math.random() * 10);
         if(user_health < 0){
           user_health = 0;
         }
