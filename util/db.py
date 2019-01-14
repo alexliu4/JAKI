@@ -214,14 +214,19 @@ def get_pokemon_from_id(poke_id):
     db.close()
     return pokemon_dict(info[0])
 
-def increment_pokemon_exp(poke_id, experience):
+def increment_pokemon_exp(poke_id, experience, growth_rate):
+    '''increments the pokemon's exp and updates its level according to how much exp they have'''
     db = sqlite3.connect(DB)
     c = db.cursor()
-    new_exp = get_pokemon_from_id(poke_id)[exp] + experience
-    command = "UPDATE user_pokemons SET exp=" + new_exp + " WHERE id=" + poke_id + ";"
+    current_pokemon = get_pokemon_from_id(poke_id)
+    new_exp = current_pokemon['exp'] + experience
+    command = "UPDATE user_pokemons SET exp=" + str(new_exp) + " WHERE id=" + str(poke_id) + ";"
     c.execute(command)
-    # UPDATE LEVEL HERE if requiredexp(level+1) < current exp: level++
     db.commit()
+    if new_exp > growth_rate['fast']['levels'][99-current_pokemon['level']]["experience"]:
+        command = "UPDATE user_pokemons SET level=" +str(current_pokemon['level']+1) + " WHERE id= " + str(poke_id) + ";"
+        c.execute(command)
+        db.commit()
     db.close()
 
 def update_health(poke_id,health):

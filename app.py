@@ -32,11 +32,6 @@ def getIP():
     # decode else binary
     return(qwerty.read().decode('utf-8'))
 
-def encounters(steps):
-    when = (random.randint(4, 18))
-    if (steps == when):
-        return "pokemon encountered"
-
 def typeChance():
     # get all pokemon
     output = []
@@ -177,6 +172,9 @@ def home():
         session['pokemon'] = API.create_pokemon_list()
     if "fast" not in session:
         session["fast"] = API.create_growth_dict()
+
+    #EXAMPLE ON HOW TO DO INCREMENT
+    db.increment_pokemon_exp(1,20,session["fast"])
 
 ##########################################################################################################
     # code for the weather
