@@ -1,4 +1,4 @@
-import json, urllib, os, datetime, random
+import json, urllib, os, datetime, random, math
 
 from flask import Flask, render_template, request, session, url_for, redirect, flash, json, jsonify
 
@@ -124,8 +124,17 @@ def heal():
         pokemon_list = db.get_user_active_pokemon(session['user'])
         for a_pokemon in pokemon_list:
             a_pokemon["image"] = pokemon.get_pokemon_image(a_pokemon['name'])
-            a_pokemon["percent"] = math.floor(a_pokemon['health']/a_pokemon['max_health'])
+            a_pokemon["percent"] = math.floor(a_pokemon['health']/a_pokemon['max_health']* 100)
         return render_template("heal.html",list = pokemon_list)
+    return redirect(url_for('login'))
+
+@app.route("/healall")
+def healall():
+    if 'user' in session:
+        pokemon_list = db.get_user_active_pokemon(session['user'])
+        for pokemon in pokemon_list:
+            db.heal_pokemon(pokemon["id"],pokemon["max_health"])
+        return redirect(url_for("heal"))
     return redirect(url_for('login'))
 
 @app.route('/')

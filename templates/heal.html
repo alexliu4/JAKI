@@ -18,13 +18,18 @@
         <div class="col-sm-12">
             <img src="{{pokemon['image']}}" alt="{{pokemon['name']}}" style="width: 300px;height: 300px; float:left;" >
             <p style="margin-top: 30px;font-family:monospace;font-weight: bold;font-size: 30px;">{{pokemon["name"]}}</p>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: {{pokemon['percent']}}%;font-family:monospace;font-weight: bold;font-size: 30px;" aria-valuenow="{{pokemon['health']}}" aria-valuemin="0" aria-valuemax="{{pokemon['max_health']}}">
+            <div class="progress" style="height:25px;">
+                <div class="progress-bar" role="progressbar" style="width: {{pokemon['percent']}}%;font-family:monospace;font-weight: bold;font-size: 20px;font-color:black" aria-valuenow="{{pokemon['health']}}" aria-valuemin="0" aria-valuemax="{{pokemon['max_health']}}">
                     {{pokemon['health']}}/{{pokemon['max_health']}}
                 </div>
             </div>
         </div>
     </div>
     {% endfor %}
+    <center>
+        <form action="/healall">
+            <input class="btn btn-primary" style="margin:center;" type="submit" name="heal" value="Heal All Pokemon">
+        </form>
+    </center>
 </div>
 {% endblock %}
