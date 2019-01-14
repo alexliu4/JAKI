@@ -54,11 +54,11 @@ var pokemon_num = 0;
 var mode = 0;
 var pkmn_health_elem = document.getElementById("pkmn_health");
 var user_health_elem = document.getElementById("user_health");
-var pkmn_health = data[0];
-var user_health = data[10];
+var pkmn_health = data[data.length - 5];
+var user_health = data[9];
 
-pkmn_health_elem.innerHTML = "Health: " + data[0];
-user_health_elem.innerHTML = "Health: " + data[10];
+pkmn_health_elem.innerHTML = "Health: " + data[data.length - 5];
+user_health_elem.innerHTML = "Health: " + data[9];
 
 function setup(){
   tl = document.getElementById("tl");
@@ -95,17 +95,17 @@ br.addEventListener("mouseout", function(e) {
 
 tl.addEventListener("click", function(e) {
   if(mode == 0){
-    tl.innerHTML = data[pokemon_num * 10 + 2]
-    tr.innerHTML = data[pokemon_num * 10 + 4]
-    bl.innerHTML = data[pokemon_num * 10 + 6]
-    br.innerHTML = data[pokemon_num * 10 + 8]
+    tl.innerHTML = data[pokemon_num * 10 + 1]
+    tr.innerHTML = data[pokemon_num * 10 + 3]
+    bl.innerHTML = data[pokemon_num * 10 + 5]
+    br.innerHTML = data[pokemon_num * 10 + 7]
     mode = 1;
   }
   else if(mode == 1){
-    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10 + 1] +
-    " used " + data[pokemon_num * 10 + 2] + "!</td></tr>";
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10] +
+    " used " + data[pokemon_num * 10 + 1] + "!</td></tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
-    pkmn_health -= data[pokemon_num * 10 + 3];
+    pkmn_health -= data[pokemon_num * 10 + 2];
     if(pkmn_health < 0){
       pkmn_health = 0;
     }
@@ -129,10 +129,52 @@ tl.addEventListener("click", function(e) {
             document.attachEvent('onkeydown', keydownHandler);
         }
       }else{
-        table.innerHTML = temp;
-        document.getElementById("move").innerHTML = "";
-        mode = 0;
-        setup();
+        var pkmn_move = data[data.length - (Math.floor(Math.random() * 4) + 1)];
+        document.getElementById("table").innerHTML = "<tr><td>" + data[data.length - 6] +
+        " used " + pkmn_move + "!</tr>";
+        document.getElementById("move").innerHTML = "Press enter to continue";
+        user_health -= Math.floor(Math.random() * 30);
+        if(user_health < 0){
+          user_health = 0;
+        }
+        user_health_elem.innerHTML = "Health:" + user_health;
+        function after3() {
+          if(user_health == 0){
+            document.getElementById("table").innerHTML = "<tr><td>You lost!</td></tr>"
+            function after4(){
+              window.location.replace("/map");
+            }
+            function keydownHandler(e){
+                if (e.keyCode == 13) {
+                    after4();
+                }
+            }
+
+            if (document.addEventListener) {
+                document.addEventListener('keydown', keydownHandler, false);
+            }
+            else if (document.attachEvent) {
+                document.attachEvent('onkeydown', keydownHandler);
+            }
+          }else{
+            table.innerHTML = temp;
+            document.getElementById("move").innerHTML = "";
+            mode = 0;
+            setup();
+          }
+        }
+        function keydownHandler(e){
+            if (e.keyCode == 13) {
+                after3();
+            }
+        }
+
+        if (document.addEventListener) {
+          document.addEventListener('keydown', keydownHandler, false);
+        }
+        else if (document.attachEvent) {
+            document.attachEvent('onkeydown', keydownHandler);
+        }
       }
     }
     function keydownHandler(e){
@@ -151,10 +193,10 @@ tl.addEventListener("click", function(e) {
 });
 tr.addEventListener("click", function(e) {
   if(mode == 1){
-    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10 + 1] +
-    " used " + data[pokemon_num * 10 + 4] + "!</tr>";
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10] +
+    " used " + data[pokemon_num * 10 + 3] + "!</tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
-    pkmn_health -= data[pokemon_num * 10 + 5];
+    pkmn_health -= data[pokemon_num * 10 + 4];
     if(pkmn_health < 0){
       pkmn_health = 0;
     }
@@ -178,10 +220,52 @@ tr.addEventListener("click", function(e) {
             document.attachEvent('onkeydown', keydownHandler);
         }
       }else{
-        table.innerHTML = temp;
-        document.getElementById("move").innerHTML = "";
-        mode = 0;
-        setup();
+        var pkmn_move = data[data.length - (Math.floor(Math.random() * 4) + 1)];
+        document.getElementById("table").innerHTML = "<tr><td>" + data[data.length - 6] +
+        " used " + pkmn_move + "!</tr>";
+        document.getElementById("move").innerHTML = "Press enter to continue";
+        user_health -= Math.floor(Math.random() * 30);
+        if(user_health < 0){
+          user_health = 0;
+        }
+        user_health_elem.innerHTML = "Health:" + user_health;
+        function after3() {
+          if(user_health == 0){
+            document.getElementById("table").innerHTML = "<tr><td>You lost!</td></tr>"
+            function after4(){
+              window.location.replace("/map");
+            }
+            function keydownHandler(e){
+                if (e.keyCode == 13) {
+                    after4();
+                }
+            }
+
+            if (document.addEventListener) {
+                document.addEventListener('keydown', keydownHandler, false);
+            }
+            else if (document.attachEvent) {
+                document.attachEvent('onkeydown', keydownHandler);
+            }
+          }else{
+            table.innerHTML = temp;
+            document.getElementById("move").innerHTML = "";
+            mode = 0;
+            setup();
+          }
+        }
+        function keydownHandler(e){
+            if (e.keyCode == 13) {
+                after3();
+            }
+        }
+
+        if (document.addEventListener) {
+          document.addEventListener('keydown', keydownHandler, false);
+        }
+        else if (document.attachEvent) {
+            document.attachEvent('onkeydown', keydownHandler);
+        }
       }
     }
     function keydownHandler(e){
@@ -200,10 +284,10 @@ tr.addEventListener("click", function(e) {
 });
 bl.addEventListener("click", function(e) {
   if(mode == 1){
-    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10 + 1] +
-    " used " + data[pokemon_num * 10 + 6] + "!</tr>";
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10] +
+    " used " + data[pokemon_num * 10 + 5] + "!</tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
-    pkmn_health -= data[pokemon_num * 10 + 7];
+    pkmn_health -= data[pokemon_num * 10 + 6];
     if(pkmn_health < 0){
       pkmn_health = 0;
     }
@@ -227,10 +311,52 @@ bl.addEventListener("click", function(e) {
             document.attachEvent('onkeydown', keydownHandler);
         }
       }else{
-        table.innerHTML = temp;
-        document.getElementById("move").innerHTML = "";
-        mode = 0;
-        setup();
+        var pkmn_move = data[data.length - (Math.floor(Math.random() * 4) + 1)];
+        document.getElementById("table").innerHTML = "<tr><td>" + data[data.length - 6] +
+        " used " + pkmn_move + "!</tr>";
+        document.getElementById("move").innerHTML = "Press enter to continue";
+        user_health -= Math.floor(Math.random() * 30);
+        if(user_health < 0){
+          user_health = 0;
+        }
+        user_health_elem.innerHTML = "Health:" + user_health;
+        function after3() {
+          if(user_health == 0){
+            document.getElementById("table").innerHTML = "<tr><td>You lost!</td></tr>"
+            function after4(){
+              window.location.replace("/map");
+            }
+            function keydownHandler(e){
+                if (e.keyCode == 13) {
+                    after4();
+                }
+            }
+
+            if (document.addEventListener) {
+                document.addEventListener('keydown', keydownHandler, false);
+            }
+            else if (document.attachEvent) {
+                document.attachEvent('onkeydown', keydownHandler);
+            }
+          }else{
+            table.innerHTML = temp;
+            document.getElementById("move").innerHTML = "";
+            mode = 0;
+            setup();
+          }
+        }
+        function keydownHandler(e){
+            if (e.keyCode == 13) {
+                after3();
+            }
+        }
+
+        if (document.addEventListener) {
+          document.addEventListener('keydown', keydownHandler, false);
+        }
+        else if (document.attachEvent) {
+            document.attachEvent('onkeydown', keydownHandler);
+        }
       }
     }
     function keydownHandler(e){
@@ -252,10 +378,10 @@ br.addEventListener("click", function(e) {
     window.location.replace("/map");
   }
   if(mode == 1){
-    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10 + 1] +
-    " used " + data[pokemon_num * 10 + 8] + "!</tr>";
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10] +
+    " used " + data[pokemon_num * 10 + 7] + "!</tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
-    pkmn_health -= data[pokemon_num * 10 + 9];
+    pkmn_health -= data[pokemon_num * 10 + 8];
     if(pkmn_health < 0){
       pkmn_health = 0;
     }
@@ -279,10 +405,52 @@ br.addEventListener("click", function(e) {
             document.attachEvent('onkeydown', keydownHandler);
         }
       }else{
-        table.innerHTML = temp;
-        document.getElementById("move").innerHTML = "";
-        mode = 0;
-        setup();
+        var pkmn_move = data[data.length - (Math.floor(Math.random() * 4) + 1)];
+        document.getElementById("table").innerHTML = "<tr><td>" + data[data.length - 6] +
+        " used " + pkmn_move + "!</tr>";
+        document.getElementById("move").innerHTML = "Press enter to continue";
+        user_health -= Math.floor(Math.random() * 30);
+        if(user_health < 0){
+          user_health = 0;
+        }
+        user_health_elem.innerHTML = "Health:" + user_health;
+        function after3() {
+          if(user_health == 0){
+            document.getElementById("table").innerHTML = "<tr><td>You lost!</td></tr>"
+            function after4(){
+              window.location.replace("/map");
+            }
+            function keydownHandler(e){
+                if (e.keyCode == 13) {
+                    after4();
+                }
+            }
+
+            if (document.addEventListener) {
+                document.addEventListener('keydown', keydownHandler, false);
+            }
+            else if (document.attachEvent) {
+                document.attachEvent('onkeydown', keydownHandler);
+            }
+          }else{
+            table.innerHTML = temp;
+            document.getElementById("move").innerHTML = "";
+            mode = 0;
+            setup();
+          }
+        }
+        function keydownHandler(e){
+            if (e.keyCode == 13) {
+                after3();
+            }
+        }
+
+        if (document.addEventListener) {
+          document.addEventListener('keydown', keydownHandler, false);
+        }
+        else if (document.attachEvent) {
+            document.attachEvent('onkeydown', keydownHandler);
+        }
       }
     }
     function keydownHandler(e){

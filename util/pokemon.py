@@ -48,9 +48,7 @@ def get_random_moves(pokemon):
     random.shuffle(unprocessed_moves)
     processed_moves = []
     for move in unprocessed_moves[:4]:
-        #print(move["move"]["name"])
-        processed_moves.append(get_move_id(move["move"]["name"]))
-    print(processed_moves)
+        processed_moves.append(move["move"]["name"])
     return processed_moves
 
 def get_pokemon_image(pokemon):
