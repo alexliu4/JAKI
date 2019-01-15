@@ -122,7 +122,7 @@ def toheal():
         locations = request.form.get('location').split(" ")
         x = locations[0]
         y = locations[1]
-        db.modify_user_coordinates(x,y,session['user'])
+        db.modify_user_coordinates(x, y, session['user'])
         return redirect(url_for('heal'))
     return redirect(url_for('login'))
 
@@ -207,7 +207,9 @@ def home():
     WEATHER_STUB = "https://api.darksky.net/forecast/{}/{},{}" # api key, longitude, latitude
     IPAPI_STUB = "https://ipapi.co/{}/json/"
 
-    json_data = "8b3d6a5f90fbe26c7e29aaef01b9875e"
+    # read json file containing the api keys
+    with open('data/API_Keys/keys.json') as json_file:
+        json_data = json.loads(json_file.read())
 
     # Checking the longitude and latitiude based on the ip address
     p = urllib.request.urlopen(IPAPI_STUB.format(getIP()))
@@ -218,7 +220,7 @@ def home():
     today = datetime.datetime.now().strftime("%Y-%m-%d")
 
     try:
-        w = urllib.request.urlopen(WEATHER_STUB.format(json_data, ip['latitude'], ip['longitude']))
+        w = urllib.request.urlopen(WEATHER_STUB.format(json_data['weather'], ip['latitude'], ip['longitude']))
     except Exception as e:
         print(e)
         return render_template('error.html', err = e)

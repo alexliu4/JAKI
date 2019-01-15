@@ -10,6 +10,12 @@ _Pokemon Dungeon_ is a gaming website that is, as the name implies it, the class
 
 ---
 
+## Check our game in action with this YouTube video!!
+
+watch our demo (here)[www.youtube.com]
+
+---
+
 ## RESTful APIs Used
 
 _Pokemon Dungeon_ makes use of **3** RESTful APIs. Each API, along with an explanation and link, are listed below.
@@ -100,7 +106,7 @@ _It is important to note that the order in which the `Weather` appear is irrelev
 Now your program is ready to go! On your terminal, run the following commands:
 
 ```bash
-cd path/to/project/dir/KAnJI/distr
+cd path/to/project/dir/KAnJI/
 python app.py
 ```
 
