@@ -214,3 +214,9 @@ alexL -- 2019-1-14 12:54
 1. Created the auth.CSS
 2. Finished the about page to have basic info about the game and the controls
 ==============================================================
+
+alexL -- 2019-1-14 13:04
+--------------------------------------------------------------
+1. Updated the README
+2. Added the keys.json file to read the users personalized key
+==============================================================

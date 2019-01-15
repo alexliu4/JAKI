@@ -5,8 +5,13 @@
 
 ## What is the Pokemon Dungeon?
 
-
 _Pokemon Dungeon_ is a gaming website that is, as the name implies it, the classic pokemon game with the weather affecting the wild pokemon that appear. There will also be (hopefully) item drops, pokemon trainers to battle, a gym leader, and even a tomagatchi mode. The tomagatchi mode will allow users to take another path to raising the level of their pokemon by taking care of them and feeding them. The site uses each user's IP address (after given permission, of course) to find the weather data of their location using the IP API and Darksky API. The Ipify API is used to procure the client's IP address.
+
+---
+
+## Check our game in action with this YouTube video!!
+
+watch our demo [here](www.youtube.com)
 
 ---
 
@@ -100,7 +105,7 @@ _It is important to note that the order in which the `Weather` appear is irrelev
 Now your program is ready to go! On your terminal, run the following commands:
 
 ```bash
-cd path/to/project/dir/KAnJI/distr
+cd path/to/project/dir/KAnJI/
 python app.py
 ```
 
