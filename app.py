@@ -208,7 +208,7 @@ def home():
     IPAPI_STUB = "https://ipapi.co/{}/json/"
 
     # read json file containing the api keys
-    with open('data/API_Keys/keys.json') as json_file:
+    with open('keys/keys.json') as json_file:
         json_data = json.loads(json_file.read())
 
     # Checking the longitude and latitiude based on the ip address
