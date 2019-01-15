@@ -221,7 +221,7 @@ def home():
     today = datetime.datetime.now().strftime("%Y-%m-%d")
 
     try:
-        w = urllib.request.urlopen(WEATHER_STUB.format(json_data['weather'], ip['latitude'], ip['longitude']))
+        w = urllib.request.urlopen(WEATHER_STUB.format(json_data['Weather'], ip['latitude'], ip['longitude']))
     except Exception as e:
         print(e)
         return render_template('error.html', err = e)
