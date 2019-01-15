@@ -20,7 +20,7 @@ Pokemon website app using Poke API, Dark Sky API, and IP API held together lovin
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
-alexL -- 2018-1-4 22:22
+alexL -- 2019-1-4 22:22
 --------------------------------------------------------------
 1. Talked through various plans for project.
 2. Settled on pokemon dungeon game that uses the Poke API,
@@ -29,18 +29,18 @@ new features.
 2. Decided on name of project to be Pokemon Dungeon.
 ==============================================================
 
-alexL -- 2018-1-7 12:45
+alexL -- 2019-1-7 12:45
 --------------------------------------------------------------
 1. Created devlog.txt file.
 ==============================================================
 
-alexL -- 2018-1-7 15:30
+alexL -- 2019-1-7 15:30
 --------------------------------------------------------------
 1. Created the html pages and the python code for accounts
 (creating and resetting).
 ==============================================================
 
-karenL -- 2018-1-7 23:15
+karenL -- 2019-1-7 23:15
 --------------------------------------------------------------
 1. Added API pdf files.
 2. Created site map.
@@ -48,45 +48,45 @@ karenL -- 2018-1-7 23:15
 4. Finished design doc
 ==============================================================
 
-alexL -- 2018-1-8 13:12
+alexL -- 2019-1-8 13:12
 --------------------------------------------------------------
 1. Created the README and the requirements.txt
 2. Added info to design doc
 ==============================================================
 
-jasonL -- 2018-1-8 21:59
+jasonL -- 2019-1-8 21:59
 --------------------------------------------------------------
 1. Fixed the database diagram based on feedback.
 2. Updated the overview of the database.
 ==============================================================
 
-karenL -- 2018-1-8 22:09
+karenL -- 2019-1-8 22:09
 --------------------------------------------------------------
 1. Added JavaScript and CSS to component map.
 2. Created timeline.
 3. Uploaded new design document.
 ==============================================================
 
-karenL -- 2018-1-8 22:06
+karenL -- 2019-1-8 22:06
 --------------------------------------------------------------
 1. Added base template to extend.
 2. Added starter_pokemon template.
 3. Uploaded changes to design doc.
 ==============================================================
 
-alexL -- 2018-1-9 19:30
+alexL -- 2019-1-9 19:30
 --------------------------------------------------------------
 1. Worked on the README
 2. Fixed the login and signup page.
 ==============================================================
 
-imadB -- 2018-1-10 13:00
+imadB -- 2019-1-10 13:00
 --------------------------------------------------------------
 1. Added necessary files for battle execution
 2. Made images move across the screen
 ==============================================================
 
-karenL -- 2018-1-11 02:21
+karenL -- 2019-1-11 02:21
 --------------------------------------------------------------
 1. Made functions to retrieve starter pokemon images from
 Poke API.
@@ -95,32 +95,32 @@ Poke API.
 screen.
 ==============================================================
 
-jasonL -- 2018-1-11 03:38
+jasonL -- 2019-1-11 03:38
 --------------------------------------------------------------
 1. Created database for Pokemon
 2. Wrote functions for increasing the level of and adding Pokemon
 ==============================================================
 
-jasonL -- 2018-1-11 04:44
+jasonL -- 2019-1-11 04:44
 --------------------------------------------------------------
 1. Made database for items and moves
 2. Included the get functions and tested it
 3. Made seeding data
 ==============================================================
 
-jasonL -- 2018-1-11 09:25
+jasonL -- 2019-1-11 09:25
 --------------------------------------------------------------
 1. Movement works
 2. It is very very smooth :)
 ==============================================================
 
-imadB -- 2018-1-11 13:10
+imadB -- 2019-1-11 13:10
 --------------------------------------------------------------
 1. Added table for actions in battle
 2. Cleaned up animation, works across platforms
 ==============================================================
 
-alexL -- 2018-1-11 13:20
+alexL -- 2019-1-11 13:20
 --------------------------------------------------------------
 1. Fixed the API keys bug (Got a weather API key too).
 2. Worked on the pokemon encounters:
@@ -128,7 +128,7 @@ alexL -- 2018-1-11 13:20
   - increased chances of certain types of pokemon based on weather
 ==============================================================
 
-karenL -- 2018-1-12 11:00
+karenL -- 2019-1-12 11:00
 --------------------------------------------------------------
 1. Added buttons to starter Pokemon page.
 2. Added a Pokemon confirmation and start game page.
@@ -137,14 +137,14 @@ multiple starter pokemon and users who are not logged in.
 4. Resolved a bug in the pokemon_dict function.
 ==============================================================
 
-alexL -- 2018-1-12 15:24
+alexL -- 2019-1-12 15:24
 --------------------------------------------------------------
 1. Changed the footer and the nav bar.
 2. Fixed the weather icons
 3. Got weather api to also find the preciptype and precipProbability
 ==============================================================
 
-alexL -- 2018-1-12 17:03
+alexL -- 2019-1-12 17:03
 --------------------------------------------------------------
 1. Fixed the requirements.txt
 2. Worked on pokemon type probability
@@ -153,63 +153,63 @@ alexL -- 2018-1-12 17:03
 5. Started the about page
 ==============================================================
 
-jasonL -- 2018-1-12 18:35
+jasonL -- 2019-1-12 18:35
 --------------------------------------------------------------
 1. Made the map and sprites.
 2. Player can animate when moving.
 3. Fixed some of the API and database functions.
 ==============================================================
 
-jasonL -- 2018-1-12 21:04
+jasonL -- 2019-1-12 21:04
 --------------------------------------------------------------
 1. Grass step counter for pokemon encounters.
 ==============================================================
 
-imadB -- 2018-1-12 21:30
+imadB -- 2019-1-12 21:30
 --------------------------------------------------------------
 1. Get moves from user and enemy pokemon
 ==============================================================
 
-karenL -- 2018-1-13 00:44
+karenL -- 2019-1-13 00:44
 --------------------------------------------------------------
 1. Can now add Pokemon to database given a user and a Pokemon
 name.
 2. Starter Pokemon and all required stats are added to database.
 ==============================================================
 
-imadB -- 2018-1-13 05:00
+imadB -- 2019-1-13 05:00
 --------------------------------------------------------------
 1. Player can now win or lose battle
 ==============================================================
 
-jasonL -- 2018-1-13 10:15
+jasonL -- 2019-1-13 10:15
 --------------------------------------------------------------
 1. Made transition to battle.
 2. Animation of wild pokemon encounter.
 ==============================================================
 
-jasonL -- 2018-1-13 20:48
+jasonL -- 2019-1-13 20:48
 --------------------------------------------------------------
 1. Made healing center
 ==============================================================
 
-jasonL -- 2018-1-13 21:34
+jasonL -- 2019-1-13 21:34
 --------------------------------------------------------------
 1. Made location saving after healing
 ==============================================================
 
-imadB -- 2018-1-13 23:30
+imadB -- 2019-1-13 23:30
 --------------------------------------------------------------
 1. Health is now updated after battle
 ==============================================================
 
-imadB -- 2018-1-14 03:50
+imadB -- 2019-1-14 03:50
 --------------------------------------------------------------
 1. Pokemon drop potions after battle
 2. User can use potions using bag during battle
 ==============================================================
 
-alexL -- 2018-1-14 12:54
+alexL -- 2019-1-14 12:54
 --------------------------------------------------------------
 1. Created the auth.CSS
 2. Finished the about page to have basic info about the game and the controls
