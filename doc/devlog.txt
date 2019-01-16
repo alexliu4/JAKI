@@ -219,6 +219,7 @@ alexL -- 2019-1-16 13:04
 --------------------------------------------------------------
 1. Updated the README
 2. Added the keys.json file to read the users personalized key
+3. Began work on modals in the navbar
 ==============================================================
 
 alexL -- 2019-1-16 13:04
