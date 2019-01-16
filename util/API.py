@@ -25,3 +25,29 @@ def create_pokemon_list():
         if (int)(pokemon["url"].split("/")[-2]) < 252:
             result[pokemon["name"]] = pokemon["url"]
     return result
+
+def water():
+    stub = "https://pokeapi.co/api/v2/pokemon/types/11"
+    req = urllib.request.Request(stub, headers={'User-Agent': 'Mozilla/5.0'})
+    object = urllib.request.urlopen(req)
+    info = object.read()
+    data = json.loads(info)
+
+    result = {}
+    for pokemon in data["pokemon"]:
+        if (int)(pokemon["url"].split("/")[-2]) < 252:
+            result[pokemon["name"]] = pokemon["url"]
+    return result
+
+def ice():
+    stub = "https://pokeapi.co/api/v2/pokemon/types/15"
+    req = urllib.request.Request(stub, headers={'User-Agent': 'Mozilla/5.0'})
+    object = urllib.request.urlopen(req)
+    info = object.read()
+    data = json.loads(info)
+
+    result = {}
+    for pokemon in data["pokemon"]:
+        if (int)(pokemon["url"].split("/")[-2]) < 252:
+            result[pokemon["name"]] = pokemon["url"]
+    return result

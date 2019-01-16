@@ -73,7 +73,7 @@ def get_user_id_from_username(username):
     db.close()
     return info[0]
 
-def modify_user_coordinates(x,y,username):
+def modify_user_coordinates(x, y, username):
     '''saves the users coordinates'''
     db = sqlite3.connect(DB)
     c = db.cursor()

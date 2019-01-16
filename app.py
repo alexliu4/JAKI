@@ -36,7 +36,8 @@ def getIP():
 def typeChance():
     # get all pokemon
     output = []
-    output = db.get_all_pokemon()
+    output = list(session['pokemon'])
+    # 11 is water 15 is ice
 
     # Try to open up content for weather stuff
     try:
@@ -50,23 +51,27 @@ def typeChance():
     f.close()
     # find precipitation data
     today = datetime.datetime.now().strftime("%Y-%m-%d")
-    prob = data[today]['prob']
-    if (prob > 0):
-        type = data[today]['type']
-        if (type == "rain"):
-            print("water types will occur x3 more often")
-            output = db.add_water # adds each water type 2 more times
-            chosen = (random.choice(output))
-        if (type == "snow" or type == "sleet"):
-            print("ice types will occur x3 more often")
-            output = db.add_ice # adds each ice type 2 more times
-            chosen = (random.choice(output))
-
+    hours = datetime.datetime.now().hour
+    current = data[today]['weather-hourly'][hours]
+    if (current['type'] == "rain"):
+        print("water types will occur x3 more often")
+        output = API.water() # adds each water type 2 more times
+        chosen = (random.choice(output))
+    if (current['type'] == "snow" or current['type'] == "sleet"):
+        print("ice types will occur x3 more often")
+        output = API.ice() # adds each ice type 2 more times
+        chosen = (random.choice(output))
     else:
         print("all pokemon have equal chances of occuring")
         chosen = (random.choice(output))
     print (chosen)
+    for i in output:
+        print (i)
     return chosen
+
+@app.route('/house')
+def house():
+    return render_template('about.html', current = current, data = data[today])
 
 
 @app.route('/game')
@@ -115,7 +120,6 @@ def about():
     session['current-hour'] = datetime.datetime.now().hour
     current = data[today]['weather-hourly'][session['current-hour']]
     return render_template('about.html', current = current, data = data[today])
-
 
 
 @app.route("/map")
@@ -205,6 +209,8 @@ def healall():
             db.update_health(pokemon["id"], pokemon["max_health"])
         return redirect(url_for("heal"))
     return redirect(url_for('login'))
+
+# ==========================LANDING PAGE==========================
 
 @app.route('/')
 def home():
