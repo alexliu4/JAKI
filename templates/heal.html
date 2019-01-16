@@ -33,35 +33,3 @@
     </center>
 </div>
 {% endblock %}
-
-{% block body %}
-<!-- The weather card -->
-  <div class="card text-white bg-dark mb-3 center weatherBox">
-    <!-- Displays location of the user -->
-    <div class="card-header">{{session['location']}}</div>
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="center">
-          <img class="card-img-top" id="weatherPreviewImage" src="{{data['weather-icon']}}" alt="Image missing">
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="card-body">
-          <!-- Allows switching between celsius and fahrenheit for temperature using bootstrap's collapse-->
-          <!-- <div class="weatherTemp">
-            <h5 class="card-title collapse show" id="temperature">
-              {{session['temp-f']}}F |
-              <a href="#temperature" data-toggle="collapse"> °C </a>
-            </h5>
-            <h5 class="card-title collapse" id="temperature">
-              {{session['temp-c']}}C |
-              <a href="#temperature" data-toggle="collapse"> °F </a>
-            </h5>
-          </div> -->
-        </div>
-      </div>
-    </div>
-    <!-- Shows summary of the weather for the day -->
-    <p class="card-text" id="bottomCardText">{{data['weather-summary']}}</p>
-  </div>
-{% endblock %}
