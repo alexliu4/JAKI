@@ -193,7 +193,10 @@ def heal():
         for a_pokemon in pokemon_list:
             a_pokemon["image"] = pokemon.get_pokemon_image(a_pokemon['name'])
             a_pokemon["percent"] = math.floor(a_pokemon['health'] / a_pokemon ['max_health'] * 100)
-            a_pokemon["type"] = a_pokemon["type"].capitalize()
+            temp = a_pokemon["type"]
+            a_pokemon["type"] = []
+            for type in temp.split(" "):
+                a_pokemon["type"].append(type.capitalize())
         return render_template("heal.html", list = pokemon_list)
     return redirect(url_for('login'))
 
