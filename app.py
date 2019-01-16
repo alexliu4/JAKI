@@ -71,7 +71,7 @@ def typeChance():
 
 @app.route('/house')
 def house():
-    return render_template('about.html', current = current, data = data[today])
+    return render_template('about.html')
 
 
 @app.route('/game')
