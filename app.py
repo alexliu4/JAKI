@@ -335,6 +335,7 @@ def home():
     session['temp-c'] = str(c).split('.')[0] + '°'
 
     current = data[today]['weather-hourly'][session['current-hour']]
+    # print(typeChance())
 
     return render_template('home.html', data = data[today], current = current, session = session, warning = need_to_warn)
 
