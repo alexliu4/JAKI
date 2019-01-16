@@ -18,7 +18,7 @@ Starter Pokemon
       <div class="col-sm">
 	<div class="alert alert-success text-center">
 	  <button type="submit" class="btn btn-outline-success btn-block btn-lg" name="starter" value="Bulbasaur">
-	    <image src={{bulbasaur}} class="image-rounded" alt="bulbasaur" width="100%">	  
+	    <image src={{bulbasaur}} class="image-rounded" alt="bulbasaur" width="100%">
 	      <br>
 	      <h4>Bulbasaur</h4>
 	  </button>
@@ -27,7 +27,7 @@ Starter Pokemon
       <div class="col-sm">
 	<div class="alert alert-danger text-center">
 	  <button type="submit" class="btn btn-outline-danger btn-block btn-lg" name="starter" value="Charmander">
-	    <image src={{charmander}} class="image-rounded" alt="charmander" width="100%">	  
+	    <image src={{charmander}} class="image-rounded" alt="charmander" width="100%">
 	      <br>
 	      <h4>Charmander</h4>
 	  </button>
@@ -36,7 +36,7 @@ Starter Pokemon
       <div class="col-sm">
 	<div class="alert alert-info text-center">
 	  <button type="submit" class="btn btn-outline-info btn-block btn-lg" name="starter" value="Squirtle">
-	    <image src={{squirtle}} class="image-rounded" alt="squirtle" width="100%">	  
+	    <image src={{squirtle}} class="image-rounded" alt="squirtle" width="100%">
 	      <br>
 	      <h4>Squirtle</h4>
 	  </button>
@@ -45,4 +45,36 @@ Starter Pokemon
     </div>
   </form>
 </div>
+{% endblock %}
+
+{% block body %}
+<!-- The weather card -->
+  <div class="card text-white bg-dark mb-3 center weatherBox">
+    <!-- Displays location of the user -->
+    <div class="card-header">{{session['location']}}</div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="center">
+          <img class="card-img-top" id="weatherPreviewImage" src="{{data['weather-icon']}}" alt="Image missing">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card-body">
+          <!-- Allows switching between celsius and fahrenheit for temperature using bootstrap's collapse-->
+          <!-- <div class="weatherTemp">
+            <h5 class="card-title collapse show" id="temperature">
+              {{session['temp-f']}}F |
+              <a href="#temperature" data-toggle="collapse"> °C </a>
+            </h5>
+            <h5 class="card-title collapse" id="temperature">
+              {{session['temp-c']}}C |
+              <a href="#temperature" data-toggle="collapse"> °F </a>
+            </h5>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- Shows summary of the weather for the day -->
+    <p class="card-text" id="bottomCardText">{{data['weather-summary']}}</p>
+  </div>
 {% endblock %}
