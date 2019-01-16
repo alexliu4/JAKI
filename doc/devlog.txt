@@ -215,8 +215,13 @@ alexL -- 2019-1-14 12:54
 2. Finished the about page to have basic info about the game and the controls
 ==============================================================
 
-alexL -- 2019-1-14 13:04
+alexL -- 2019-1-16 13:04
 --------------------------------------------------------------
 1. Updated the README
 2. Added the keys.json file to read the users personalized key
+==============================================================
+
+alexL -- 2019-1-16 13:04
+--------------------------------------------------------------
+1. Created the weather modal to show user's the weather and increased pokemon occurances
 ==============================================================

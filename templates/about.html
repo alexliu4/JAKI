@@ -35,7 +35,7 @@
 
   <h3> Extra Features </h3>
   <p> Click the weather button on the navbar. It will show you your physical location and the basic weather at your location. Based on your precipitation--
-    rain or snow-- the chances of rain and ice pokemon will be increased 3 fold. </p>
+    rain or snow-- the chances of rain and ice pokemon will be increased 3 fold. It only works on the about page, map, and home page.</p>
 
   <hr class="divider">
 
@@ -54,4 +54,40 @@
         <span class="text-muted">Pokemon Dungeon© <br> Alex Liu, Karen Li, Imad Belkebir, Jason Lin</span>
     </div>
 </footer>
+{% endblock %}
+
+{% block body %}
+<!-- The weather card -->
+  <div class="card text-white bg-dark mb-3 center weatherBox">
+    <!-- Displays location of the user -->
+    <div class="card-header" align="center">{{session['location']}}</div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="center" align="center">
+          <img class="card-img-top" id="weatherPreviewImage" src="{{data['weather-icon']}}" alt="Image missing">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card-body">
+          <!-- Allows switching between celsius and fahrenheit for temperature using bootstrap's collapse-->
+          <div class="weatherResult">
+            <p> Expect {{current['type']}} <br>
+              {{current['result']}}
+            </p>
+
+            <!-- <h5 class="card-title collapse show" id="temperature">
+              {{session['temp-f']}}F |
+              <a href="#temperature" data-toggle="collapse"> °C </a>
+            </h5>
+            <h5 class="card-title collapse" id="temperature">
+              {{session['temp-c']}}C |
+              <a href="#temperature" data-toggle="collapse"> °F </a>
+            </h5> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Shows summary of the weather for the day -->
+    <p class="card-text" align="center" id="bottomCardText">Forecast: {{data['weather-summary']}}</p>
+  </div>
 {% endblock %}

@@ -100,7 +100,21 @@ def game():
 
 @app.route("/about")
 def about():
-    return render_template('about.html')
+    today = datetime.datetime.now().strftime("%Y-%m-%d")
+
+    # Try to open up content for weather stuff
+    try:
+        f = open('data/content.json', 'r')
+    except Exception as e:
+        f = open('data/content.json', 'x')
+    try:
+        data = json.loads(f.read())
+    except Exception as e:
+        data = {}
+    f.close()
+    session['current-hour'] = datetime.datetime.now().hour
+    current = data[today]['weather-hourly'][session['current-hour']]
+    return render_template('about.html', current = current, data = data[today])
 
 
 
@@ -113,7 +127,24 @@ def map():
         user_info = db.get_user_from_username(session['user'])
         xcor = user_info["xcor"]
         ycor = user_info["ycor"]
-        return render_template("map.html", cookie = data, x=xcor, y=ycor)
+
+        today = datetime.datetime.now().strftime("%Y-%m-%d")
+
+        # Try to open up content for weather stuff
+        try:
+            f = open('data/content.json', 'r')
+        except Exception as e:
+            f = open('data/content.json', 'x')
+        try:
+            data = json.loads(f.read())
+        except Exception as e:
+            data = {}
+        f.close()
+
+        session['current-hour'] = datetime.datetime.now().hour
+        current = data[today]['weather-hourly'][session['current-hour']]
+
+        return render_template("map.html", current = current, cookie = data, data = data[today], x=xcor, y=ycor)
     return redirect(url_for('login'))
 
 @app.route("/toheal", methods=["POST"])
@@ -260,9 +291,20 @@ def home():
             d['temp-c'] = str((temp - 32.) * 5 / 9).split('.')[0]
             d['summary'] = hour['summary']
             # print("\nPrecipitation:" + str(hour['precipProbability']) + "\n")
+            d['prob'] = "0.0"
+            d['type'] = ""
+            d['result'] = ""
             d['prob'] = str(hour['precipProbability'])
             if ( hour['precipProbability'] > 0):
                 d['type'] = hour['precipType']
+
+            if (d['type'] == "rain"):
+                d['result'] = "Incease 300% chance of water pokemon!"
+            elif (d['type'] == "snow" or d['type'] == "sleet"):
+                d['result'] = "Incease 300% chance of ice pokemon!"
+            else:
+                d['type'] = "no precipitation"
+                d['result'] = "No change in pokemon occurances."
 
         # Add it all to our own file
         f = open('data/content.json', 'w')
@@ -283,7 +325,9 @@ def home():
     session['temp-f'] = str(f).split('.')[0] + '°'
     session['temp-c'] = str(c).split('.')[0] + '°'
 
-    return render_template('home.html', data = data[today], session = session, warning = need_to_warn)
+    current = data[today]['weather-hourly'][session['current-hour']]
+
+    return render_template('home.html', data = data[today], current = current, session = session, warning = need_to_warn)
 
 
 # ==========================STARTER POKEMON==========================
