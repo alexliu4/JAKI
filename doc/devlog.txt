@@ -238,3 +238,10 @@ jasonL -- 2019-1-16 21:36
 1. Display pokemon level and type
 2. Added titles and fixed water pokemon getter
 ==============================================================
+
+imadB -- 2019-1-17 02:54
+--------------------------------------------------------------
+1. Added pokeball to bag
+2. 50% chance to catch pokemon
+3. Updates database with caught pokemon
+==============================================================
