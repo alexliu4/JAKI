@@ -9,65 +9,71 @@
 <br>
 <br>
 
-<div class="container d-flex justify-content-center">
-
-  <div class="row" id="rowTop">
-    <div class="col-md-6">
-      {% if 'user' in session %}
-      <h2 class="font-weight-light">Welcome {{session['user']}}<h2>
-        {% endif %}
-      </div>
-
+<div class="container justify-content-center">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <img src="../static/images/pokemon_logo.png" alt="POKEMON" width="100%">
     </div>
   </div>
+  <div class="row justify-content-center">
+    <div class="col-4 text-center">
+      <form action="/map">
+	<button type="submit" class="btn btn-primary btn-lg btn-block">
+	  Start game!
+	</button>
+      </form>
+    </div>
+  </div>
+</div>
 
-  <!-- End of weather card -->
-  <!-- <p> The probability of precipitation is: {{data['precipProbability']}} </p> -->
-  <!-- d['type'] = hour['precipType'] -->
+
+<!-- End of weather card -->
+<!-- <p> The probability of precipitation is: {{data['precipProbability']}} </p> -->
+<!-- d['type'] = hour['precipType'] -->
 
 <br>
 
 <hr class="divider">
 
 <footer class="footer">
-    <div class="container center">
-        <span class="text-muted">Pokemon Dungeon© <br> Alex Liu, Karen Li, Imad Belkebir, Jason Lin</span>
-    </div>
+  <div class="container center">
+    <span class="text-muted">Pokemon Dungeon© <br> Alex Liu, Karen Li, Imad Belkebir, Jason Lin</span>
+  </div>
 </footer>
 {% endblock %}
 
 {% block body %}
 <!-- The weather card -->
-  <div class="card text-white bg-dark mb-3 center weatherBox">
-    <!-- Displays location of the user -->
-    <div class="card-header" align="center">{{session['location']}}</div>
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="center" align="center">
-          <img class="card-img-top" id="weatherPreviewImage" src="{{data['weather-icon']}}" alt="Image missing">
-        </div>
+<div class="card text-white bg-dark mb-3 center weatherBox">
+  <!-- Displays location of the user -->
+  <div class="card-header" align="center">{{session['location']}}</div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="center" align="center">
+        <img class="card-img-top" id="weatherPreviewImage" src="{{data['weather-icon']}}" alt="Image missing">
       </div>
-      <div class="col-lg-6">
-        <div class="card-body">
-          <!-- Allows switching between celsius and fahrenheit for temperature using bootstrap's collapse-->
-          <div class="weatherResult">
-            <p> Expect {{current['type']}} <br>
-              {{current['result']}}
-            </p>
+    </div>
+    <div class="col-lg-6">
+      <div class="card-body">
+        <!-- Allows switching between celsius and fahrenheit for temperature using bootstrap's collapse-->
+        <div class="weatherResult">
+          <p> Expect {{current['type']}} <br>
+            {{current['result']}}
+          </p>
 
-            <!-- <h5 class="card-title collapse show" id="temperature">
-              {{session['temp-f']}}F |
-              <a href="#temperature" data-toggle="collapse"> °C </a>
-            </h5>
-            <h5 class="card-title collapse" id="temperature">
-              {{session['temp-c']}}C |
-              <a href="#temperature" data-toggle="collapse"> °F </a>
-            </h5> -->
-          </div>
+          <!-- <h5 class="card-title collapse show" id="temperature">
+               {{session['temp-f']}}F |
+               <a href="#temperature" data-toggle="collapse"> °C </a>
+          </h5>
+          <h5 class="card-title collapse" id="temperature">
+            {{session['temp-c']}}C |
+            <a href="#temperature" data-toggle="collapse"> °F </a>
+          </h5> -->
         </div>
       </div>
     </div>
-    <!-- Shows summary of the weather for the day -->
-    <p class="card-text" align="center" id="bottomCardText">Forecast: {{data['weather-summary']}}</p>
   </div>
+  <!-- Shows summary of the weather for the day -->
+  <p class="card-text" align="center" id="bottomCardText">Forecast: {{data['weather-summary']}}</p>
+</div>
 {% endblock %}
