@@ -271,7 +271,7 @@ def get_move_from_id(move_id):
     command = "SELECT * FROM moves WHERE id = ?;"
     c.execute(command, (move_id,))
     info = c.fetchone()
-    print(info)
+    print (str(move_id) + " " + str(info))
     db.close()
     return move_dict(info)
 
@@ -324,7 +324,7 @@ def update_item(item_id, new_quantity):
     db.close()
 
 
-
+#add_Pokemon("jason", "charizard", "fire", 85, [1,2,3,4], 35, True)
 # MAKE TABLES AND DATABASE IF THEY DONT EXIST
 db = sqlite3.connect(DB)
 c = db.cursor()
