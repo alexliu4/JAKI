@@ -201,6 +201,9 @@ def heal():
             a_pokemon["type"] = []
             for type in temp.split(" "):
                 a_pokemon["type"].append(type.capitalize())
+            for i in range(len(a_pokemon["type"])):
+                if i != 0:
+                    a_pokemon["type"][i] = "/ " + a_pokemon["type"][i]
         return render_template("heal.html", list = pokemon_list)
     return redirect(url_for('login'))
 

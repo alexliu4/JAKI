@@ -75,12 +75,13 @@ def starter_images():
 def add_pokemon(username, pokemon):
     '''Link a Pokemon to a user in the database'''
     data = get_pokemon_data(pokemon)
-
+    print(data)
     poke_type_data = data["types"]
-    poke_type = []
+    print(poke_type_data)
+    poke_type_list = []
     for type in poke_type_data:
-        poke_type.append(type["type"]["name"] + " ")
-    poke_type = "".join(poke_type_data)
+        poke_type_list.append(type["type"]["name"])
+    poke_type = " ".join(poke_type_list)
 
     poke_max_health = 40
     unprocessed_moves = data["moves"]

@@ -14,8 +14,8 @@
             <img src="{{pokemon['image']}}" alt="{{pokemon['name']}}" style="width: 300px;height: 300px; float:left;" >
             <p style="margin-top: 30px;font-family:monospace;font-weight: bold;font-size: 30px;">
                 LVL: {{pokemon["level"]}} | {{pokemon["name"]}} |
-                {% for type in pokemon["type"]}
-                {{pokemon["type"]}} &nbsp;
+                {% for type in pokemon["type"] %}
+                {{type}}
                 {% endfor %}
             </p>
             <div class="progress" style="height:25px;">
