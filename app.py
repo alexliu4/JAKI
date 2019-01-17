@@ -93,6 +93,7 @@ def game():
             data.append(db.get_move_from_id(pokemons['move_4_id'])['name'])
             data.append(db.get_move_from_id(pokemons['move_4_id'])['damage'])
             data.append(pokemons['health'])
+            data.append(pokemon.get_pokemon_image(wild_pokemon))
         data.append(wild_pokemon)
         damage = pokemon.get_pokemon_data(wild_pokemon)['stats'][5]['base_stat']
         data.append(damage)
@@ -189,6 +190,16 @@ def updates():
         update = request.form.get('update').split(" ")
         db.update_health(user_pkmn, int(update[0]))
         db.add_item(session['user'], update[1], "potion", 1)
+        return redirect(url_for('map'))
+    return redirect(url_for('login'))
+
+@app.route("/updates2", methods=["POST"])
+def updates2():
+    if 'user' in session:
+        user_pkmn = db.get_user_active_pokemon(session['user'])[0]['id']
+        update = request.form.get('update').split(" ")
+        db.update_health(user_pkmn, int(update[0]))
+        pokemon.add_pokemon(session['user'], update[1])
         return redirect(url_for('map'))
     return redirect(url_for('login'))
 

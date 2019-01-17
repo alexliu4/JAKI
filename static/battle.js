@@ -51,7 +51,6 @@ var temp;
 
 var has_potion = false;
 var has_super_potion = false;
-var has_ultra_potion = false;
 var potion;
 
 var data = JSON.parse(document.getElementById("data").innerHTML)
@@ -63,7 +62,7 @@ var user_health_elem = document.getElementById("user_health");
 var pkmn_health = data[data.length - 5];
 var user_health = data[9];
 
-pkmn_health_elem.innerHTML = "Health: " + data[data.length - 5];
+pkmn_health_elem.innerHTML = "Health: " + data[pokemon_num * 11 + 9];
 user_health_elem.innerHTML = "Health: " + data[9];
 
 function setup(){
@@ -101,33 +100,30 @@ br.addEventListener("mouseout", function(e) {
 
 tl.addEventListener("click", function(e) {
   if(mode == 0){
-    tl.innerHTML = data[pokemon_num * 10 + 1]
-    tr.innerHTML = data[pokemon_num * 10 + 3]
-    bl.innerHTML = data[pokemon_num * 10 + 5]
-    br.innerHTML = data[pokemon_num * 10 + 7]
+    tl.innerHTML = data[pokemon_num * 11 + 1]
+    tr.innerHTML = data[pokemon_num * 11 + 3]
+    bl.innerHTML = data[pokemon_num * 11 + 5]
+    br.innerHTML = data[pokemon_num * 11 + 7]
     mode = 1;
   }
   else if(mode == 1){
-    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10] +
-    " used " + data[pokemon_num * 10 + 1] + "!</td></tr>";
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 11] +
+    " used " + data[pokemon_num * 11 + 1] + "!</td></tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
-    pkmn_health -= (data[pokemon_num * 10 + 2] + 25);
+    pkmn_health -= (data[pokemon_num * 11 + 2] + 25);
     if(pkmn_health < 0){
       pkmn_health = 0;
     }
     pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
     function after(){
       if(pkmn_health == 0){
-        var type = Math.floor(Math.random() * 3);
+        var type = Math.floor(Math.random() * 2);
 
         if(type == 0){
           potion = "potion";
         }
         if(type == 1){
           potion = "super potion";
-        }
-        if(type == 2){
-          potion = "ultra potion";
         }
         document.getElementById("table").innerHTML = "<tr><td>You won! Enemy dropped a " + potion + "!</td></tr>"
         function after2(){
@@ -249,78 +245,48 @@ tl.addEventListener("click", function(e) {
 });
 tr.addEventListener("click", function(e) {
   if(mode == 0){
-    if(items.length == 0){
-      document.getElementById("table").innerHTML = "<tr><td>You have no items!</td></tr>";
-      document.getElementById("move").innerHTML = "Press enter to continue";
-      function keydownHandler(e){
-          if (e.keyCode == 13) {
-            table.innerHTML = temp;
-            document.getElementById("move").innerHTML = "";
-            mode = 0;
-            setup();
-          }
+    var len = items.length;
+    var i;
+    for(i = 0; i < len; i++){
+      if(items[i]['name'] == "potion"){
+        has_potion = true;
       }
-
-      if (document.addEventListener) {
-          document.addEventListener('keydown', keydownHandler, false);
+      if(items[i]['name'] == "super_potion"){
+        has_super_potion = true;
       }
-      else if (document.attachEvent) {
-          document.attachEvent('onkeydown', keydownHandler);
-      }
-    }else{
-      var len = items.length;
-      var i;
-      for(i = 0; i < len; i++){
-        if(items[i]['name'] == "potion"){
-          has_potion = true;
-        }
-        if(items[i]['name'] == "super_potion"){
-          has_super_potion = true;
-        }
-        if(items[i]['name'] == "ultra_potion"){
-          has_ultra_potion = true;
-        }
-      }
-      if(has_potion){
-        tl.innerHTML = "potion";
-      }else{
-        tl.innerHTML = "";
-      }
-      if(has_super_potion){
-        tr.innerHTML = "super potion";
-      }else{
-        tr.innerHTML = "";
-      }
-      if(has_ultra_potion){
-        bl.innerHTML = "ultra potion";
-      }else{
-        bl.innerHTML = "";
-      }
-      br.innerHTML = "back";
-      mode = 2;
     }
+    if(has_potion){
+      tl.innerHTML = "potion";
+    }else{
+      tl.innerHTML = "";
+    }
+    if(has_super_potion){
+      tr.innerHTML = "super potion";
+    }else{
+      tr.innerHTML = "";
+    }
+    bl.innerHTML = "Pokeball";
+    br.innerHTML = "back";
+    mode = 2;
   }
   else if(mode == 1){
-    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10] +
-    " used " + data[pokemon_num * 10 + 3] + "!</tr>";
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 11] +
+    " used " + data[pokemon_num * 11 + 3] + "!</tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
-    pkmn_health -= (data[pokemon_num * 10 + 4] + 25);
+    pkmn_health -= (data[pokemon_num * 11 + 4] + 25);
     if(pkmn_health < 0){
       pkmn_health = 0;
     }
     pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
     function after(){
       if(pkmn_health == 0){
-        var type = Math.floor(Math.random() * 3);
+        var type = Math.floor(Math.random() * 2);
 
         if(type == 0){
           potion = "potion";
         }
         if(type == 1){
           potion = "super potion";
-        }
-        if(type == 2){
-          potion = "ultra potion";
         }
         document.getElementById("table").innerHTML = "<tr><td>You won! Enemy dropped a " + potion + "!</td></tr>"
         function after2(){
@@ -442,45 +408,42 @@ tr.addEventListener("click", function(e) {
 });
 bl.addEventListener("click", function(e) {
   if(mode == 0){
-    document.getElementById("table").innerHTML = "<tr><td>You have no other Pokemon!</td></tr>";
-    document.getElementById("move").innerHTML = "Press enter to continue";
-    function keydownHandler(e){
-        if (e.keyCode == 13) {
-          table.innerHTML = temp;
-          document.getElementById("move").innerHTML = "";
-          mode = 0;
-          setup();
-        }
-    }
+      document.getElementById("table").innerHTML = "<tr><td>You have no other Pokemon!</td></tr>";
+      document.getElementById("move").innerHTML = "Press enter to continue";
+      function keydownHandler(e){
+          if (e.keyCode == 13) {
+            table.innerHTML = temp;
+            document.getElementById("move").innerHTML = "";
+            mode = 0;
+            setup();
+          }
+      }
+      if (document.addEventListener) {
+          document.addEventListener('keydown', keydownHandler, false);
+      }
+      else if (document.attachEvent) {
+          document.attachEvent('onkeydown', keydownHandler);
+      }
 
-    if (document.addEventListener) {
-        document.addEventListener('keydown', keydownHandler, false);
-    }
-    else if (document.attachEvent) {
-        document.attachEvent('onkeydown', keydownHandler);
-    }
   }
   if(mode == 1){
-    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10] +
-    " used " + data[pokemon_num * 10 + 5] + "!</tr>";
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 11] +
+    " used " + data[pokemon_num * 11 + 5] + "!</tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
-    pkmn_health -= (data[pokemon_num * 10 + 6] + 25);
+    pkmn_health -= (data[pokemon_num * 11 + 6] + 25);
     if(pkmn_health < 0){
       pkmn_health = 0;
     }
     pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
     function after(){
       if(pkmn_health == 0){
-        var type = Math.floor(Math.random() * 3);
+        var type = Math.floor(Math.random() * 2);
 
         if(type == 0){
           potion = "potion";
         }
         if(type == 1){
           potion = "super potion";
-        }
-        if(type == 2){
-          potion = "ultra potion";
         }
         document.getElementById("table").innerHTML = "<tr><td>You won! Enemy dropped a " + potion + "!</td></tr>"
         function after2(){
@@ -581,23 +544,51 @@ bl.addEventListener("click", function(e) {
     }
   }
   else if(mode == 2){
-    if(has_ultra_potion){
-      user_health += 30;
-      user_health_elem.innerHTML = "Health:" + user_health;
-      has_ultra_potion = false;
-      var len = items.length;
-      var i;
-      for(i = 0; i < len; i++){
-        if(items[i]['name'] == "ultra potion"){
-          items.splice(i);
-          break;
-        }
+    var chance = Math.floor(Math.random() * 2);
+    if(chance == 0){
+      document.getElementById("table").innerHTML = "<tr><td>The other Pokemon escaped the pokeball!</tr>";
+      document.getElementById("move").innerHTML = "Press enter to continue";
+      function keydownHandler(e){
+          if (e.keyCode == 13) {
+            table.innerHTML = temp;
+            document.getElementById("move").innerHTML = "";
+            mode = 0;
+            setup();
+          }
+      }
+
+      if (document.addEventListener) {
+          document.addEventListener('keydown', keydownHandler, false);
+      }
+      else if (document.attachEvent) {
+          document.attachEvent('onkeydown', keydownHandler);
+      }
+    }else{
+      document.getElementById("table").innerHTML = "<tr><td>You caught the Pokrmon!</tr>";
+      document.getElementById("move").innerHTML = "Press enter to continue";
+      function keydownHandler(e){
+          if (e.keyCode == 13) {
+            var form = document.createElement("form");
+            form.setAttribute("method","POST");
+            form.setAttribute("action","/updates2")
+            var input = document.createElement("input");
+            input.setAttribute("type","text");
+            input.setAttribute("hidden","True");
+            input.setAttribute("name","update")
+            input.setAttribute("value", user_health + " " + data[data.length - 6]);
+            form.appendChild(input);
+            document.getElementsByTagName("body")[0].appendChild(form);
+            form.submit();
+          }
+      }
+
+      if (document.addEventListener) {
+          document.addEventListener('keydown', keydownHandler, false);
+      }
+      else if (document.attachEvent) {
+          document.attachEvent('onkeydown', keydownHandler);
       }
     }
-    table.innerHTML = temp;
-    document.getElementById("move").innerHTML = "";
-    mode = 0;
-    setup();
   }
 });
 br.addEventListener("click", function(e) {
@@ -605,25 +596,22 @@ br.addEventListener("click", function(e) {
     window.location.replace("/map");
   }
   if(mode == 1){
-    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 10] +
-    " used " + data[pokemon_num * 10 + 7] + "!</tr>";
+    document.getElementById("table").innerHTML = "<tr><td>" + data[pokemon_num * 11] +
+    " used " + data[pokemon_num * 11 + 7] + "!</tr>";
     document.getElementById("move").innerHTML = "Press enter to continue";
-    pkmn_health -= (data[pokemon_num * 10 + 8] + 25);
+    pkmn_health -= (data[pokemon_num * 11 + 8] + 25);
     if(pkmn_health < 0){
       pkmn_health = 0;
     }
     pkmn_health_elem.innerHTML = "Health:" + pkmn_health;
     function after(){
       if(pkmn_health == 0){
-        var type = Math.floor(Math.random() * 3);
+        var type = Math.floor(Math.random() * 2);
         if(type == 0){
           potion = "potion";
         }
         if(type == 1){
           potion = "super potion";
-        }
-        if(type == 2){
-          potion = "ultra potion";
         }
         document.getElementById("table").innerHTML = "<tr><td>You won! Enemy dropped a " + potion + "!</td></tr>"
         function after2(){
