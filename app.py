@@ -65,7 +65,7 @@ def typeChance():
         print("all pokemon have equal chances of occuring")
         chosen = (random.choice(output))
     print (chosen)
-    #for i in output:
+    # for i in output:
     #    print (i)
     return chosen
 
@@ -267,7 +267,7 @@ def home():
         session["fast"] = API.create_growth_dict()
 
     # EXAMPLE ON HOW TO DO INCREMENT
-    #db.increment_pokemon_exp(1, 20, session["fast"])
+    # db.increment_pokemon_exp(1, 20, session["fast"])
 
 ##########################################################################################################
     # code for the weather
@@ -452,7 +452,7 @@ def register():
                 session['user'] = r_username
                 db.add_user(r_username, md5_crypt.encrypt(r_password))
                 return redirect(url_for("home"))
-    return render_template('register.html',logged_in=False)
+    return render_template('register.html', logged_in = False)
 
 @app.route('/reset', methods = ["GET", "POST"])
 def reset():
@@ -484,7 +484,7 @@ def reset():
                     return redirect(url_for('home'))
                 else:
                     flash("Error occurred")
-    return render_template('reset.html',logged_in=False)
+    return render_template('reset.html', logged_in = False)
 
 @app.route('/logout', methods = ['GET'])
 def logout():

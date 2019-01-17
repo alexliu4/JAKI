@@ -88,7 +88,7 @@ def add_pokemon(username, pokemon):
     # print(unprocessed_moves)
     processed_moves = []
     for move in unprocessed_moves[:4]:
-        processed_moves.append(db.add_moves(move["move"]["name"],35,35,10))
+        processed_moves.append(db.add_moves(move["move"]["name"], 35, 35, 10))
     poke_level = 1
     has_room = True
     # print(db.get_user_active_pokemon(username))

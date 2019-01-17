@@ -32,7 +32,7 @@ def water():
     object = urllib.request.urlopen(req)
     info = object.read()
     data = json.loads(info)
-    
+
     result = {}
     for pokemon in data["pokemon"]:
         if (int)(pokemon["pokemon"]["url"].split("/")[-2]) < 252:

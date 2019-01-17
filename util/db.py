@@ -223,19 +223,19 @@ def increment_pokemon_exp(poke_id, experience, growth_rate):
     command = "UPDATE user_pokemons SET exp=" + str(new_exp) + " WHERE id=" + str(poke_id) + ";"
     c.execute(command)
     db.commit()
-    if new_exp > growth_rate['fast']['levels'][99-current_pokemon['level']]["experience"]:
-        command = "UPDATE user_pokemons SET level=" +str(current_pokemon['level']+1) + " WHERE id= " + str(poke_id) + ";"
+    if new_exp > growth_rate['fast']['levels'][99 - current_pokemon['level']]["experience"]:
+        command = "UPDATE user_pokemons SET level=" + str(current_pokemon['level'] + 1) + " WHERE id= " + str(poke_id) + ";"
         c.execute(command)
         db.commit()
-        command = "UPDATE user_pokemons SET attack=" +str(current_pokemon['attack']+1) + " WHERE id= " + str(poke_id) + ";"
+        command = "UPDATE user_pokemons SET attack=" + str(current_pokemon['attack'] + 1) + " WHERE id= " + str(poke_id) + ";"
         c.execute(command)
         db.commit()
-        command = "UPDATE user_pokemons SET defense=" +str(current_pokemon['defense']+1) + " WHERE id= " + str(poke_id) + ";"
+        command = "UPDATE user_pokemons SET defense=" + str(current_pokemon['defense'] + 1) + " WHERE id= " + str(poke_id) + ";"
         c.execute(command)
         db.commit()
     db.close()
 
-def update_health(poke_id,health):
+def update_health(poke_id, health):
     db = sqlite3.connect(DB)
     c = db.cursor()
     command = "UPDATE user_pokemons SET health=" + str(health) + " WHERE id=" + str(poke_id) + ";"
@@ -324,7 +324,7 @@ def update_item(item_id, new_quantity):
     db.close()
 
 
-#add_Pokemon("jason", "Charizard", "fire", 85, [1,2,3,4], 35, True)
+# add_Pokemon("jason", "Charizard", "fire", 85, [1,2,3,4], 35, True)
 # MAKE TABLES AND DATABASE IF THEY DONT EXIST
 db = sqlite3.connect(DB)
 c = db.cursor()
