@@ -61,8 +61,9 @@ var pkmn_health_elem = document.getElementById("pkmn_health");
 var user_health_elem = document.getElementById("user_health");
 var pkmn_health = data[data.length - 5];
 var user_health = data[9];
+var take_damage = false;
 
-pkmn_health_elem.innerHTML = "Health: " + data[pokemon_num * 11 + 9];
+pkmn_health_elem.innerHTML = "Health: " + data[data.length - 5];
 user_health_elem.innerHTML = "Health: " + data[9];
 
 function setup(){
@@ -156,6 +157,7 @@ tl.addEventListener("click", function(e) {
         document.getElementById("table").innerHTML = "<tr><td>" + data[data.length - 6] +
         " used " + pkmn_move + "!</tr>";
         document.getElementById("move").innerHTML = "Press enter to continue";
+        take_damage = true;
         user_health -= Math.floor(Math.random() * 8);
         if(user_health < 0){
           user_health = 0;
