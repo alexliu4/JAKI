@@ -295,33 +295,36 @@ window.setInterval(() => {
         }
         cover_int++;
     }
-},0.1);
+},1);
+
+var sent_location = false;
 
 window.setInterval(() => {
-
-    if (stop_moving >= 1){
-        return;
-    }
     var change_row = document.getElementById("0,0").style.top.toString();
     var change_col = document.getElementById("0,0").style.left.toString();
     grass_row = 6-Math.floor((parseInt(change_row.substring(0,change_row.length-2))) / 75);
     grass_col = 10-Math.floor((parseInt(change_col.substring(0,change_col.length-2))) / 75);
+    if (cover_int > 190 && cover_int < 300 && !sent_location){
+        var form = document.createElement("form");
+        form.setAttribute("method","POST");
+        form.setAttribute("action","/tobattle")
+        var input = document.createElement("input");
+        input.setAttribute("type","text");
+        input.setAttribute("hidden","True");
+        input.setAttribute("name","location")
+        input.setAttribute("value",(grass_row) + " " + (grass_col));
+        form.appendChild(input);
+        body.appendChild(form);
+        form.submit();
+    }
+    if (stop_moving >= 1){
+        return;
+    }
     if (map[grass_row][grass_col] === 7 && (Math.abs(right-left) > 0 || Math.abs(down-up) > 0)){
         grass_steps++;
         if (grass_steps > 20) {
             grass_steps = 0;
             stop_moving = 1;
-            var form = document.createElement("form");
-            form.setAttribute("method","POST");
-            form.setAttribute("action","/tobattle")
-            var input = document.createElement("input");
-            input.setAttribute("type","text");
-            input.setAttribute("hidden","True");
-            input.setAttribute("name","location")
-            input.setAttribute("value",(grass_row) + " " + (grass_col));
-            form.appendChild(input);
-            body.appendChild(form);
-            form.submit();
         }
     }
     if (map[grass_row][grass_col] === 26){
