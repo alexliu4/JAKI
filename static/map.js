@@ -276,19 +276,19 @@ var cover_int = 0;
 
 window.setInterval(() => {
     if (stop_moving == 1){
-        if (cover_int < 400){
+        if (cover_int < 200){
             tile = document.createElement("img");
             tile.setAttribute("src","../static/images/black.png");
             tile.style.height = screen.height/4 + "px";
-            tile.style.width = screen.width/80 + "px"
+            tile.style.width = screen.width/40 + "px"
             tile.style.position = "absolute";
-            if (Math.floor(cover_int/100) %2 == 0 ){
-                tile.style.left = (cover_int%100)*screen.width/80 + "px";
+            if (Math.floor(cover_int/50) %2 == 0 ){
+                tile.style.left = (cover_int%50)*screen.width/40 + "px";
             }
             else {
-                tile.style.left = (screen.width+160 - (cover_int%100)*screen.width/80) + "px";
+                tile.style.left = (screen.width+160 - (cover_int%50)*screen.width/40) + "px";
             }
-            tile.style.top = Math.floor(cover_int/100) * screen.height/4 + "px";
+            tile.style.top = Math.floor(cover_int/50) * screen.height/4 + "px";
             tile.style.background = "black";
             tile.style.zIndex = "20";
             body.appendChild(tile);
