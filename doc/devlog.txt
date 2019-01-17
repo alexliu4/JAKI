@@ -238,3 +238,9 @@ jasonL -- 2019-1-16 21:36
 1. Display pokemon level and type
 2. Added titles and fixed water pokemon getter
 ==============================================================
+
+jasonL -- 2019-1-17 04:01
+--------------------------------------------------------------
+1. Made homepage look nicer
+2. Added inventory
+==============================================================

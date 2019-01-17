@@ -3,3 +3,10 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.modal-title{
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 28px;
+}

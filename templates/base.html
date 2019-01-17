@@ -119,10 +119,27 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel">Inventory</h4>
+            <p class="modal-title" id="myModalLabel">Inventory</p>
           </div>
           <div class="modal-body">
-            Hello
+              {% for pokemon in pokemons %}
+              <div class="row">
+                  <div class="col-sm-12">
+                      <img src="{{pokemon['image']}}" alt="{{pokemon['name']}}" style="width: 300px;height: 300px; float:left;" >
+                      <p style="margin-top: 30px;font-family:monospace;font-weight: bold;font-size: 30px;">
+                          LVL: {{pokemon["level"]}} | {{pokemon["name"]}} |
+                          {% for type in pokemon["type"] %}
+                          {{type}}
+                          {% endfor %}
+                      </p>
+                      <div class="progress" style="height:25px;">
+                          <div class="progress-bar" role="progressbar" style="width: {{pokemon['percent']}}%;font-family:monospace;font-weight: bold;font-size: 20px;font-color:black" aria-valuenow="{{pokemon['health']}}" aria-valuemin="0" aria-valuemax="{{pokemon['max_health']}}">
+                              {{pokemon['health']}}/{{pokemon['max_health']}}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              {% endfor %}
           </div>
           <div class="modal-footer">
             <button type="button" style="background-color:#2E4053; color:white" class="btn btn-default" data-dismiss="modal">Close</button>

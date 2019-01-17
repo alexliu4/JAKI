@@ -324,7 +324,7 @@ def update_item(item_id, new_quantity):
     db.close()
 
 
-#add_Pokemon("jason", "charizard", "fire", 85, [1,2,3,4], 35, True)
+#add_Pokemon("jason", "Charizard", "fire", 85, [1,2,3,4], 35, True)
 # MAKE TABLES AND DATABASE IF THEY DONT EXIST
 db = sqlite3.connect(DB)
 c = db.cursor()

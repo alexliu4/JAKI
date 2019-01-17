@@ -133,6 +133,17 @@ def map():
         xcor = user_info["xcor"]
         ycor = user_info["ycor"]
 
+        user_pokemon = db.get_pokemon_from_username(session['user'])
+        for a_pokemon in user_pokemon:
+            a_pokemon["image"] = pokemon.get_pokemon_image(a_pokemon['name'])
+            a_pokemon["percent"] = math.floor(a_pokemon['health'] / a_pokemon ['max_health'] * 100)
+            temp = a_pokemon['type']
+            a_pokemon["type"] = []
+            for type in temp.split(" "):
+                a_pokemon["type"].append(type.capitalize())
+            for i in range(len(a_pokemon["type"])):
+                if i != 0:
+                    a_pokemon["type"][i] = "/ " + a_pokemon["type"][i]
         today = datetime.datetime.now().strftime("%Y-%m-%d")
 
         # Try to open up content for weather stuff
@@ -149,7 +160,7 @@ def map():
         session['current-hour'] = datetime.datetime.now().hour
         current = data[today]['weather-hourly'][session['current-hour']]
 
-        return render_template("map.html", current = current, cookie = data, data = data[today], x=xcor, y=ycor, logged_in=True, on_map=True)
+        return render_template("map.html", current = current, cookie = data, data = data[today], x=xcor, y=ycor, logged_in=True, on_map=True, pokemons = user_pokemon)
     return redirect(url_for('login'))
 
 @app.route("/toheal", methods=["POST"])
@@ -352,7 +363,7 @@ def starter_pokemon():
         if pokemon_list:
             return redirect(url_for('home'))
         images = pokemon.starter_images()
-        return render_template('starter_pokemon.html', **images, logged_in=True)
+        return render_template('starter_pokemon.html', **images, logged_in=False)
     return redirect(url_for('home'))
 
 @app.route('/start', methods = ['GET'])
