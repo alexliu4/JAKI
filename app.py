@@ -56,17 +56,17 @@ def typeChance():
     if (current['type'] == "rain"):
         print("water types will occur x3 more often")
         output = API.water() # adds each water type 2 more times
-        chosen = (random.choice(output))
-    if (current['type'] == "snow" or current['type'] == "sleet"):
+        chosen = random.choice(list(output))
+    elif (current['type'] == "snow" or current['type'] == "sleet"):
         print("ice types will occur x3 more often")
         output = API.ice() # adds each ice type 2 more times
-        chosen = (random.choice(output))
+        chosen = random.choice(list(output))
     else:
         print("all pokemon have equal chances of occuring")
         chosen = (random.choice(output))
     print (chosen)
-    for i in output:
-        print (i)
+    #for i in output:
+    #    print (i)
     return chosen
 
 @app.route('/house')
@@ -338,7 +338,7 @@ def home():
     session['temp-c'] = str(c).split('.')[0] + '°'
 
     current = data[today]['weather-hourly'][session['current-hour']]
-    # print(typeChance())
+    print(typeChance())
 
     return render_template('home.html', data = data[today], current = current, session = session, warning = need_to_warn)
 
@@ -349,7 +349,6 @@ def home():
 def starter_pokemon():
     if 'user' in session:
         pokemon_list = db.get_pokemon_from_username(session['user'])
-        print(pokemon_list)
         if pokemon_list:
             return redirect(url_for('home'))
         images = pokemon.starter_images()

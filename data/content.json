@@ -494,5 +494,501 @@
         ],
         "weather-icon": "/static/icons/night.svg",
         "weather-summary": "Mixed precipitation on Friday through next Wednesday, with high temperatures peaking at 54\u00b0F on Sunday."
+    },
+    "2019-01-17": {
+        "weather-hourly": [
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Clear",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547704800,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547708400,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "-1",
+                "temp-f": "29",
+                "time": 1547712000,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "-1",
+                "temp-f": "28",
+                "time": 1547715600,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547719200,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "-3",
+                "temp-f": "26",
+                "time": 1547722800,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "-3",
+                "temp-f": "26",
+                "time": 1547726400,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "26",
+                "time": 1547730000,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.01",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Partly Cloudy",
+                "temp-c": "-2",
+                "temp-f": "27",
+                "time": 1547733600,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "-1",
+                "temp-f": "28",
+                "time": 1547737200,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.01",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Partly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547740800,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.01",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547744400,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Mostly Cloudy",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547748000,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.01",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Mostly Cloudy",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547751600,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Mostly Cloudy",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547755200,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Mostly Cloudy",
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547758800,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Overcast",
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547762400,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Overcast",
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547766000,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Overcast",
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547769600,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Overcast",
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547773200,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.01",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Overcast",
+                "temp-c": "-0",
+                "temp-f": "30",
+                "time": 1547776800,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.01",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Overcast",
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547780400,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.04",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Overcast",
+                "temp-c": "-0",
+                "temp-f": "31",
+                "time": 1547784000,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.07",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Overcast",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547787600,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.12",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Overcast",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547791200,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/snowy-1.svg",
+                "prob": "0.18",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Possible Light Snow",
+                "temp-c": "0",
+                "temp-f": "33",
+                "time": 1547794800,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/snowy-1.svg",
+                "prob": "0.22",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Possible Light Snow",
+                "temp-c": "1",
+                "temp-f": "33",
+                "time": 1547798400,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.26",
+                "result": "Incease 300% chance of water pokemon!",
+                "summary": "Overcast",
+                "temp-c": "1",
+                "temp-f": "34",
+                "time": 1547802000,
+                "type": "rain"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.31",
+                "result": "Incease 300% chance of water pokemon!",
+                "summary": "Overcast",
+                "temp-c": "1",
+                "temp-f": "35",
+                "time": 1547805600,
+                "type": "rain"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.29",
+                "result": "Incease 300% chance of water pokemon!",
+                "summary": "Overcast",
+                "temp-c": "1",
+                "temp-f": "35",
+                "time": 1547809200,
+                "type": "rain"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.24",
+                "result": "Incease 300% chance of water pokemon!",
+                "summary": "Overcast",
+                "temp-c": "2",
+                "temp-f": "36",
+                "time": 1547812800,
+                "type": "rain"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.28",
+                "result": "Incease 300% chance of water pokemon!",
+                "summary": "Overcast",
+                "temp-c": "2",
+                "temp-f": "36",
+                "time": 1547816400,
+                "type": "rain"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.24",
+                "result": "Incease 300% chance of water pokemon!",
+                "summary": "Overcast",
+                "temp-c": "2",
+                "temp-f": "37",
+                "time": 1547820000,
+                "type": "rain"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.19",
+                "result": "Incease 300% chance of water pokemon!",
+                "summary": "Overcast",
+                "temp-c": "3",
+                "temp-f": "38",
+                "time": 1547823600,
+                "type": "rain"
+            },
+            {
+                "icon": "/static/icons/cloudy.svg",
+                "prob": "0.12",
+                "result": "Incease 300% chance of water pokemon!",
+                "summary": "Overcast",
+                "temp-c": "4",
+                "temp-f": "39",
+                "time": 1547827200,
+                "type": "rain"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.08",
+                "result": "Incease 300% chance of water pokemon!",
+                "summary": "Mostly Cloudy",
+                "temp-c": "4",
+                "temp-f": "40",
+                "time": 1547830800,
+                "type": "rain"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.07",
+                "result": "Incease 300% chance of water pokemon!",
+                "summary": "Mostly Cloudy",
+                "temp-c": "5",
+                "temp-f": "42",
+                "time": 1547834400,
+                "type": "rain"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0.06",
+                "result": "Incease 300% chance of water pokemon!",
+                "summary": "Mostly Cloudy",
+                "temp-c": "6",
+                "temp-f": "42",
+                "time": 1547838000,
+                "type": "rain"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "5",
+                "temp-f": "42",
+                "time": 1547841600,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-day-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "5",
+                "temp-f": "41",
+                "time": 1547845200,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "4",
+                "temp-f": "39",
+                "time": 1547848800,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "3",
+                "temp-f": "38",
+                "time": 1547852400,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "2",
+                "temp-f": "37",
+                "time": 1547856000,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/cloudy-night-2.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Partly Cloudy",
+                "temp-c": "2",
+                "temp-f": "36",
+                "time": 1547859600,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0.01",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Clear",
+                "temp-c": "1",
+                "temp-f": "34",
+                "time": 1547863200,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0.01",
+                "result": "Incease 300% chance of ice pokemon!",
+                "summary": "Clear",
+                "temp-c": "1",
+                "temp-f": "34",
+                "time": 1547866800,
+                "type": "snow"
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Clear",
+                "temp-c": "1",
+                "temp-f": "33",
+                "time": 1547870400,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Clear",
+                "temp-c": "0",
+                "temp-f": "33",
+                "time": 1547874000,
+                "type": "no precipitation"
+            },
+            {
+                "icon": "/static/icons/night.svg",
+                "prob": "0",
+                "result": "No change in pokemon occurances.",
+                "summary": "Clear",
+                "temp-c": "0",
+                "temp-f": "32",
+                "time": 1547877600,
+                "type": "no precipitation"
+            }
+        ],
+        "weather-icon": "/static/icons/night.svg",
+        "weather-summary": "Mixed precipitation tomorrow through next Thursday, with high temperatures peaking at 45\u00b0F on Sunday."
     }
 }
