@@ -1,9 +1,10 @@
 {% extends "base.html" %}
-{% block head %}
 {% block title %}
 About
 {% endblock %}
+{% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 {% endblock %}
 
 {% block content %}
@@ -16,7 +17,7 @@ About
   <hr class="divider">
   <br>
 
-  <p> _Pokemon Dungeon_ is a gaming website that is, as the name implies it, the classic pokemon game with the weather affecting the wild pokemon that appear. There will also be (hopefully) item drops, pokemon trainers to battle, a gym leader, and even a tomagatchi mode. The tomagatchi mode will allow users to take another path to raising the level of their pokemon by taking care of them and feeding them. The site uses each user's IP address (after given permission, of course) to find the weather data of their location using the IP API and Darksky API. The Ipify API is used to procure the client's IP address. </p>
+  <p> <b><i>Pokemon Dungeon</i></b> is a gaming website that is, as the name implies it, the classic pokemon game with the weather affecting the wild pokemon that appear. There will also be (hopefully) item drops, pokemon trainers to battle, a gym leader, and even a tomagatchi mode. The tomagatchi mode will allow users to take another path to raising the level of their pokemon by taking care of them and feeding them. The site uses each user's IP address (after given permission, of course) to find the weather data of their location using the IP API and Darksky API. The Ipify API is used to procure the client's IP address. </p>
 
   <hr class="divider">
 
@@ -32,6 +33,7 @@ About
     Tip: If your health is going low either: use a potion or head to the pokecenter
     <br>
     To enter the pokecenter simply walk through the center of the doorway and you will be brought inside to heal your pokemon.
+    <b>NOTE: The map mode is best played on 90% zoom.</b>
   </p>
 
   <hr class="divider">

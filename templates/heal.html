@@ -4,9 +4,13 @@
 Poke Center
 {% endblock %}
 
+{% block head %}
+
+{% endblock %}
+
 
 {% block content %}
-<div class="container-fluid" style="padding-top:100px; background-color:#C9E2E7;">
+<div class="container-fluid" style="padding-top:100px;">
     {% for pokemon in list %}
     <div class="row">
         <div class="col-sm-12">
@@ -31,4 +35,9 @@ Poke Center
         </form>
     </center>
 </div>
+
+<script>
+var body = document.getElementsByTagName("body")[0];
+body.setAttribute("style","background-color: #C9E2E7;");
+</script>
 {% endblock %}
