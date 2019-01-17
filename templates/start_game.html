@@ -12,19 +12,19 @@ Start Game
 <h1 class="text-center"> You chose {{starter_name}} </h1>
 <br>
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-4 text-center">
-      <div class="alert alert-secondary text-center">
-	<image src={{starter_image}} class="image-rounded" alt="starter" width="100%">
-	  <br>
-	  <h4>{{starter_name}}</h4>
-      </div>
-      <form action="/map">
-	<button type="submit" class="btn btn-primary btn-lg btn-block">
-	  Start game!
-	</button>
-      </form>
+    <div class="row justify-content-center">
+        <div class="col-4 text-center">
+            <div class="alert alert-secondary text-center">
+                <image src={{starter_image}} class="image-rounded" alt="starter" width="100%">
+                <br>
+                <h4>{{starter_name}}</h4>
+            </div>
+            <form action="/">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">
+                    Go to home page!
+                </button>
+            </form>
+        </div>
     </div>
-  </div>
 </div>
 {% endblock %}

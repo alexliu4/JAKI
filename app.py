@@ -244,7 +244,7 @@ def home():
         session["fast"] = API.create_growth_dict()
 
     # EXAMPLE ON HOW TO DO INCREMENT
-    db.increment_pokemon_exp(1, 20, session["fast"])
+    #db.increment_pokemon_exp(1, 20, session["fast"])
 
 ##########################################################################################################
     # code for the weather
@@ -338,7 +338,6 @@ def home():
     session['temp-c'] = str(c).split('.')[0] + '°'
 
     current = data[today]['weather-hourly'][session['current-hour']]
-    print(typeChance())
 
     return render_template('home.html', data = data[today], current = current, session = session, warning = need_to_warn)
 
