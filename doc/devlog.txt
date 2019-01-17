@@ -224,7 +224,13 @@ alexL -- 2019-1-16 13:04
 
 alexL -- 2019-1-16 13:04
 --------------------------------------------------------------
-1. Created the weather modal to show user's the weather and increased pokemon occurances
+1. Created the weather modal to show user's the weather and
+increased pokemon occurances
+==============================================================
+
+alexL -- 2019-1-16 21:44
+--------------------------------------------------------------
+1. Designed home page with logo and button to start game.
 ==============================================================
 
 jasonL -- 2019-1-16 21:36
