@@ -18,26 +18,27 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	<ul class="navbar-nav mr-auto">
+        {% if logged_in %}
           <li class="nav-item active">
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="/map">Map</a>
           </li>
+        {% endif %}
           <li class="nav-item active">
             <a class="nav-link" href="/about">About the Game</a>
           </li>
+          {% if logged_in %}
           <li class="nav-item active">
             <a href="#" class="nav-link" data-toggle="modal" data-target="#weatherModal">Weather</a>
           </li>
-          <!-- <li class="nav-item active">
-            <a class="nav-link" href="/#comic">Comic</a>
-          </li>
-          {% if 'user' in session %}
+          {% endif %}
+          {% if on_map %}
           <li class="nav-item active">
-            <a class="nav-link" href="/favorites">Favorites</a>
+            <a href="#" class="nav-link" data-toggle="modal" data-target="#itemModal">Inventory</a>
           </li>
-          {% endif %} -->
+          {% endif %}
 	</ul>
 	<ul class="navbar-nav">
           {% if 'user' not in session %}
@@ -112,6 +113,24 @@
         </div>
       </div>
     </div>
+
+    {% if on_map %}
+    <div class="modal fade" id="itemModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Inventory</h4>
+          </div>
+          <div class="modal-body">
+            Hello
+          </div>
+          <div class="modal-footer">
+            <button type="button" style="background-color:#2E4053; color:white" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
   </body>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

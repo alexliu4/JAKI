@@ -5,80 +5,102 @@ Home
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="../static/style.css">
+<link rel="stylesheet" href="../static/home.css">
 {% endblock %}
 
 {% block content %}
-<br>
-<br>
-<br>
-<br>
 
-<div class="container justify-content-center">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <img src="../static/images/pokemon_logo.png" alt="POKEMON" width="100%">
+<div class="top">
+    <div class="container justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <img src="../static/images/pokemon_logo.png" alt="POKEMON" width="100%">
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 text-center">
+                <form action="/map">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        Start game!
+                    </button>
+                </form>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-4 text-center">
-      <form action="/map">
-	<button type="submit" class="btn btn-primary btn-lg btn-block">
-	  Start game!
-	</button>
-      </form>
-    </div>
-  </div>
+</div>
+<div class="top_text">
+    <p>Welcome To The World Of Pokemon</p>
+    <p class="inner_text">
+        In this world, you can catch, fight, heal, feed, and train your Pokemon. Work
+        hard and become the world's best Pokemon trainer!
+    </p>
 </div>
 
+<div class="middle">
+    <div class="choose">
+        <p class="middle_text">Choose from a variety of Pokemon!</p>
+    </div>
+</div>
+
+<div class="top_text">
+    <p>Explore the world and discover new places!</p>
+    <p class="inner_text">
+        Start your Pokemon adventure here, where you can observe the natural world
+        as well as the industrial world. Visit the Poke Center or the grass to find new things!
+    </p>
+</div>
+
+<div class="bottom">
+    <div class="choose">
+        <p class="middle_text">Be what you want to be in this world of Pokemon. Pursue your dreams!</p>
+    </div>
+</div>
 
 <!-- End of weather card -->
 <!-- <p> The probability of precipitation is: {{data['precipProbability']}} </p> -->
 <!-- d['type'] = hour['precipType'] -->
 
-<br>
-
-<hr class="divider">
-
-<footer class="footer">
-  <div class="container center">
-    <span class="text-muted">Pokemon Dungeon© <br> Alex Liu, Karen Li, Imad Belkebir, Jason Lin</span>
-  </div>
-</footer>
+<div class="footer">
+    <div class="container center">
+        <span class="text-muted">Pokemon Dungeon© <br> Alex Liu, Karen Li, Imad Belkebir, Jason Lin</span>
+    </div>
+</div>
 {% endblock %}
 
 {% block body %}
 <!-- The weather card -->
 <div class="card text-white bg-dark mb-3 center weatherBox">
-  <!-- Displays location of the user -->
-  <div class="card-header" align="center">{{session['location']}}</div>
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="center" align="center">
-        <img class="card-img-top" id="weatherPreviewImage" src="{{data['weather-icon']}}" alt="Image missing">
-      </div>
-    </div>
-    <div class="col-lg-6">
-      <div class="card-body">
-        <!-- Allows switching between celsius and fahrenheit for temperature using bootstrap's collapse-->
-        <div class="weatherResult">
-          <p> Expect {{current['type']}} <br>
-            {{current['result']}}
-          </p>
-
-          <!-- <h5 class="card-title collapse show" id="temperature">
-               {{session['temp-f']}}F |
-               <a href="#temperature" data-toggle="collapse"> °C </a>
-          </h5>
-          <h5 class="card-title collapse" id="temperature">
-            {{session['temp-c']}}C |
-            <a href="#temperature" data-toggle="collapse"> °F </a>
-          </h5> -->
+    <!-- Displays location of the user -->
+    <div class="card-header" align="center">{{session['location']}}</div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="center" align="center">
+                <img class="card-img-top" id="weatherPreviewImage" src="{{data['weather-icon']}}" alt="Image missing">
+            </div>
         </div>
-      </div>
+        <div class="col-lg-6">
+            <div class="card-body">
+                <!-- Allows switching between celsius and fahrenheit for temperature using bootstrap's collapse-->
+                <div class="weatherResult">
+                    <p> Expect {{current['type']}} <br>
+                        {{current['result']}}
+                    </p>
+
+                    <!-- <h5 class="card-title collapse show" id="temperature">
+                    {{session['temp-f']}}F |
+                    <a href="#temperature" data-toggle="collapse"> °C </a>
+                </h5>
+                <h5 class="card-title collapse" id="temperature">
+                {{session['temp-c']}}C |
+                <a href="#temperature" data-toggle="collapse"> °F </a>
+            </h5> -->
+        </div>
     </div>
-  </div>
-  <!-- Shows summary of the weather for the day -->
-  <p class="card-text" align="center" id="bottomCardText">Forecast: {{data['weather-summary']}}</p>
+</div>
+</div>
+<!-- Shows summary of the weather for the day -->
+<p class="card-text" align="center" id="bottomCardText">Forecast: {{data['weather-summary']}}</p>
 </div>
 {% endblock %}

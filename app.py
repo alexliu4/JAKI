@@ -100,7 +100,7 @@ def game():
         for move in wild_moves:
             data.append(move)
         items = db.get_item_from_username(session['user'])
-        return render_template('battle.html', user_pkmn = user_pokemon_url, wild_pkmn = wild_pokemon_url, data=data, items=items)
+        return render_template('battle.html', user_pkmn = user_pokemon_url, wild_pkmn = wild_pokemon_url, data=data, items=items, logged_in=True)
     return redirect(url_for('login'))
 
 @app.route("/about")
@@ -119,7 +119,8 @@ def about():
     f.close()
     session['current-hour'] = datetime.datetime.now().hour
     current = data[today]['weather-hourly'][session['current-hour']]
-    return render_template('about.html', current = current, data = data[today])
+    is_logged_in = 'user' in session
+    return render_template('about.html', current = current, data = data[today], logged_in=is_logged_in)
 
 
 @app.route("/map")
@@ -148,7 +149,7 @@ def map():
         session['current-hour'] = datetime.datetime.now().hour
         current = data[today]['weather-hourly'][session['current-hour']]
 
-        return render_template("map.html", current = current, cookie = data, data = data[today], x=xcor, y=ycor)
+        return render_template("map.html", current = current, cookie = data, data = data[today], x=xcor, y=ycor, logged_in=True, on_map=True)
     return redirect(url_for('login'))
 
 @app.route("/toheal", methods=["POST"])
@@ -204,7 +205,7 @@ def heal():
             for i in range(len(a_pokemon["type"])):
                 if i != 0:
                     a_pokemon["type"][i] = "/ " + a_pokemon["type"][i]
-        return render_template("heal.html", list = pokemon_list)
+        return render_template("heal.html", list = pokemon_list, logged_in=True)
     return redirect(url_for('login'))
 
 @app.route("/healall")
@@ -339,7 +340,7 @@ def home():
 
     current = data[today]['weather-hourly'][session['current-hour']]
 
-    return render_template('home.html', data = data[today], current = current, session = session, warning = need_to_warn)
+    return render_template('home.html', data = data[today], current = current, session = session, warning = need_to_warn, logged_in=True)
 
 
 # ==========================STARTER POKEMON==========================
@@ -351,7 +352,7 @@ def starter_pokemon():
         if pokemon_list:
             return redirect(url_for('home'))
         images = pokemon.starter_images()
-        return render_template('starter_pokemon.html', **images)
+        return render_template('starter_pokemon.html', **images, logged_in=True)
     return redirect(url_for('home'))
 
 @app.route('/start', methods = ['GET'])
@@ -365,7 +366,8 @@ def start():
             pokemon.add_pokemon(session['user'], name)
             return render_template('start_game.html',
                                    starter_name=name,
-                                   starter_image=image)
+                                   starter_image=image,
+                                   logged_in = True)
     return redirect(url_for('home'))
 
 
@@ -375,7 +377,7 @@ def start():
 def login():
     if 'user' in session:
         return redirect(url_for('home'))
-    return render_template('login.html')
+    return render_template('login.html', logged_in=False)
 
 @app.route('/auth', methods = ["POST"])
 def auth():
@@ -428,7 +430,7 @@ def register():
                 session['user'] = r_username
                 db.add_user(r_username, md5_crypt.encrypt(r_password))
                 return redirect(url_for("home"))
-    return render_template('register.html')
+    return render_template('register.html',logged_in=False)
 
 @app.route('/reset', methods = ["GET", "POST"])
 def reset():
@@ -460,7 +462,7 @@ def reset():
                     return redirect(url_for('home'))
                 else:
                     flash("Error occurred")
-    return render_template('reset.html')
+    return render_template('reset.html',logged_in=False)
 
 @app.route('/logout', methods = ['GET'])
 def logout():
