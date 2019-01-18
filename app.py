@@ -79,7 +79,7 @@ def game():
     if 'user' in session:
         user_list = db.get_user_active_pokemon(session['user'])
         user_pokemon_url = pokemon.get_pokemon_image(user_list[0]['name'])
-        wild_pokemon = random.choice(list(session['pokemon']))
+        wild_pokemon = typeChance()
         wild_pokemon_url = pokemon.get_pokemon_image(wild_pokemon)
         data = []
         for pokemons in user_list:

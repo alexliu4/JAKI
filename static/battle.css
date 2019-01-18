@@ -1,0 +1,19 @@
+body{
+    background-image: url('./images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pkmn_health{
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+#user_health{
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 20px;
+
+}
