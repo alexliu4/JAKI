@@ -11,7 +11,7 @@ _Pokemon Dungeon_ is a gaming website that is, as the name implies it, the class
 
 ## Check our game in action with this YouTube video!!
 
-watch our demo [here](https://youtu.be/i69Jltw-8fs)
+watch our demo [here](https://www.youtube.com/watch?v=5r1-FmAUTOs)
 
 ---
 
